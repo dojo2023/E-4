@@ -1,30 +1,27 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BbsDao;
 import model.Bbs;
 
 /**
 * Servlet implementation class BoardServlet
  * @param <BbsDAO>
 */
-@WebServlet("/board")
-public class BoardServlet<BbsDAO> extends HttpServlet {
+@WebServlet("/insert")
+public class InsertServlet<BbsDAO> extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   /**
   * @see HttpServlet#HttpServlet()
   */
-  public BoardServlet() {
+  public InsertServlet() {
     super();
     // TODO Auto-generated constructor stub
   }
@@ -34,19 +31,7 @@ public class BoardServlet<BbsDAO> extends HttpServlet {
   * response)
   */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-
-    request.setCharacterEncoding("UTF-8");
-//top
-    BbsDao bbsDAO = new BbsDao();
-
-    //全件取得
-    List<Bbs> list = bbsDAO.selectAllBbs();
-
-    request.setAttribute("list", list);
-
-    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/board.jsp");
-    rd.forward(request, response);
+  throws ServletException, IOException {
 
   }
 
@@ -57,7 +42,21 @@ public class BoardServlet<BbsDAO> extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    doGet(request, response);
+    request.setCharacterEncoding("UTF-8");
+
+    Bbs b = new Bbs();
+
+    b.setName(request.getParameter("name"));
+    b.setChattext(request.getParameter("chattext"));
+
+    BbsDAO bbsDAO = new BbsDAO();
+
+    //1件追加
+    bbsDAO.insertBbs(b);
+
+    //追加後トップページへリダイレクト
+    response.sendRedirect(request.getContextPath() + "/board");
+
   }
 
 }
