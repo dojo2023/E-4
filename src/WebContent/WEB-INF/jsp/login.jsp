@@ -11,16 +11,16 @@
 </head>
 
 <body>
-<div class="login-wrapper">
+<div class="login_wrapper">
 <img src="#">
 	<form method="POST" action="/sobaudon/LoginServlet.java">
-		<p>ID</p>
-		<input type="text" name="ID"><br>
-		<p>Password</p><br>
-		<input class="round" type="password" name="PW"><br>
+		<p class="login_p">ID</p>
+		<input type="text" name="user_id"><br>
+		<p class="login_p">Password</p>
+		<input type="password" name="password"><br>
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input type="submit" name="LOGIN" value="ログイン" onclick="validateForm(event)"><br>
-		<input type="submit" name="LOGIN" value="新規登録はこちら" ><br>
+		<input type="submit" name="NEW" value="新規登録はこちら" ><br>
 	</form>
 </div>
 </body>
