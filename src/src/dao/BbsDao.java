@@ -35,7 +35,7 @@ public class BbsDao {
       while (rs.next()) {
         // 1件ずつCountryオブジェクトを生成して結果を詰める
         Bbs Bbs = new Bbs();
-        Bbs.setId(rs.getInt("use_id"));
+        Bbs.setId(rs.getInt("user_id"));
         Bbs.setName(rs.getString("name"));
         Bbs.setChattext(rs.getString("chattext"));
 
@@ -86,10 +86,10 @@ public class BbsDao {
 
   public void getConnection() throws SQLException, ClassNotFoundException {
     //ドライバクラス読込
-    Class.forName("jdbc:h2:file:C:/dojo6/data/suDB");
+    Class.forName("com.h2.jdbc.Driver");
 
     // DBと接続
-    con = DriverManager.getConnection("jdbc:mysql://localhost/sample?useSSL=false&characterEncoding=utf8", "sa", "");
+    con = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB?useSSL=false&characterEncoding=utf8", "sa", "");
     
   }
 

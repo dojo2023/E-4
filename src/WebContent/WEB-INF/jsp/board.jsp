@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h2>○○掲示板</h2>
+  <h2>掲示板</h2>
   <table border="1">
     <tbody>
       <tr>
@@ -27,13 +27,14 @@
   </table>
   <br /><br />
 
-  <form method="POST" action="<c:url value='/insert' />">
+  <form method="POST" action="<c:url value='/InsertServlet' />">
     <label for="name">名前</label><br />
     <input type="text" name="name"/>
     <br /><br />
-    <label for="content">メッセージ</label><br />
-    <textarea name="content"></textarea>
+    <label for="chattext">メッセージ</label><br />
+    <textarea name="chattext"></textarea>
     <br /><br />
+    <button type="submit">リセット</button>
     <button type="submit">投稿</button>
   </form>
 
