@@ -8,11 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
-import model.Idpw;
-import model.LoginUser;
-import model.Result;
+import model.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -21,13 +20,6 @@ import model.Result;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -40,30 +32,31 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	// リクエストパラメータを取得する
-	request.setCharacterEncoding("UTF-8");
-	String id = request.getParameter("user_id");
-	String pw = request.getParameter("password");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("user_id");
+		String pw = request.getParameter("password");
+		String name ="";
+		Double height = null;
+		Double weight = null;
+		Double target_weight = null;
 
-	// ログイン処理を行う
-	UserDao iDao = new UserDao();
-	if (iDao.isLoginOK(new UserDao(user_id, password))) {	// ログイン成功
+		// ログイン処理を行う
+		UserDao uDao = new UserDao();
+		if (uDao.Login(new User(id, pw, name, height, weight, target_weight))) {	// ログイン成功
 		// セッションスコープにIDを格納する
 		HttpSession session = request.getSession();
-		session.setAttribute("id", new LoginUser(id));
+		session.setAttribute("id",id);
 
-		// 登録画面にリダイレクトする
-		response.sendRedirect("/sobaudon/src/RegistrationServlet.java");
+		// 登録サーブレットにリダイレクトする
+		response.sendRedirect("/sobaudon/RegistrationServlet");
 	}
 
 	else {									// ログイン失敗
-		// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-		request.setAttribute("result",
-		new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/WEB-INF/jsp/login.jsp"));
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		// ログインページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
 	}
+  }
 }
