@@ -15,12 +15,12 @@
 <img src="#">
 	<form method="POST" action="/sobaudon/LoginServlet.java">
 		<p class="login_p">ID</p>
-		<input type="text" name="user_id"><br>
+		<input class="l_text" type="text" name="user_id"><br>
 		<p class="login_p">Password</p>
-		<input type="password" name="password"><br>
+		<input class="l_text" type="password" name="password"><br>
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input type="submit" name="LOGIN" value="ログイン" onclick="validateForm(event)"><br>
-		<input type="submit" name="NEW" value="新規登録はこちら" ><br>
+		<input type="submit" name="NEW" value="新規登録はこちら" >
 	</form>
 </div>
 </body>
