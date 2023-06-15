@@ -90,7 +90,7 @@ public class BbsDao {
 
     // DBと接続
     con = DriverManager.getConnection("jdbc:mysql://localhost/sample?useSSL=false&characterEncoding=utf8", "sa", "");
-    // ※ユーザとパスワードはMySQLに設定済みのものを記載してください。
+    
   }
 
   private void close() {
