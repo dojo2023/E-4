@@ -1,1 +1,25 @@
 @charset "UTF-8";
+/*pタグと入力欄を横並べ*/
+p{
+	display:inline-block;
+}
+
+.login_p{
+	text-align:center;
+	padding:5px;
+	width:120px;
+	border:2px solid rgb(0, 166, 255);
+}
+
+.l_text{
+	padding:10px;
+	width:240px;
+	border:2px solid rgb(0, 166, 255);
+}
+
+.l_button{
+	border:2px solid rgb(0, 166, 255);
+	background-color:white;
+	padding:5px;
+	width:120px;
+}
