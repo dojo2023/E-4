@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>きょうから｜新規登録</title>
 <!-- ログインcssの挿入 -->
-<link rel="stylesheet" href="/example/WebContent/css/login.css">
+<link rel="stylesheet" href="/sobaudon/WebContent/css/login.css">
 </head>
 <div class="login_wrapper">
 	<img src="#">
@@ -31,7 +31,5 @@
 		<input class="l_button" type="submit" name="LOGIN" value="登録" onclick="validateForm(event)"><br>
 	</form>
 </div>
-<body>
-
 </body>
 </html>
