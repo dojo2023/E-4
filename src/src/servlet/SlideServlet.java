@@ -36,9 +36,13 @@ public class SlideServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	//protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	// TODO Auto-generated method stub
-	//	doGet(request, response);
-	//}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/sobaudon/LoginServlet");
+			return;
+		}
+	}
 
 }
