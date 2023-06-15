@@ -24,7 +24,7 @@ public class CalendarServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
 				if (session.getAttribute("id") == null) {
-					response.sendRedirect("/sobaudon/src/servlet/LoginServlet.java");
+					response.sendRedirect("/servlet/LoginServlet");
 					return;
 				}
 				// カレンダーページにフォワードする
