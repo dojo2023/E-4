@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ManageDao;
+import model.Bbs;
 import model.Manage;
-import model.Result;
+import model.Point;
+import model.Title;
+import model.User;
 
 /**
  * Servlet implementation class RegistrationServlet
@@ -35,6 +38,7 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
@@ -53,6 +57,7 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
@@ -68,10 +73,10 @@ public class RegistrationServlet extends HttpServlet {
 		String lctext = request.getParameter("lu_text");
 		String dinner = request.getParameter("di_select");
 		String dntext = request.getParameter("di_text");
-		int exercise = request.getParameter("stretch");
-		int drink = request.getParameter("drink");
-		int snack = request.getParameter("snack");
-		double dayweight = request.getParameter("weight");
+		int exercise = Integer.parseInt(request.getParameter("stretch"));
+		int drink = Integer.parseInt(request.getParameter("drink"));
+		int snack = Integer.parseInt(request.getParameter("snack"));
+		double dayweight = Double.parseDouble(request.getParameter("weight"));
 		String picture = request.getParameter("pic");
 	}
 
@@ -80,12 +85,14 @@ public class RegistrationServlet extends HttpServlet {
 	if (mDao.insert(new Manage(breakfast ,bftext ,lunch ,lctext ,dinner ,dntext ,exercise ,drink ,snack ,dayweight ,picture))) {
 		// 登録成功
 		request.setAttribute("result",
-		new Result("登録成功！", "レコードを登録しました。", "/simpleBC/MenuServlet"));
+			new Result("登録完了", "登録しました。", "/sobaudon/RegistrationServlet")
+		);
 	}
 	else {
 		// 登録失敗
 		request.setAttribute("result",
-		new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/MenuServlet"));
+			new Result("登録失敗", "登録できませんでした。","/sobaudon/RegistrationServlet")
+		);
 	}
 
 }

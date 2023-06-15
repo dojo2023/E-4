@@ -11,21 +11,21 @@ public class User implements Serializable {
 
 
 	public User(String user_id, String password, String name, Double height, Double weight, Double target_weight) {
-		this.setUser_id(user_id);
-		this.setPassword(password);
-		this.setName(name);
-		this.setHeight(height);
-		this.setWeight(weight);
-		this.setTarget_weight(target_weight);
+		this.user_id = user_id;
+		this.password = password;
+		this.name = name;
+		this.height = height;
+		this.weight = weight;
+		this.target_weight = target_weight;
 	}
 
 	public User() {
-		this.setUser_id("");
-		this.setPassword("");
-		this.setName("");
-		this.setHeight(null);
-		this.setWeight(null);
-		this.setTarget_weight(null);
+		this.user_id = "";
+		this.password = "";
+		this.name = "";
+		this.height = null;
+		this.weight = null;
+		this.target_weight = null;
 	}
 
 	public String getUser_id() {
