@@ -1,14 +1,18 @@
 @charset "UTF-8";
 
 .slider {
-  width: 300px;
-    height: 200px;
+  width: 450px;
+    height: 400px;
     overflow: hidden;
     margin: 0 auto;
-
+    border-color: black;
+	position: absolute;
+	top: 0;
+    right: 0;
 }
 .slider-item {
-  width: 300px;
+  width: 450px;
+  height: 350px;
   float: left;
 }
 img{
@@ -16,6 +20,7 @@ img{
 }
 .slider-inner {
   width: 300%;
+
   animation: slider 10s infinite ease;
 }
 
@@ -24,12 +29,26 @@ img{
 	transform: translateX(0);
 	}
 	33% {
-	transform: translateX(-300px);
+	transform: translateX(-450px);
 	}
 	66% {
-	transform: translateX(-600px);
+	transform: translateX(-900px);
 	}
 	100% {
 	transform: translateX(0);
 	}
+}
+article {
+  width: 1400px;
+  position: relative;
+}
+
+.advertisement{
+
+	width: 200px;
+	height:500px;
+}
+
+.button{
+
 }
