@@ -13,7 +13,7 @@
 <body>
 <div class="login_wrapper">
 <img src="#">
-	<form method="POST" action="/sobaudon/LoginServlet.java">
+	<form method="POST" action="/sobaudon/LoginServlet">
 		<p class="login_p">ID</p>
 		<input class="l_text" type="text" name="user_id"><br>
 		<p class="login_p">Password</p>
