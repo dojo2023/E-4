@@ -8,7 +8,7 @@
     border-color: black;
 	position: absolute;
 	top: 0;
-    right: 0;
+    right: 32%;
 }
 .slider-item {
   width: 450px;
@@ -39,7 +39,7 @@ img{
 	}
 }
 article {
-  width: 1400px;
+  width: 1200px;
   position: relative;
 }
 
