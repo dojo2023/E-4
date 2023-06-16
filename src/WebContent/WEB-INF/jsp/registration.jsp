@@ -47,28 +47,23 @@
 		<tr>
 			<td>
 				<p class="registration_p">運動</p>
-				<input id="reg_str1" type="radio" name="stretch" value="Yes">
-				<label for="reg_str1">あり</label>
-				<input id="reg_str2" type="radio" name="stretch" value="No">
-				<label for="reg_str2">なし</label>
+				<label><input type="radio" name="stretch" value="Yes">あり</label>
+				<label><input type="radio" name="stretch" value="No">なし</label>
+
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<input id="reg_drink1" type="radio" name="drink" value="Yes">
-				<label for="reg_drink1">あり</label>
-				<input id="reg_drink2" type="radio" name="drink" value="No">
-				<label for="reg_drink2">なし</label>
+				<label><input type="radio" name="drink" value="Yes">あり</label>
+				<label><input type="radio" name="drink" value="No">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<input id="reg_snc1" type="radio" name="drink" value="Yes">
-				<label for="reg_snc1">あり</label>
-				<input id="reg_snc2" type="radio" name="drink" value="No">
-				<label for="reg_snc2">なし</label>
+				<label><input type="radio" name="drink" value="Yes">あり</label>
+				<label><input type="radio" name="drink" value="No">なし</label>
 			</td>
 		</tr>
 		<tr>
@@ -85,7 +80,7 @@
 			</td>
 		</tr>
 	</table>
-		<input class="reg_submit" type="submit" name="submit" value="登録">
+	<input class="reg_submit" type="submit" name="submit" value="登録">
 </form>
 </body>
 </html>
