@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/sobaudon/WebContent/css/registration.css">
 </head>
 <body>
+<form method="POST" action="/sobaudon/RegistrationServlet.java" enctype="multipart/form-data">
 	<table class="update_table">
 		<tr>
 			<th>朝</th>
@@ -59,5 +60,6 @@
 		</tr>
 	</table>
 	<input class="reg_submit" type="submit" name="submit" value="更新">
+</form>
 </body>
 </html>
