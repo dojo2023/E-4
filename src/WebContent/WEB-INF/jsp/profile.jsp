@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>きょうから｜プロフィール</title>
 <!-- ログインcssの挿入 -->
-<link rel="stylesheet" href="/sobaudon/WebContent/css/login.css">
+<link rel="stylesheet" href="/sobaudon/css/login.css">
 </head>
 <body>
 <div class="login_wrapper">
