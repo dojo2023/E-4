@@ -9,23 +9,19 @@
 <body>
 
   <h2>掲示板</h2>
-  <table border="1">
-    <tbody>
-      <tr>
-        <th>id</th>
-        <th>名前</th>
-        <th>メッセージ</th>
-      </tr>
-      <c:forEach var="message" items="${list}" varStatus="status">
-        <tr>
-          <td><c:out value="${message.user_id}" /></td>
-          <td><c:out value="${message.name}" /></td>
-          <td><textarea><c:out value="${message.chattext}" /></textarea></td>
-        </tr>
-      </c:forEach>
-    </tbody>
-  </table>
-  <br /><br />
+  <table border = "1">
+   <tr>
+      <td>ニックネーム</td>
+      <td>メッセージ</td>
+      <td>訪問数</td>
+      <td>日付</td>
+    </tr>
+    <tr>
+    <td><a href=""></a></td>
+    <td></td>>
+    </tr>
+   </table>
+
 
   <form method="POST" action="<c:url value='/InsertServlet' />">
     <label for="name">名前</label><br />
