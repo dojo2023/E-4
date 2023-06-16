@@ -47,18 +47,17 @@ public class NewServlet extends HttpServlet {
 		String user_id = request.getParameter("USER_ID");
 		String password = request.getParameter("PASSWORD");
 		String name = request.getParameter("NAME");
-		String height = request.getParameter("HEIGHT");
-		String weight = request.getParameter("WEIGHT");
-		String target_weight = request.getParameter("TARGET_WEIGHT");
+		Double height = Double.parseDouble(request.getParameter("HEIGHT"));
+		Double weight = Double.parseDouble(request.getParameter("WEIGHT"));
+		Double target_weight = Double.parseDouble(request.getParameter("TARGET_WEIGHT"));
 
 		UserDao uDao = new UserDao();
 		//個別に受け取ってjavabeansに入れている
-		insert(new user(user_id, password, name, height, weight, target_weight);
-		//登録内容を登録
-
-	}
+		uDao.insert(new model.User(user_id, password, name, height, weight, target_weight));
 
 		// ログインページにリダイレクトする
-		rsponse.sendDispatcher("/WEB-INF/jsp/login.jsp")
+		response.sendRedirect("/WEB-INF/jsp/login.jsp");
+	}
+
 
 }

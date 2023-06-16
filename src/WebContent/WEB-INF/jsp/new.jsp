@@ -6,10 +6,11 @@
 <meta charset="UTF-8">
 <title>きょうから｜新規登録</title>
 <!-- ログインcssの挿入 -->
-<link rel="stylesheet" href="/sobaudon/WebContent/css/login.css">
+<link rel="stylesheet" href="/sobaudon/css/login.css">
 </head>
 <div class="login_wrapper">
 	<img src="#">
+	<div class="login_container">
 	<form method="POST" action="/sobaudon/NewServlet.java">
 		<p class="login_p">ID</p>
 		<input class="l_text" type="text" name="user_id" minlength="5" required placeholder="5~12文字で入力してください。"><br>
@@ -30,6 +31,7 @@
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
 	</form>
+	</div>
 </div>
 </body>
 </html>
