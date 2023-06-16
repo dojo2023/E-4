@@ -21,12 +21,13 @@
 		<p class="login_p">Password</p>
 		<input class="lt_text" type="password" name="password"><br>
 		<!-- onclick～がないとクリックされたと認識しない -->
-		<input class="l_button" type="submit" name="LOGIN" value="ログイン" onclick="validateForm(event)"><br>
-		<input class="l_button ln_button" type="submit" name="NEW" value="新規登録はこちら" >
+		<input class="l_button" type="submit" name="LOGIN" value="ログイン" ><br>
+	</form>
+	<form method="GET" action="/sobaudon/NewServlet">
+	<input class="l_button ln_button" type="submit" name="NEW" value="新規登録はこちら" >
 	</form>
 	</div>
 </div>
 </body>
-
-<script src="/WEB-Content/login.js"></script>
+<script src="/sobaudon/js/login.js"></script>
 </html>
