@@ -34,28 +34,34 @@
 		</tr>
 		<tr>
 			<td>
-				運動<input class="reg_radio" type="radio" name="stretch">
+				運動
+				<input class="reg_radio" type="radio" name="stretch">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				飲酒<input class="reg_radio" type="radio" name="drink">
+				飲酒
+				<input class="reg_radio" type="radio" name="drink">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				間食<input class="reg_radio" type="radio" name="snack">
+				間食
+				<input class="reg_radio" type="radio" name="snack">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				体重<input class="reg_text" type="text" name="weight">
+				体重
+				<input class="reg_text" type="text" name="weight">
 				bmi
+
 			</td>
 		</tr>
 		<tr>
 			<td>
-				写真<input class="reg_pic" type="file" name="picture">
+				写真
+				<input class="reg_pic" type="file" name="picture">
 			</td>
 		</tr>
 	</table>
