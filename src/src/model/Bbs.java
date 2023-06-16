@@ -1,55 +1,59 @@
 package model;
+import java.io.Serializable;
 
-public class Bbs {
+public class Bbs implements Serializable {
+	private String user_id;
+	private String name;
+	private int cpoint;
+	private String chattext;
+	private String date;
 
-  int user_id;
+	public Bbs(String user_id, int cpoint, String name, String chattext, String date) {
+		super();
+		this.setUser_id(user_id);
+		this.setCpoint(cpoint);
+		this.setName(name);
+		this.setChattext(chattext);
+		this.setDate(date);
+	}
 
-  String name;
+	public Bbs() {
+		this.setUser_id("");
+		this.setCpoint(Integer.parseInt(""));
+		this.setName("");
+		this.setChattext("");
+		this.setName("");
+	}
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+	public int getCpoint() {
+		return cpoint;
+	}
+	public void setCpoint(int cpoint) {
+		this.cpoint = cpoint;
+	}
+	public String getChattext() {
+		return chattext;
+	}
+	public void setChattext(String chattext) {
+		this.chattext = chattext;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-  String chattext;
+	public String getName() {
+		return name;
+	}
 
-  /**
-  * @return id
-  */
-  public int getId() {
-    return user_id;
-  }
-
-  /**
-  * @param id セットする id
-  */
-  public void setId(int id) {
-    this.user_id = id;
-  }
-
-  /**
-  * @return name
-  */
-  public String getName() {
-    return name;
-  }
-
-  /**
-  * @param name セットする name
-  */
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  /**
-  * @return chattext
-  */
-  public String getChattext() {
-    return chattext;
-  }
-
-  /**
-  * @param chattext セットする chattext
-  */
-  public void setChattext(String chattext) {
-    this.chattext = chattext;
-  }
-
-
-
+	public void setName(String name) {
+		this.name = name;
+	}
 }
