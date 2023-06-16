@@ -10,13 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.ManageDao;
-import model.Bbs;
-import model.Manage;
-import model.Point;
-import model.Title;
-import model.User;
-
 /**
  * Servlet implementation class RegistrationServlet
  */
@@ -78,21 +71,6 @@ public class RegistrationServlet extends HttpServlet {
 		int snack = Integer.parseInt(request.getParameter("snack"));
 		double dayweight = Double.parseDouble(request.getParameter("weight"));
 		String picture = request.getParameter("pic");
-	}
-
-	// 登録処理を行う
-	ManageDao mDao = new ManageDao();
-	if (mDao.insert(new Manage(breakfast ,bftext ,lunch ,lctext ,dinner ,dntext ,exercise ,drink ,snack ,dayweight ,picture))) {
-		// 登録成功
-		request.setAttribute("result",
-			new Result("登録完了", "登録しました。", "/sobaudon/RegistrationServlet")
-		);
-	}
-	else {
-		// 登録失敗
-		request.setAttribute("result",
-			new Result("登録失敗", "登録できませんでした。","/sobaudon/RegistrationServlet")
-		);
 	}
 
 }
