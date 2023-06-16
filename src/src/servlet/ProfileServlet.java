@@ -20,14 +20,6 @@ import model.User;
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ProfileServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -60,11 +52,11 @@ public class ProfileServlet extends HttpServlet {
 		uDao.update(new model.User(user_id, password, name, height, weight, target_weight));
 
 		//検索処理を行う
-		List<User> uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
-		//検索結果をリクエストスコープに格納する
-
+		List<User> profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
+		//更新内容をリクエストスコープに格納する
+		request.setAttribute("profile", profile);
 		//更新した内容で更新画面に戻る
-		//requestスコープに格納
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+		dispatcher.forward(request, response);
 	}
 }
