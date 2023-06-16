@@ -85,7 +85,7 @@
 			</td>
 		</tr>
 	</table>
-		<input class="reg_submit" type="submit" name="submit" value="登録">
+	<input class="reg_submit" type="submit" name="submit" value="登録">
 </form>
 </body>
 </html>
