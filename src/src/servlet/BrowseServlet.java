@@ -21,14 +21,14 @@ public class BrowseServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		/* もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/sobaudon/src/servlet/LoginServlet.java");
+			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
-		}
+		}*/
 		// 閲覧ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/sobaudon/WebContent/WEB-INF/jsp/browse.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/browse.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -39,11 +39,11 @@ public class BrowseServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/sobaudon/src/servlet/LoginServlet.java");
+			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
 		// 他人情報ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/sobaudon/WebContent/WEB-INF/jsp/otherinf.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/otherinf.jsp");
 		dispatcher.forward(request, response);
 	}
 
