@@ -62,9 +62,6 @@ public class NewServlet extends HttpServlet {
 				//登録内容を登録
 
 	}
-}
-
-
 
 		// ログインページにリダイレクトする
 		rsponse.sendDispatcher("/WEB-INF/jsp/login.jsp")
