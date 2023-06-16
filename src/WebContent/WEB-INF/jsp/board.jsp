@@ -23,7 +23,7 @@
    </table>
 
 
-  <form method="POST" action="<c:url value='/InsertServlet' />">
+  <form method="POST" action="<c:url value='/BoardServlet' />">
     <label for="name">名前</label><br />
     <input type="text" name="name"/>
     <br /><br />
