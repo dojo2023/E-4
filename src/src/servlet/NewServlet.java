@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDao;
+
 /**
  * Servlet implementation class NewServlet
  */
@@ -32,16 +34,39 @@ public class NewServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/new.jsp");
 				dispatcher.forward(request, response);
 			}
-		// ログインページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/new.jsp");
-				dispatcher.forward(request, response);
-}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		// リクエストパラメータを取得する name属性要確認
+				request.setCharacterEncoding("UTF-8");
+				//NUMBER(regist.jspのname属性)を入れる変数 number
+				String number = request.getParameter("NUMBER");
+				String company = request.getParameter("COMPANY");
+				String department = request.getParameter("DEPARTMENT");
+				String position = request.getParameter("POSITION");
+				String name = request.getParameter("NAME");
+				String zipcode = request.getParameter("ZIPCODE");
+				String address = request.getParameter("ADDRESS");
+				String tel = request.getParameter("TEL");
+				String email = request.getParameter("EMAIL");
+				String remarks = request.getParameter("REMARKS");
+
+
+		UserDao uDao = new UserDao();
+		//個別に受け取ってjavabeansに入れている
+		if (uDao.insert(new udao(user_id, password, name, height, weight, target_weight)
+				//登録内容を登録
+
 	}
+}
+
+
+
+		// ログインページにリダイレクトする
+		rsponse.sendDispatcher("/WEB-INF/jsp/login.jsp")
 
 }
