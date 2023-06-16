@@ -35,22 +35,26 @@
 		</tr>
 		<tr>
 			<td>
-				運動<input type="radio" name="STRETCH" value="${other.stretch}">
+				運動
+				<input type="radio" name="STRETCH" value="${other.stretch}">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				飲酒<input type="radio" name="DRINK" value="${other.drink}">
+				飲酒
+				<input type="radio" name="DRINK" value="${other.drink}">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				間食<input type="radio" name="SNACK" value="${other.snack}">
+				間食
+				<input type="radio" name="SNACK" value="${other.snack}">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				体重<input type="text" name="WEIGHT" value="${other.weight}">
+				体重
+				<input type="text" name="WEIGHT" value="${other.weight}">
 			</td>
 		</tr>
 	</table>
