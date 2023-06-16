@@ -1,8 +1,12 @@
 @charset "UTF-8";
 /*pタグと入力欄を横並べ*/
+/*
+*{
+	outline:1px solid red;
+}*/
 
 .login_wrapper{
-	border:3px solid rgb(0, 64, 128);
+	border:3px solid rgb(19, 104, 181);
 	padding:10px;
 	margin:0 auto;
 	width:580px;
@@ -10,9 +14,30 @@
 	text-align:center;
 	margin-top:50px;
 }
+.ln_wrapper{
+	border:3px solid rgb(19, 104, 181);
+	padding:10px;
+	margin:0 auto;
+	width:580px;
+	height:590px;
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:20px;
+}
+.lp_wrapper{
+	border:3px solid rgb(19, 104, 181);
+	padding:10px;
+	margin:0 auto;
+	width:580px;
+	height:440px;
+	text-align:center;
+	margin-top:150px;
+	margin-bottom:20px;
+}
 .login_container{
 	margin-top:50px;
 }
+
 
 p{
 	display:inline-block;
@@ -49,3 +74,8 @@ p{
 	font-size:16px;
 	width:190px;
 }
+
+.new_button{
+	margin-bottom:20px;
+}
+

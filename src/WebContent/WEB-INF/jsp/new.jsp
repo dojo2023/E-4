@@ -8,10 +8,10 @@
 <!-- ログインcssの挿入 -->
 <link rel="stylesheet" href="/sobaudon/css/login.css">
 </head>
-<div class="login_wrapper">
+<div class="ln_wrapper">
 	<img src="#">
 	<div class="login_container">
-	<form method="POST" action="/sobaudon/NewServlet.java">
+	<form method="POST" action="/sobaudon/NewServlet">
 		<p class="login_p">ID</p>
 		<input class="l_text" type="text" name="user_id" minlength="5" required placeholder="5~12文字で入力してください。"><br>
 		<p class="login_p">Password</p>
@@ -26,10 +26,10 @@
 		<input class="l_text" type="password" name="target_weight" required placeholder="(kg)で小数第1位まで入力してください。"><br>
 
 		<p>すべて必須項目です。</p><br>
-		<p>規約：</p>
+		<p>規約：</p><br>
 
 		<!-- onclick～がないとクリックされたと認識しない -->
-		<input class="l_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
+		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
 	</form>
 	</div>
 </div>
