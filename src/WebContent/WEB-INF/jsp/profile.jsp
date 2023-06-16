@@ -13,7 +13,7 @@
 	<img src="#">
 	<form method="POST" action="/sobaudon/ProfileServlet.java">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="user_id">取得したID<br>
+		<input class="l_text" type="text" name="user_id" value="${user_id}"><br>
 		<p class="login_p">Password</p>
 		<input class="l_text" type="password" name="password">******<br>
 		<p class="login_p">ニックネーム</p>

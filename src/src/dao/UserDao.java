@@ -148,7 +148,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update User set NAME=?, =?, HEIGHT=?, TARGET_WEIGHT=? where USER_ID=?";
+			String sql = "update USER set NAME=?, =?, HEIGHT=?, TARGET_WEIGHT=? where USER_ID=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			if (user.getName() != null && !user.getName().equals("")) {
 				pStmt.setString(1, user.getName());
@@ -203,7 +203,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from BC WHERE USER_ID= ?";
+			String sql = "select * from USER WHERE USER_ID= ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
