@@ -24,8 +24,10 @@
             <div class="slider-item"><img src="./img/test1.png"></div>
             <div class="slider-item"><img src="./img/test1.png"></div>
         </div>
+  <div class="button1" style="height:400px;">
+    <button>開始</button>
   </div>
-  <button>開始</button>
+  </div>
 </article>
 </body>
 </html>
