@@ -42,12 +42,29 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
+		// リクエストパラメータを取得する name属性要確認
+		request.setCharacterEncoding("UTF-8");
+		//NUMBER(regist.jspのname属性)を入れる変数 number
+		String number = request.getParameter("NUMBER");
+		String company = request.getParameter("COMPANY");
+		String department = request.getParameter("DEPARTMENT");
+		String position = request.getParameter("POSITION");
+		String name = request.getParameter("NAME");
+		String zipcode = request.getParameter("ZIPCODE");
+		String address = request.getParameter("ADDRESS");
+		String tel = request.getParameter("TEL");
+		String email = request.getParameter("EMAIL");
+		String remarks = request.getParameter("REMARKS");
+
 		//プロフィール変更点を登録
 		UserDao uDao = new UserDao();
 			uDao.update(new udao(user_id, password, name, height, weight, target_weight)
 
 		//更新した内容で更新画面に戻る
+
 		//requestスコープに格納
+
 
 	}
 
