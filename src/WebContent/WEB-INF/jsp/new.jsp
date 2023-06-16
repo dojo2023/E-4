@@ -10,7 +10,7 @@
 </head>
 <div class="login_wrapper">
 	<img src="#">
-	<form method="POST" action="/sobaudon/LoginServlet.java">
+	<form method="POST" action="/sobaudon/NewServlet.java">
 		<p class="login_p">ID</p>
 		<input class="l_text" type="text" name="user_id" minlength="5" required placeholder="5~12文字で入力してください。"><br>
 		<p class="login_p">Password</p>
@@ -28,7 +28,7 @@
 		<p>規約：</p>
 
 		<!-- onclick～がないとクリックされたと認識しない -->
-		<input class="l_button" type="submit" name="LOGIN" value="登録" onclick="validateForm(event)"><br>
+		<input class="l_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
 	</form>
 </div>
 </body>

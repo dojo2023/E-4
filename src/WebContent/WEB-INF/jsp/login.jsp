@@ -19,10 +19,11 @@
 		<p class="login_p">Password</p>
 		<input class="l_text" type="password" name="password"><br>
 		<!-- onclick～がないとクリックされたと認識しない -->
-		<input type="submit" name="LOGIN" value="ログイン" onclick="validateForm(event)"><br>
-		<input type="submit" name="NEW" value="新規登録はこちら" >
+		<input class="l_button" type="submit" name="LOGIN" value="ログイン" onclick="validateForm(event)"><br>
+		<input class="l_button" type="submit" name="NEW" value="新規登録はこちら" >
 	</form>
 </div>
 </body>
+
 <script src="/WEB-Content/login.js"></script>
 </html>
