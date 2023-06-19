@@ -17,20 +17,10 @@ import javax.servlet.http.HttpSession;
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RegistrationServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
@@ -60,17 +50,24 @@ public class RegistrationServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String breakfast = request.getParameter("bf_select");
-		String bftext = request.getParameter("bf_remarks");
-		String lunch = request.getParameter("lu_select");
-		String lctext = request.getParameter("lu_text");
-		String dinner = request.getParameter("di_select");
-		String dntext = request.getParameter("di_text");
-		int exercise = Integer.parseInt(request.getParameter("stretch"));
-		int drink = Integer.parseInt(request.getParameter("drink"));
-		int snack = Integer.parseInt(request.getParameter("snack"));
-		double dayweight = Double.parseDouble(request.getParameter("weight"));
-		String picture = request.getParameter("pic");
+		String breakfast = request.getParameter("BREAKFAST");
+		String bftext = request.getParameter("BFTEXT");
+		String lunch = request.getParameter("LUNCH");
+		String lctext = request.getParameter("LCTEXT");
+		String dinner = request.getParameter("DINNER");
+		String dntext = request.getParameter("DNTEXT");
+		int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
+		int drink = Integer.parseInt(request.getParameter("DRINK"));
+		int snack = Integer.parseInt(request.getParameter("SNACK"));
+		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
+		String picture = request.getParameter("PICTURE");
+
+		//登録を押した際のカウント
+		int count = Integer.parseInt(request.getParameter("submit"));
+		if(request.getParameter("submit").equals("登録")) {
+			count++;
+		}
+
 	}
 
 }
