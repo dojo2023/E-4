@@ -28,7 +28,7 @@ public class Board implements Serializable {
     public String getChattext() {
         return chattext;
     }
-    public void setComment(String chattext) {
+    public void setChattext(String chattext) {
         this.chattext = chattext;
     }
 	public int getCpoint() {

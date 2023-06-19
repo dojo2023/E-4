@@ -16,7 +16,7 @@ public class AddCommentDAO {
             bo.setName( "名無し");
         }
         if(bo.getChattext().isEmpty()) {
-            bo.setComment( "コメント無し");
+            bo.setChattext( "コメント無し");
         }
 
 
