@@ -19,7 +19,7 @@
 				<label><input id="reg_check" type="checkbox" name="bf_select" value=side>副菜</label>
 				<label><input id="reg_check" type="checkbox" name="bf_select" value=not_eat>たべていない</label>
 				<label><input id="reg_check" type="checkbox" name="bf_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" max_length="100" name="bf_remarks">
+				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
 			</td>
 		</tr>
 		<tr>
@@ -30,7 +30,7 @@
 				<label><input id="reg_check" type="checkbox" name="lu_select" value=side>副菜</label>
 				<label><input id="reg_check" type="checkbox" name="lu_select" value=not_eat>たべていない</label>
 				<label><input id="reg_check" type="checkbox" name="lu_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" max_length="100" name="lu_remarks">
+				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
 			</td>
 		</tr>
 		<tr>
@@ -41,7 +41,7 @@
 				<label><input id="reg_check" type="checkbox" name="di_select" value=side>副菜</label>
 				<label><input id="reg_check" type="checkbox" name="di_select" value=not_eat>たべていない</label>
 				<label><input id="reg_check" type="checkbox" name="di_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" max_length="100" name="di_remarks">
+				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
 			</td>
 		</tr>
 		<tr>
