@@ -63,7 +63,7 @@ public class ManageDao {
 					rs.getDouble("DAYWEIGHT"),
 					rs.getString("PICTURE"),
 					rs.getDouble("BMI"),
-					rs.get??????("")
+					rs.getString("COUNTER")
 
 					);
 					manageList.add(manage);
@@ -195,8 +195,8 @@ public class ManageDao {
 				else {
 					pStmt.setString(14, null);
 				}
-				if (manage.get????() != 0 && manage.get????() != 1) {
-					pStmt.setInt(15, manage.get????());
+				if (manage.getCounter() != null && !manage.getCounter().equals("")) {
+					pStmt.setString(15, manage.getCounter());
 				}
 				else {
 					pStmt.setString(15, null);
@@ -242,7 +242,7 @@ public class ManageDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
 
 				// SQL文を準備する
-				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, ????=? where NUMBER=?, DATE=?";
+				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where NUMBER=?, DATE=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -318,15 +318,15 @@ public class ManageDao {
 				else {
 					pStmt.setString(12, null);
 				}
-				if (manage.get????() != 0 && manage.get????() != 1) {
-					pStmt.setInt(13, manage.get????());
+				if (manage.getCounter() != null && !manage.getCounter().equals("")) {
+					pStmt.setString(13, manage.getCounter());
 				}
 				else {
 					pStmt.setString(13, null);
 				}
 
-				pStmt.setString(14, card.getUser_id());
-				pStmt.setString(15, card.getDate());
+				pStmt.setString(14, manage.getUser_id());
+				pStmt.setString(15, manage.getDate());
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
