@@ -99,12 +99,6 @@
 				<p class="registration_p">bmi</p>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<p class="registration_p">写真</p>
-				<input type="file" name="picture">
-			</td>
-		</tr>
 	</table>
 </c:forEach>
 </form>
