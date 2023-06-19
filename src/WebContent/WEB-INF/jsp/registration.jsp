@@ -62,8 +62,8 @@
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="drink" value="Yes">あり</label>
-				<label><input type="radio" name="drink" value="No">なし</label>
+				<label><input type="radio" name="snack" value="Yes">あり</label>
+				<label><input type="radio" name="snack" value="No">なし</label>
 			</td>
 		</tr>
 		<tr>
