@@ -34,4 +34,5 @@
 	</div>
 </div>
 </body>
+<script src="/sobaudon/js/new.js"></script>
 </html>

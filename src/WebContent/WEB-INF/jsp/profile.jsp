@@ -14,9 +14,9 @@
 	<div class="login-container">
 	<form method="POST" action="/sobaudon/ProfileServlet">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="user_id" value="${UserDao.user_id}"><br>
+		<input class="l_text" type="text" name="user_id" value="${UserDao.id}"><br>
 		<p class="login_p">Password</p>
-		<input class="l_text" type="password" name="password" value="${UserDao.password}"><br>
+		<input class="l_text" type="password" name="password" value="${UserDao.pw}"><br>
 		<p class="login_p">ニックネーム</p>
 		<input class="l_text" type="text" name="name" minlength="2" required placeholder="2~20文字で入力してください。"><br>
 		<p class="login_p">身長</p>
@@ -52,4 +52,5 @@
 	</table>
 </div>
 </body>
+<script src="/sobaudon/js/profile.js"></script>
 </html>
