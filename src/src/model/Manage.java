@@ -16,6 +16,7 @@ public class Manage implements Serializable {
 	private double dayweight;   //DAYWEIGHT
 	private String picture;      //PICTURE
 	private double bmi;         //BMI
+	
 
 	public Manage(String user_id, String date, String breakfast, String bftext, String lunch, String lctext, String dinner
            , String dntext, int snack, int exercise, int drink, double dayweight, String picture, double bmi) {
