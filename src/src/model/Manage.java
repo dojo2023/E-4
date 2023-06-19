@@ -16,10 +16,10 @@ public class Manage implements Serializable {
 	private double dayweight;   //DAYWEIGHT
 	private String picture;      //PICTURE
 	private double bmi;         //BMI
-	
+	private String counter;      //COUNTER
 
 	public Manage(String user_id, String date, String breakfast, String bftext, String lunch, String lctext, String dinner
-           , String dntext, int snack, int exercise, int drink, double dayweight, String picture, double bmi) {
+           , String dntext, int snack, int exercise, int drink, double dayweight, String picture, double bmi,String counter) {
 		super();
 		this.user_id =user_id;
 		this.date = date;
@@ -35,6 +35,7 @@ public class Manage implements Serializable {
 		this.dayweight = dayweight;
 		this.picture = picture;
 		this.bmi = bmi;
+		this.counter = counter;
 	}
 
 	public Manage() {
@@ -53,6 +54,7 @@ public class Manage implements Serializable {
 		//this.dayweight = "";
 		this.picture = "";
 		//this.bmi = "";
+		this.counter = "";
 	}
 
 	public String getUser_id() {
@@ -165,5 +167,13 @@ public class Manage implements Serializable {
 
 	public void setBmi(double bmi) {
 		this.bmi = bmi;
+	}
+
+	public String getCounter() {
+		return counter;
+	}
+
+	public void setCounter(String counter) {
+		this.counter = counter;
 	}
 }
