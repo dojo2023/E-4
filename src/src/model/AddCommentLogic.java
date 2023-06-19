@@ -1,9 +1,9 @@
 package model;
 
-import dao.AddCommentDAO;
+import dao.AddChattextDAO;
 
-public class AddCommentLogic {
-    public void executeAddComment(Board bo) {
-        AddCommentDAO acdao = new AddCommentDAO(bo);
+public class AddChattextLogic {
+    public void executeAddChattext(Board bo) {
+        AddChattextDAO acdao = new AddChattextDAO(bo);
     }
 }

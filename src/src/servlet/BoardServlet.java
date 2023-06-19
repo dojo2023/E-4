@@ -59,14 +59,14 @@ public class BoardServlet extends HttpServlet {
 
         // 入力された値を取得
         String name = request.getParameter("name");
-        String comment = request.getParameter("comment");
-
+        String chattext = request.getParameter("chattext");
+        
         //JavaBeansに格納
         Board bo = new Board();
         bo.setName(name);
-        bo.setComment(comment);
+        bo.setChattext(chattext);
 
-        // mysqlに格納
+        // DBに格納
         AddCommentLogic acl = new AddCommentLogic();
         acl.executeAddComment(bo);
 

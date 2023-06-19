@@ -1,19 +1,26 @@
 package servlet;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  * Servlet implementation class RegistrationServlet
  */
 @WebServlet("/RegistrationServlet")
+@MultipartConfig(
+location="/tmp/files",
+maxFileSize=1000000
+)
+
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,12 +30,12 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//もしログインしていなかったらログインサーブレットへリダイレクト
-		HttpSession session = request.getSession();
+	/*	HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
-
+	*/
 		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
@@ -41,13 +48,13 @@ public class RegistrationServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
-		//もしログインしていなかったらログインサーブレットへリダイレクト
+	/*	//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/sobaudon/LoginServlet");
+			response.sendRedirect("/servlet/LoginServlet");
 			return;
 		}
-
+	*/
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String breakfast = request.getParameter("BREAKFAST");
@@ -61,6 +68,13 @@ public class RegistrationServlet extends HttpServlet {
 		int snack = Integer.parseInt(request.getParameter("SNACK"));
 		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
 		String picture = request.getParameter("PICTURE");
+
+		//partオブジェクトとしてnameがpictureのものを取得
+		Part part = request.getPart(picture);
+		//ファイル名を取得
+		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		//アップロードするフォルダ
+		String path = getServletContext().getRealPath("/upload");
 
 		//登録を押した際のカウント
 		int count = Integer.parseInt(request.getParameter("submit"));

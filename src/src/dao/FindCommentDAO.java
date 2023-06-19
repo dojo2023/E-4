@@ -40,10 +40,9 @@ public class FindCommentDAO {
                     while (rs.next()) {
                         // DBから取り出したid,name,commentをJavaBeansにset
                         Board bo = new Board();
-                        bo.setUser_id(rs.getInt("id"));
                         bo.setName(rs.getString("name"));
-                        bo.setComment(rs.getString("comment"));
-                        bo.setTime(rs.getTimestamp("time"));
+                        bo.setChattext(rs.getString("chattext"));
+                        bo.setDate(rs.getTimestamp("Date"));
 
                         // リストに1個ずつ格納。末尾に要素が追加されていく。
                         list.add(bo);

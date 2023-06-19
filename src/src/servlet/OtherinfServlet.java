@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,16 @@ public class OtherinfServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//もしログインしていなかったらログインサーブレットへリダイレクト
+	/*	HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/sobaudon/LoginServlet");
+			return;
+		}
+	*/
+		// 他人情報ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/otherinf.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -27,6 +38,13 @@ public class OtherinfServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+	/*	//もしログインしていなかったらログインサーブレットへリダイレクト
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/servlet/LoginServlet");
+			return;
+		}
+	*/
 	}
 
 }

@@ -8,6 +8,7 @@
 <!-- ログインcssの挿入 -->
 <link rel="stylesheet" href="/sobaudon/css/login.css">
 </head>
+<body>
 <div class="ln_wrapper">
 	<img src="#">
 	<div class="login_container">
@@ -34,4 +35,5 @@
 	</div>
 </div>
 </body>
+<script src="/sobaudon/js/new.js"></script>
 </html>

@@ -11,20 +11,18 @@
 function check(){
     var flag = 0;
 
-    if(document.form1.name.value == ""){
-        flag = 1;
-    }
-    else if(document.form1.comment.value == ""){
+    if(document.form1.comment.value == ""){
         flag = 1;
     }
 
     if(flag){
-        window.alert('名前とコメントを入力してください'); 
+        window.alert('コメントを入力してください'); 
         return false; // 送信を中止
     }
     else{
         return true; // 送信を実行
     }
+    
 }
 </script>
 
@@ -32,7 +30,6 @@ function check(){
 </head>
 <body>
 <form action="/servlet/BoardServlet" method="post" name="form1" onSubmit="return check()">
-<p>名前:<input type="text" name="name"></p>
 <p>コメント:<br>
 <textarea name="comment" rows="5" cols="40"></textarea>
 </p>
@@ -41,8 +38,8 @@ function check(){
 </form>
 
 <c:forEach var="list" items="${listAttribute}">
-<p>ID:<c:out value="${list.id}"/>　名前:<c:out value="${list.name}"/>　日付:<c:out value="${list.time}"/><br>
-<c:out value="${list.comment}"/></p>
+<p>名前:<c:out value="${list.name}"/>　訪問数:<c:out value="${list.visiter}"/>　投稿内容:<c:out value="${list.chattext}"/>　
+日付:<c:out value="${list.time}"/>　<br></p>
 </c:forEach>
 
 </body>
