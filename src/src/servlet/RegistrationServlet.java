@@ -74,7 +74,7 @@ public class RegistrationServlet extends HttpServlet {
 		//ファイル名を取得
 		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 		//アップロードするフォルダ
-		String path = getServletContext().getRealPath("/upload");
+		String path = getServletContext().getRealPath("/body");
 
 		//登録を押した際のカウント
 		int count = Integer.parseInt(request.getParameter("submit"));
