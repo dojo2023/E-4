@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Manage;
+import model.ManageSlide;
 
 
 public class ManageDao {
-	// 引数paramで検索項目を指定し、検索結果のリストを返す
+		// 引数paramで検索項目を指定し、検索結果のリストを返す
 		public List<Manage> select(Manage param) {
 			Connection conn = null;
 			List<Manage> manageList = new ArrayList<Manage>();
@@ -354,6 +355,76 @@ public class ManageDao {
 			// 結果を返す
 			return result;
 		}
+
+		// 引数paramで検索項目を指定し、検索結果のリストを返す
+				public List<ManageSlide> selectSlide(ManageSlide manageSlide) {
+					Connection conn = null;
+					List<ManageSlide> manageSlideList = new ArrayList<ManageSlide>();
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID LIKE ? AND DATE LIKE ? ORDER BY DATE";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+						if (manageSlide.getUser_id() != null) {
+							pStmt.setString(1, "%" + manageSlide.getUser_id() + "%");
+						}
+						else {
+							pStmt.setString(1, "%");
+						}
+						if (manageSlide.getDate() != null) {
+							pStmt.setString(2, "%" + manageSlide.getDate() + "%");
+						}
+						else {
+							pStmt.setString(2, "%");
+						}
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							ManageSlide manage = new ManageSlide(
+							rs.getString("USER_ID"),
+							rs.getString("DATE"),
+							rs.getString("PICTURE")
+
+							);
+							manageSlideList.add(manage);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						manageSlideList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						manageSlideList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								manageSlideList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return manageSlideList;
+				}
 
 
 }

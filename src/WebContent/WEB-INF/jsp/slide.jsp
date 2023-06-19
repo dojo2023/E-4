@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +21,9 @@
   <div class="advertisement"><img src="./img/advertisement.png"></div>
   <div class="slider">
         <div class="slider-inner">
-            <div class="slider-item"><img src="./img/test1.png"></div>
-            <div class="slider-item"><img src="./img/test1.png"></div>
-            <div class="slider-item"><img src="./img/test1.png"></div>
+        <c:forEach var="e" items="${manageSlideList}" >
+            <div class="slider-item"><img src="${e.picture"></div>
+            </c:forEach>
         </div>
   <div class="button1" style="height:400px;">
     <button>開始</button>

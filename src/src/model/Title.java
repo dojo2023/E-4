@@ -9,10 +9,10 @@ public class Title implements Serializable {
 
 	public Title(String title_id , int title_point , String title_name , String title_image) {
 		super();
-		this.setTitle_id(title_id);
-		this.setTitle_point(title_point);
-		this.setTitle_name(title_name);
-		this.setTitle_image(title_image);
+		this.setTitle_id(title_id);			//ID
+		this.setTitle_point(title_point);	//ランク用ポイント
+		this.setTitle_name(title_name);		//称号の名前
+		this.setTitle_image(title_image);	//称号の画像
 	}
 
 	public Title() {

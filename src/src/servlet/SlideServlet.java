@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dao.ManageDao;
+import model.ManageSlide;
 
 /**
  * Servlet implementation class SlideServlet
@@ -46,32 +50,24 @@ public class SlideServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String user_id = (String) session.getAttribute("USER_ID");
-				String company = request.getParameter("COMPANY");
-				String department = request.getParameter("DEPARTMENT");
-				String position = request.getParameter("POSITION");
-				String name = request.getParameter("NAME");
-				String zipcode = request.getParameter("ZIPCODE");
-				String address = request.getParameter("ADDRESS");
-				String phone = request.getParameter("PHONE");
-				String fax = request.getParameter("FAX");
-				String email = request.getParameter("EMAIL");
-				String remarks = request.getParameter("REMARKS");
+				String name = (String) session.getAttribute("NAME");
+				String picture = null;
 
 				// 検索処理を行う
-				//BcDAO bDao = new BcDAO();
-				//List<Bc> cardList = bDao.select(new Bc(number, company, department, position, name, zipcode, address, phone, fax, email, remarks));
+				ManageDao mDao = new ManageDao();
+				List<ManageSlide> manageSlideList = mDao.selectSlide(new ManageSlide(user_id, name, picture));
 
 
 
 
 
 				// 検索結果をリクエストスコープに格納する
-				//request.setAttribute("cardList", cardList);
+				request.setAttribute("manageSlideList", manageSlideList);
 
 
 
 				// 結果ページにフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/slide.jsp");
 				dispatcher.forward(request, response);
 	}
 
