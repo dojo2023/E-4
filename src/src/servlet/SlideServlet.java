@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class SlideServlet
@@ -21,7 +22,7 @@ public class SlideServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		//if (session.getAttribute("id") == null) {
 			//response.sendRedirect("/sobaudon/LoginServlet");
 			//return;
@@ -37,14 +38,14 @@ public class SlideServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		//if (session.getAttribute("id") == null) {
 			//response.sendRedirect("/sobaudon/LoginServlet");
 			//return;
 		//}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String number = request.getParameter("NUMBER");
+				String user_id = (String) session.getAttribute("USER_ID");
 				String company = request.getParameter("COMPANY");
 				String department = request.getParameter("DEPARTMENT");
 				String position = request.getParameter("POSITION");
