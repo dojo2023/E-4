@@ -9,56 +9,105 @@
 	<link rel="stylesheet" href="/sobaudon/WebContent/css/registration.css">
 </head>
 <body>
+<header>
+	<!-- ヘッダー（ここから） -->
+	<h1 id="logo_login">
+		ロゴ
+	</h1>
+	<h2>
+		~さんの目標体重
+	</h2>
+	<h2 id="date"></h2>
+	<a href="/sobaudon/LoginServlet">ログアウト</a>
+	<ul>
+		<li><a href="/sovaudon/RegistrationServlet">登録</a></li>
+		<li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
+		<li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
+		<li><a href="/sobaudon/BoardServlet">掲示板</a></li>
+		<li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
+		<li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
+	</ul>
+	<!-- ヘッダー（ここまで） -->
+</header>
+<!-- 広告 -->
+	<a url="">
+		<img src="" alt="広告">
+	</a>
+<main>
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
-	<c:forEach var="other" items="${otherInfo}" >
-	<table class="other_table">
+<c:forEach var="other" items="${otherInfo}" >
+	<table>
 		<tr>
 			<th>朝</th>
 			<td>
-				朝食チェック<input type="checkbox" name="BF_SELECT" value="${other.bf_select}">
-				朝食テキスト<input type="text" name="BF_TEXT" value="${other.bf_text}">
+				<label><input id="reg_check" type="checkbox" name="bf_select" value=staple>主食</label>
+				<label><input id="reg_check" type="checkbox" name="bf_select" value=main>主菜</label>
+				<label><input id="reg_check" type="checkbox" name="bf_select" value=side>副菜</label>
+				<label><input id="reg_check" type="checkbox" name="bf_select" value=not_eat>たべていない</label>
+				<label><input id="reg_check" type="checkbox" name="bf_select" value=other_eat>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				昼食チェック<input type="checkbox" name="LU_SELECT" value="${other.lu_select}">
-				昼食テキスト<input type="text" name="LU_TEXT" value="${other.lu_text}">
+				<label><input id="reg_check" type="checkbox" name="lu_select" value=staple>主食</label>
+				<label><input id="reg_check" type="checkbox" name="lu_select" value=main>主菜</label>
+				<label><input id="reg_check" type="checkbox" name="lu_select" value=side>副菜</label>
+				<label><input id="reg_check" type="checkbox" name="lu_select" value=not_eat>たべていない</label>
+				<label><input id="reg_check" type="checkbox" name="lu_select" value=other_eat>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				夕食チェック<input type="checkbox" name="DI_SELECT" value="${other.di_select}">
-				夕食テキスト<input type="text" name="DI_TEXT" value="${other.di_text}">
+				<label><input id="reg_check" type="checkbox" name="di_select" value=staple>主食</label>
+				<label><input id="reg_check" type="checkbox" name="di_select" value=main>主菜</label>
+				<label><input id="reg_check" type="checkbox" name="di_select" value=side>副菜</label>
+				<label><input id="reg_check" type="checkbox" name="di_select" value=not_eat>たべていない</label>
+				<label><input id="reg_check" type="checkbox" name="di_select" value=other_eat>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				運動
-				<input type="radio" name="STRETCH" value="${other.stretch}">
+				<p class="registration_p">運動</p>
+				<label><input type="radio" name="stretch" value="Yes">あり</label>
+				<label><input type="radio" name="stretch" value="No">なし</label>
+
 			</td>
 		</tr>
 		<tr>
 			<td>
-				飲酒
-				<input type="radio" name="DRINK" value="${other.drink}">
+				<p class="registration_p">飲酒</p>
+				<label><input type="radio" name="drink" value="Yes">あり</label>
+				<label><input type="radio" name="drink" value="No">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				間食
-				<input type="radio" name="SNACK" value="${other.snack}">
+				<p class="registration_p">間食・夜食</p>
+				<label><input type="radio" name="snack" value="Yes">あり</label>
+				<label><input type="radio" name="snack" value="No">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				体重
-				<input type="text" name="WEIGHT" value="${other.weight}">
+				<p class="registration_p">体重</p>
+				<input class="reg_text" type="text" name="weight">
+				<p class="registration_p">bmi</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p class="registration_p">写真</p>
+				<input type="file" name="picture">
 			</td>
 		</tr>
 	</table>
-	</c:forEach>
+</c:forEach>
 </form>
+</main>
 </body>
 </html>
