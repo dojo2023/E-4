@@ -7,10 +7,10 @@ import java.sql.SQLException;
 
 import model.Board;
 
-public class AddCommentDAO {
+public class AddChattextDAO {
 
     // DBにid,name,commentを加えるメソッド
-    public AddCommentDAO(Board bo) {
+    public AddChattextDAO(Board bo) {
 
         if(bo.getName().isEmpty()) {
             bo.setName( "名無し");
