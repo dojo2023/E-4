@@ -26,14 +26,14 @@
 	margin-bottom:20px;
 }
 .lp_wrapper{
+	position:relative;
 	border:3px solid rgb(19, 104, 181);
 	padding:10px;
 	margin:0 auto;
 	width:580px;
-	height:440px;
+	height:420px;
 	text-align:center;
 	margin-top:150px;
-	margin-bottom:20px;
 }
 .login_container{
 	margin-top:50px;
