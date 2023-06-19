@@ -3,59 +3,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>board</title>
+<link rel="stylesheet" type="text/css" href="/sobaudon//WebContent/css/board.css">
+<script type="text/javascript">
+
+function check(){
+    var flag = 0;
+
+    if(document.form1.name.value == ""){
+        flag = 1;
+    }
+    else if(document.form1.comment.value == ""){
+        flag = 1;
+    }
+
+    if(flag){
+        window.alert('名前とコメントを入力してください'); 
+        return false; // 送信を中止
+    }
+    else{
+        return true; // 送信を実行
+    }
+}
+</script>
+
+<title>掲示板</title>
 </head>
 <body>
-<header>
-  <!-- ヘッダー（ここから） -->
-     <h1 id="logo_login">
-       ロゴ
-     </h1>
-    <h2>
-      ~さんの目標体重
-    </h2>
-    <h2 id="date"></h2>
-      <a href="/sobaudon/LoginServlet">ログアウト</a>
-    <ul>
-      <li><a href="/sovaudon/RegistrationServlet">登録</a></li>
-      <li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
-      <li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
-      <li><a href="/sobaudon/BoardServlet">掲示板</a></li>
-      <li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
-      <li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
-    </ul>
-  <!-- ヘッダー（ここまで） -->
-  </header>
+<form action="/servlet/BoardServlet" method="post" name="form1" onSubmit="return check()">
+<p>名前:<input type="text" name="name"></p>
+<p>コメント:<br>
+<textarea name="comment" rows="5" cols="40"></textarea>
+</p>
+<p><input type="submit" value="送信"><input type="reset" value="リセット">
+</p>
+</form>
 
-  <h2>掲示板</h2>
-  <table border = "1">
-   <tr>
-      <td>ニックネーム</td>
-      <td>メッセージ</td>
-      <td>訪問数</td>
-      <td>日付</td>
-    </tr>
-    <tr>
-    <td><a href=""></a></td>
-    <td></td>>
-    </tr>
-   </table>
-
-
-  <form method="POST" action="<c:url value='/BoardServlet' />">
-    <label for="name">名前</label><br />
-    <input type="text" name="name"/>
-    <br /><br />
-    <label for="chattext">メッセージ</label><br />
-    <textarea name="chattext"></textarea>
-    <br /><br />
-    <button type="submit">リセット</button>
-    <button type="submit">投稿</button>
-  </form>
-
-
+<c:forEach var="list" items="${listAttribute}">
+<p>ID:<c:out value="${list.id}"/>　名前:<c:out value="${list.name}"/>　日付:<c:out value="${list.time}"/><br>
+<c:out value="${list.comment}"/></p>
+</c:forEach>
 
 </body>
 </html>
