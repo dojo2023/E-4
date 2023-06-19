@@ -57,6 +57,7 @@ public class Manage implements Serializable {
 		this.counter = "";
 	}
 
+
 	public String getUser_id() {
 		return user_id;
 	}
@@ -177,3 +178,5 @@ public class Manage implements Serializable {
 		this.counter = counter;
 	}
 }
+
+

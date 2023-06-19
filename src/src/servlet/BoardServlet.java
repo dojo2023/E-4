@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AddCommentLogic;
+import model.AddChattextLogic;
 import model.Board;
-import model.FindCommentLogic;
+import model.FindChattextLogic;
 
 /**
  * Servlet implementation class BoardServlet
@@ -39,8 +39,8 @@ public class BoardServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         // 既存のコメントを確認
-        FindCommentLogic fcl = new FindCommentLogic();
-        List<Board> list = fcl.executeFindComment();
+        FindChattextLogic fcl = new FindChattextLogic();
+        List<Board> list = fcl.executeFindChattext();
 
         // セッションスコープにコメントリストを保存
         HttpSession session = request.getSession();
@@ -67,20 +67,23 @@ public class BoardServlet extends HttpServlet {
         bo.setChattext(chattext);
 
         // DBに格納
-        AddCommentLogic acl = new AddCommentLogic();
-        acl.executeAddComment(bo);
+        AddChattextLogic acl = new AddChattextLogic();
+        acl.executeAddChattext(bo);
 
         // 今入力されたコメントと既存のコメントをh2から取得
-        FindCommentLogic fcl = new FindCommentLogic();
-        List<Board> list = fcl.executeFindComment();
+        FindChattextLogic fcl = new FindChattextLogic();
+        List<Board> list = fcl.executeFindChattext();
 
         // セッションスコープにコメントリストを保存
         HttpSession session = request.getSession();
         session.setAttribute("listAttribute", list);
-
+        
         RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/jsp/board.jsp");
         rd.forward(request, response);
-
+        
+     // 閲覧ページにフォワードする ＊名前が押されたら
+     		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/browse.jsp");
+     		dispatcher.forward(request, response);
     }
 
 }
