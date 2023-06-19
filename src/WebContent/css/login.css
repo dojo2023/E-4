@@ -15,7 +15,9 @@
 	text-align:center;
 	margin-top:50px;
 }
+
 .ln_wrapper{
+	background-color:white;
 	border:3px solid rgb(19, 104, 181);
 	padding:10px;
 	margin:0 auto;
