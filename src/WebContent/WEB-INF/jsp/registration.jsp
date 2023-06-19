@@ -20,7 +20,7 @@
 	<h2 id="date"></h2>
 	<a href="/sobaudon/LoginServlet">ログアウト</a>
 	<ul>
-		<li><a href="/sovaudon/RegistrationServlet">登録</a></li>
+		<li><a href="/sobaudon/RegistrationServlet">登録</a></li>
 		<li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
 		<li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
 		<li><a href="/sobaudon/BoardServlet">掲示板</a></li>
