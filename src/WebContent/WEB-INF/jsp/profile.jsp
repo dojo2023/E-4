@@ -13,23 +13,21 @@
 <div class="lp_wrapper">
 	<div class="login-container">
 	<form method="POST" action="/sobaudon/ProfileServlet">
-	<c:forEach var="e" items="${profile}">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="user_id" value="${e.user_id}"><br>
+		<input class="l_text" type="text" name="user_id" value="${loginUser.user_id}"><br>
 		<p class="login_p">Password</p>
-		<input class="l_text" type="password" name="password" value="${e.password}"><br>
+		<input class="l_text" type="password" name="password" value="${loginUser.password}"><br>
 		<p class="login_p">ニックネーム</p>
 		<input class="l_text" type="text" name="name" minlength="2" required placeholder="2~20文字で入力してください。"><br>
 		<p class="login_p">身長</p>
 		<input class="l_text" type="text" name="height" required placeholder="(cm)で小数第1位まで入力してください。"><br>
 		<p class="login_p">体重</p>
-		<input class="l_text" type="text" name="weight" value="${e.weight}"><br>
+		<input class="l_text" type="text" name="weight" value="${loginUser.weight}"><br>
 		<p class="login_p">目標体重</p>
 		<input class="l_text" type="text" name="target_weight" required placeholder="(kg)で小数第1位まで入力してください。"><br>
 
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
-	</c:forEach>
 	</form>
 	</div>
 </div>

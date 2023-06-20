@@ -25,12 +25,12 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String user_id = (String)session.getAttribute("loginUser.id");
-		String password = (String)session.getAttribute("loginUser.pw");
+		String user_id = (String)session.getAttribute("loginUser.user_id");
+		String password = (String)session.getAttribute("loginUser.password");
 		String name = (String)session.getAttribute("loginUser.name");
 		Double height = (Double)session.getAttribute("loginUser.height");
-		Double weight = (Double)session.getAttribute("loginUser.weight");;
-		Double target_weight = (Double)session.getAttribute("loginUser.target_weight");;
+		Double weight = (Double)session.getAttribute("loginUser.weight");
+		Double target_weight = (Double)session.getAttribute("loginUser.target_weight");
 		UserDao uDao = new UserDao();
 		//検索処理を行う
 			User profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
