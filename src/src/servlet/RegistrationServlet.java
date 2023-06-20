@@ -18,8 +18,9 @@ import javax.servlet.http.Part;
  */
 @WebServlet("/RegistrationServlet")
 @MultipartConfig(
-location="/tmp/files",
-maxFileSize=1000000
+	location="/tmp/files",
+	maxFileSize=1000000
+
 )
 
 public class RegistrationServlet extends HttpServlet {

@@ -106,6 +106,7 @@
 			<td>
 				<p class="registration_p">写真</p>
 				<input type="file" name="picture">
+				<img src="/sobaudon/body/小嶋駿也_typing_0517.png">
 			</td>
 		</tr>
 	</table>
