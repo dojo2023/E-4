@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.User;
 
@@ -22,7 +20,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from USER where USER_ID = ? and PASSWORD = ?";
@@ -73,7 +71,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
 			String sql = "insert into USER(USER_ID,PASSWORD,NAME,HEIGHT,WEIGHT,TARGET_WEIGHT)  values (?, ?, ?, ?, ?, ?)";
@@ -145,7 +143,7 @@ public class UserDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
 			String sql = "update USER set NAME=?, =?, HEIGHT=?, TARGET_WEIGHT=? where USER_ID=?";
@@ -191,16 +189,16 @@ public class UserDao {
 			}
 		}
 	}
-	public List<User> detail(User user) {
+	public User detail(User user) {
 		Connection conn = null;
-		List<User> profile = new ArrayList<User>();
+		User profile = new User();
 
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
 			String sql = "select * from USER WHERE USER_ID= ?";
@@ -215,7 +213,7 @@ public class UserDao {
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
-			while (rs.next()) {
+			if (rs.next()) {
 				User detail = new User(
 				rs.getString("USER_ID"),
 				rs.getString("PASSWORD"),
@@ -224,7 +222,7 @@ public class UserDao {
 				rs.getDouble("WEIGHT"),
 				rs.getDouble("TARGET_WEIGHT")
 				);
-				profile.add(detail);
+				profile = detail;
 			}
 		}
 		catch (SQLException e) {

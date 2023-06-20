@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Graph;
 import model.Manage;
 import model.ManageSlide;
 
@@ -23,7 +24,7 @@ public class ManageDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
 				String sql = "select * from MANAGE WHERE USER_ID LIKE ? AND DATE LIKE ? ORDER BY DATE";
@@ -105,7 +106,7 @@ public class ManageDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
 				String sql = "insert into MANAGE values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -240,7 +241,7 @@ public class ManageDao {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
 				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where NUMBER=?, DATE=?";
@@ -366,7 +367,7 @@ public class ManageDao {
 						Class.forName("org.h2.Driver");
 
 						// データベースに接続する
-						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "sa", "");
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 						// SQL文を準備する
 						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID LIKE ? AND DATE LIKE ? ORDER BY DATE";
@@ -424,6 +425,77 @@ public class ManageDao {
 
 					// 結果を返す
 					return manageSlideList;
+				}
+
+				// 引数paramで検索項目を指定し、検索結果のリストを返す
+				public List<Graph> selectGraph(Graph Graph) {
+					Connection conn = null;
+					List<Graph> GraphList = new ArrayList<Graph>();
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
+
+						// SQL文を準備する
+						String sql = "select USER_ID,DATE,DAYWEIGHT,BMI from MANAGE WHERE USER_ID LIKE ? AND DATE LIKE ? ORDER BY DATE DESC";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+						if (Graph.getUser_id() != null) {
+							pStmt.setString(1, "%" + Graph.getUser_id() + "%");
+						}
+						else {
+							pStmt.setString(1, "%");
+						}
+						if (Graph.getDate() != null) {
+							pStmt.setString(2, "%" + Graph.getDate() + "%");
+						}
+						else {
+							pStmt.setString(2, "%");
+						}
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							Graph manage = new Graph(
+							rs.getString("USER_ID"),
+							rs.getString("DATE"),
+							rs.getDouble("DAYWEIGHT"),
+							rs.getDouble("BMI")
+
+							);
+							GraphList.add(manage);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						GraphList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						GraphList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								GraphList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return GraphList;
 				}
 
 

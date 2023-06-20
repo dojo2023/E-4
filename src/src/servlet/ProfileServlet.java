@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
 import model.User;
@@ -24,15 +24,12 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user_id = "";
-		String password = "";
-		String name = "";
-		Double height = null;
-		Double weight = null;
-		Double target_weight = null;
+		HttpSession session = request.getSession();
+		User user_inf = (User)session.getAttribute("loginUser");
+
 		UserDao uDao = new UserDao();
 		//検索処理を行う
-			List<User> profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
+			User profile = uDao.detail(user_inf);
 		//更新内容をリクエストスコープに格納する
 		request.setAttribute("profile", profile);
 		// プロフィール編集画面にフォワードする
@@ -61,7 +58,7 @@ public class ProfileServlet extends HttpServlet {
 		uDao.update(new model.User(user_id, password, name, height, weight, target_weight));
 
 		//検索処理を行う
-		List<User> profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
+		User profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
 		//更新内容をリクエストスコープに格納する
 		request.setAttribute("profile", profile);
 		//更新した内容で更新画面に戻る
