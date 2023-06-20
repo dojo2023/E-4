@@ -16,7 +16,7 @@ public class FindChattextDAO {
 		// id,name,commentを格納するリスト
 		List<Board> list = new ArrayList<>();
 		final String jdbcId = "id";
-        final String jdbcPass = "password";
+        final String jdbcName = "name";
         final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
 
         Connection con = null;
@@ -26,7 +26,7 @@ public class FindChattextDAO {
 			Class.forName("org.h2.Driver");
 
 		// データベースに接続する
-		con = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
+		con = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "test", "pass");
 		System.out.println("Connected....");
 		try {
 			Statement st = con.createStatement();
@@ -65,7 +65,7 @@ public class FindChattextDAO {
                         	}
             		}
             	}
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("Connection Failed.");
             return null;

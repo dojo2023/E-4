@@ -11,8 +11,7 @@ public class AddChattextDAO {
 
     // DBにid,name,commentを加えるメソッド
     public AddChattextDAO(Board bo) {
-
-        if(bo.getName().isEmpty()) {
+    	if(bo.getName().isEmpty()) {
             bo.setName( "名無し");
         }
         if(bo.getChattext().isEmpty()) {
@@ -25,14 +24,17 @@ public class AddChattextDAO {
         final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
 
         Connection con = null;
-
         try {
 
-            con = DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
+            con = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "test", "pass");
 
             System.out.println("Connected....");
 
             try {
+            	// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
 
                 PreparedStatement ps = con.prepareStatement("INSERT INTO board (name, chattext) VALUES (?, ?)");
 
@@ -50,7 +52,7 @@ public class AddChattextDAO {
 
                 ps.close();
 
-            } catch (SQLException e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
             } finally {
                 // データベース接続の切断

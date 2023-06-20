@@ -5,36 +5,34 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" type="text/css" href="/sobaudon//WebContent/css/board.css">
-<script type="text/javascript">
-
-function check(){
-    var flag = 0;
-
-    if(document.form1.Chattext.value == ""){
-        flag = 1;
-    }
-
-    if(flag){
-        window.alert('コメントを入力してください'); 
-        return false; // 送信を中止
-    }
-    else{
-        return true; // 送信を実行
-    }
-    
-}
-</script>
-
 <title>掲示板</title>
+<link rel="stylesheet" href="/sobaudon/css/board.css">
 </head>
 <body>
+<header>
+	<!-- ヘッダー（ここから） -->
+	<h1 id="logo_login">
+		ロゴ
+	</h1>
+	<a href="/sobaudon/LoginServlet">ログアウト</a>
+	<ul>
+		<li><a href="/sobaudon/RegistrationServlet">登録</a></li>
+		<li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
+		<li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
+		<li><a href="/sobaudon/BoardServlet">掲示板</a></li>
+		<li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
+		<li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
+	</ul>
+	<!-- ヘッダー（ここまで） -->
+</header>
 <form action="/servlet/BoardServlet" method="post" name="form1" onSubmit="return check()">
+<div class = "rw">
 <p>コメント:<br>
 <textarea name="chattext" rows="5" cols="40"></textarea>
 </p>
 <p><input type="submit" value="送信"><input type="reset" value="リセット">
 </p>
+</div>
 </form>
 
 <c:forEach var="list" items="${listAttribute}">
@@ -53,5 +51,6 @@ function check(){
 		</tr>
 	</table>
 </div>
+
 </body>
 </html>
