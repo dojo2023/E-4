@@ -10,15 +10,15 @@ public class UserDaoTest {
 		Double target_weight = null;
 		// detail()のテスト
 		System.out.println("---------- select()のテスト ----------");
-		User cardList2 = dao.detail(new User("dojo","","",height,weight,target_weight));
-			System.out.println("NUMBER：" + cardList2.getUser_id());
-			System.out.println("COMPANY" + cardList2.getPassword());
-			System.out.println("DEPARTMENT" + cardList2.getName());
-			System.out.println("POSITION" + cardList2.getHeight());
-			System.out.println("NAME" + cardList2.getWeight());
-			System.out.println("ZIPCODE" + cardList2.getTarget_weight());
+		User user = dao.detail(new User("dojo","","",height,weight,target_weight));
+			System.out.println("NUMBER：" + user.getUser_id());
+			System.out.println("COMPANY" + user.getPassword());
+			System.out.println("DEPARTMENT" + user.getName());
+			System.out.println("POSITION" + user.getHeight());
+			System.out.println("NAME" + user.getWeight());
+			System.out.println("ZIPCODE" + user.getTarget_weight());
 			System.out.println();
-}
+	}
 }
 /*
 		// insert()のテスト
