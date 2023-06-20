@@ -1,4 +1,6 @@
 @charset "UTF-8";
-form position{
-	bottom: 50; right: 50;
-} 
+.rw{
+	display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

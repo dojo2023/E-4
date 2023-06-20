@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
@@ -46,7 +47,6 @@ public class RegistrationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 
 	/*	//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
@@ -57,32 +57,42 @@ public class RegistrationServlet extends HttpServlet {
 	*/
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String breakfast = request.getParameter("BREAKFAST");
+		String bf_se_st = request.getParameter("BF_SE_ST");
+		String bf_se_ma = request.getParameter("BF_SE_MA");
+		String bf_se_si = request.getParameter("BF_SE_SI");
+		String bf_se_no = request.getParameter("BF_SE_NO");
+		String bf_se_ot = request.getParameter("BF_SE_OT");
 		String bftext = request.getParameter("BFTEXT");
 		String lunch = request.getParameter("LUNCH");
 		String lctext = request.getParameter("LCTEXT");
 		String dinner = request.getParameter("DINNER");
 		String dntext = request.getParameter("DNTEXT");
-		int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
-		int drink = Integer.parseInt(request.getParameter("DRINK"));
-		int snack = Integer.parseInt(request.getParameter("SNACK"));
-		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
+		String exercise = request.getParameter("EXERCISE");
+		String drink = request.getParameter("DRINK");
+		String snack = request.getParameter("SNACK");
+		String dayweight = request.getParameter("DAYWEIGHT");
 		String picture = request.getParameter("PICTURE");
 
 		//partオブジェクトとしてnameがpictureのものを取得
-		Part part = request.getPart(picture);
+		Part part = request.getPart("picture");
 		//ファイル名を取得
 		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 		//アップロードするフォルダ
 		String path = getServletContext().getRealPath("/body");
 
+		System.out.println(path);
+
+		part.write(path+File.separator+filename);
+
 		//登録を押した際のカウント
-		int count = Integer.parseInt(request.getParameter("submit"));
+		int count = 0 ;
 		if(request.getParameter("submit").equals("登録")) {
 			count++;
 		}
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
+		dispatcher.forward(request, response);
 	}
+
 
 }
 
