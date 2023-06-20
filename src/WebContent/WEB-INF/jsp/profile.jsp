@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,44 +13,38 @@
 <div class="lp_wrapper">
 	<div class="login-container">
 	<form method="POST" action="/sobaudon/ProfileServlet">
+	<c:forEach var="e" items="${profile}">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="user_id" value="${UserDao.id}"><br>
+		<input class="l_text" type="text" name="user_id" value="${e.user_id}"><br>
 		<p class="login_p">Password</p>
-		<input class="l_text" type="password" name="password" value="${UserDao.pw}"><br>
+		<input class="l_text" type="password" name="password" value="${e.password}"><br>
 		<p class="login_p">ニックネーム</p>
 		<input class="l_text" type="text" name="name" minlength="2" required placeholder="2~20文字で入力してください。"><br>
 		<p class="login_p">身長</p>
-		<input class="l_text" type="password" name="height" required placeholder="(cm)で小数第1位まで入力してください。"><br>
+		<input class="l_text" type="text" name="height" required placeholder="(cm)で小数第1位まで入力してください。"><br>
 		<p class="login_p">体重</p>
-		<input class="l_text" type="text" name="weight" value="${UserDao.weight}"><br>
+		<input class="l_text" type="text" name="weight" value="${e.weight}"><br>
 		<p class="login_p">目標体重</p>
-		<input class="l_text" type="password" name="target_weight" required placeholder="(kg)で小数第1位まで入力してください。"><br>
+		<input class="l_text" type="text" name="target_weight" required placeholder="(kg)で小数第1位まで入力してください。"><br>
 
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>
+	</c:forEach>
 	</form>
 	</div>
 </div>
+
 <div class="title">
 	<table class="ctitle">
 		<tr>
-		<td id="tn"><p class="tname">今シーズン</p><br>レジェンド</td>
+		<td id="tn">レジェンド</td>
 		<td rowspan="2"><img src="./img/titletest.png"></td>
 		</tr>
 		<tr>
 		<td id="tl">87pt</td>
 		</tr>
 	</table>
-	<table class="ptitle">
-		<tr>
-		<td id="tn"><p class="tname">前シーズン</p><br>怠惰</td>
-		<td rowspan="2"><img src="./img/titletest.png"></td>
-		</tr>
-		<tr>
-		<td id="tl">3pt</td>
-		</tr>
-	</table>
 </div>
 </body>
-<script src="/sobaudon/js/profile.js"></script>
+<%-- <script src="/sobaudon/js/profile.js"></script> --%>
 </html>

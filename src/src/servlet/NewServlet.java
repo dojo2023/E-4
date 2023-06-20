@@ -46,7 +46,7 @@ public class NewServlet extends HttpServlet {
 		uDao.insert(new model.User(user_id, password, name, height, weight, target_weight));
 
 		// ログインページにリダイレクトする
-		response.sendRedirect("/WEB-INF/jsp/login.jsp");
+		response.sendRedirect("/sobaudon/LoginServlet");
 	}
 
 

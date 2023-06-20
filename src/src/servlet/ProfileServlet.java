@@ -24,9 +24,21 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String user_id = "";
+		String password = "";
+		String name = "";
+		Double height = null;
+		Double weight = null;
+		Double target_weight = null;
+		UserDao uDao = new UserDao();
+		//検索処理を行う
+			List<User> profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
+		//更新内容をリクエストスコープに格納する
+		request.setAttribute("profile", profile);
 		// プロフィール編集画面にフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
-				dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+			dispatcher.forward(request, response);
+
 
 		}
 
@@ -34,9 +46,6 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		//NUMBER(regist.jspのname属性)を入れる変数 number

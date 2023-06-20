@@ -16,18 +16,3 @@ td{
 	width: 110px;
 	height: 45px;
 }
-
-/*テーブル同士の隙間*/
-.ctitle{
-	margin-bottom:10px;
-}
-.tname{
-	font-size:8px;
-}
-
-/*
-前シーズンの称号 非表示
-.ptitle{
-	display: none;
-}
-*/

@@ -53,7 +53,8 @@ public class LoginServlet extends HttpServlet {
 		response.sendRedirect("/sobaudon/RegistrationServlet");
 	}
 
-	else {									// ログイン失敗
+	else {
+		// ログイン失敗
 		// ログインページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
