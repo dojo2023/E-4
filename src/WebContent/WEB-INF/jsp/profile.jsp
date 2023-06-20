@@ -14,17 +14,18 @@
 	<div class="login-container">
 	<form method="POST" action="/sobaudon/ProfileServlet">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="user_id" value="${loginUser.user_id}"><br>
+		<input class="l_text" type="text" name="USER_ID" value="${profile.user_id}" readonly><br>
 		<p class="login_p">Password</p>
-		<input class="l_text" type="password" name="password" value="${loginUser.password}"><br>
+		<input class="l_text" type="password" name="PASSWORD" value="${profile.password}" readonly><br>
 		<p class="login_p">ニックネーム</p>
-		<input class="l_text" type="text" name="name" minlength="2" required placeholder="2~20文字で入力してください。"><br>
+		<input class="l_text" type="text" name="NAME" minlength="2" value="${profile.name}"><br>
+		 <!-- required placeholder="2~20文字で入力してください。" -->
 		<p class="login_p">身長</p>
-		<input class="l_text" type="text" name="height" required placeholder="(cm)で小数第1位まで入力してください。"><br>
+		<input class="l_text" type="text" name="HEIGHT" placeholder="(cm)で小数第1位まで入力してください。"><br>
 		<p class="login_p">体重</p>
-		<input class="l_text" type="text" name="weight" value="${loginUser.weight}"><br>
+		<input class="l_text" type="text" name="WEIGHT" value="${profile.weight}" readonly><br>
 		<p class="login_p">目標体重</p>
-		<input class="l_text" type="text" name="target_weight" required placeholder="(kg)で小数第1位まで入力してください。"><br>
+		<input class="l_text" type="text" name="TARGET_WEIGHT" placeholder="(kg)で小数第1位まで入力してください。"><br>
 
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)"><br>

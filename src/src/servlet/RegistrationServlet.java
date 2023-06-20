@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +17,7 @@ import javax.servlet.http.Part;
  */
 @WebServlet("/RegistrationServlet")
 @MultipartConfig(
-	location="/tmp/files",
+	//location="C:\\dojo6\\src\\WebContent\\body",
 	maxFileSize=1000000
 
 )
@@ -64,10 +63,21 @@ public class RegistrationServlet extends HttpServlet {
 		String bf_se_no = request.getParameter("BF_SE_NO");
 		String bf_se_ot = request.getParameter("BF_SE_OT");
 		String bftext = request.getParameter("BFTEXT");
-		String lunch = request.getParameter("LUNCH");
-		String lctext = request.getParameter("LCTEXT");
-		String dinner = request.getParameter("DINNER");
-		String dntext = request.getParameter("DNTEXT");
+
+		String lu_se_st = request.getParameter("LU_SE_ST");
+		String lu_se_ma = request.getParameter("LU_SE_MA");
+		String lu_se_si = request.getParameter("LU_SE_SI");
+		String lu_se_no = request.getParameter("LU_SE_NO");
+		String lu_se_ot = request.getParameter("LU_SE_OT");
+		String lutext = request.getParameter("LUTEXT");
+
+		String di_se_st = request.getParameter("DI_SE_ST");
+		String di_se_ma = request.getParameter("DI_SE_MA");
+		String di_se_si = request.getParameter("DI_SE_SI");
+		String di_se_no = request.getParameter("DI_SE_NO");
+		String di_se_ot = request.getParameter("DI_SE_OT");
+		String ditext = request.getParameter("DITEXT");
+
 		String exercise = request.getParameter("EXERCISE");
 		String drink = request.getParameter("DRINK");
 		String snack = request.getParameter("SNACK");
@@ -77,7 +87,8 @@ public class RegistrationServlet extends HttpServlet {
 		//partオブジェクトとしてnameがpictureのものを取得
 		Part part = request.getPart("picture");
 		//ファイル名を取得
-		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		String filename = part.getSubmittedFileName();
+		//String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 		//アップロードするフォルダ
 		String path = getServletContext().getRealPath("/body");
 
@@ -93,7 +104,6 @@ public class RegistrationServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
 	}
-
 
 }
 
