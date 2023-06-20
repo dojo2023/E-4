@@ -42,6 +42,7 @@ public class CalendarServlet extends HttpServlet {
 					return;
 				}*/
 				// 更新ページにフォワードする
+				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/update.jsp");
 				dispatcher.forward(request, response);
 	}
