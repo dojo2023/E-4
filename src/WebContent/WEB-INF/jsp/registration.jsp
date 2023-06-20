@@ -34,61 +34,65 @@
 		<img src="" alt="広告">
 	</a>
 <main>
-<form method="POST" action="/sobaudon/RegistrationServlet.java" enctype="multipart/form-data">
+<form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data">
 	<table>
 		<tr>
 			<th>朝</th>
-			<td>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=other_eat>その他</label><br>
+			<td><label><input type='hidden' value="0" name="bf_se_st"></label>
+				<label><input id="reg_check" type="checkbox" name="bf_se_st" value="1">主食</label>
+				<label><input type='hidden' value="0" name="bf_se_ma"></label>
+				<label><input id="reg_check" type="checkbox" name="bf_se_ma" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="bf_se_si"></label>
+				<label><input id="reg_check" type="checkbox" name="bf_se_si" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="bf_se_no"></label>
+				<label><input id="reg_check" type="checkbox" name="bf_se_no" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="bf_se_ot"></label>
+				<label><input id="reg_check" type="checkbox" name="bf_se_ot" value="1">その他</label><br>
 				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=other_eat>その他</label><br>
+				<label><input id="reg_check" type="checkbox" name="lu_se_st" value=staple>主食</label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_ma" value=main>主菜</label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_si" value=side>副菜</label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_no" value=not_eat>たべていない</label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_ot" value=other_eat>その他</label><br>
 				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=other_eat>その他</label><br>
+				<label><input id="reg_check" type="checkbox" name="di_se_st" value=staple>主食</label>
+				<label><input id="reg_check" type="checkbox" name="di_se_ma" value=main>主菜</label>
+				<label><input id="reg_check" type="checkbox" name="di_se_si" value=side>副菜</label>
+				<label><input id="reg_check" type="checkbox" name="di_se_no" value=not_eat>たべていない</label>
+				<label><input id="reg_check" type="checkbox" name="di_se_ot" value=other_eat>その他</label><br>
 				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">運動</p>
-				<label><input type="radio" name="stretch" value="Yes">あり</label>
-				<label><input type="radio" name="stretch" value="No">なし</label>
+				<label><input type="radio" name="EXERCISE" value="0">あり</label>
+				<label><input type="radio" name="EXERCISE" value="1">なし</label>
 
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<label><input type="radio" name="drink" value="Yes">あり</label>
-				<label><input type="radio" name="drink" value="No">なし</label>
+				<label><input type="radio" name="drink" value="0">あり</label>
+				<label><input type="radio" name="drink" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="snack" value="Yes">あり</label>
-				<label><input type="radio" name="snack" value="No">なし</label>
+				<label><input type="radio" name="snack" value="0">あり</label>
+				<label><input type="radio" name="snack" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
