@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.User;
 
@@ -191,9 +189,9 @@ public class UserDao {
 			}
 		}
 	}
-	public List<User> detail(User user) {
+	public User detail(User user) {
 		Connection conn = null;
-		List<User> profile = new ArrayList<User>();
+		User profile = new User();
 
 		try {
 			// JDBCドライバを読み込む
@@ -215,7 +213,7 @@ public class UserDao {
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
-			while (rs.next()) {
+			if (rs.next()) {
 				User detail = new User(
 				rs.getString("USER_ID"),
 				rs.getString("PASSWORD"),
@@ -224,7 +222,7 @@ public class UserDao {
 				rs.getDouble("WEIGHT"),
 				rs.getDouble("TARGET_WEIGHT")
 				);
-				profile.add(detail);
+				profile = detail;
 			}
 		}
 		catch (SQLException e) {
