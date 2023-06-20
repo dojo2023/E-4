@@ -1,25 +1,26 @@
 package test;
-import java.util.List;
-
 import dao.UserDao;
 import model.User;
 
-public class BcDAOTest {
+public class UserDaoTest {
 	public static void main(String[] args) {
 		UserDao dao = new UserDao();
-
+		Double height = null;
+		Double weight = null;
+		Double target_weight = null;
 		// detail()のテスト
 		System.out.println("---------- select()のテスト ----------");
-		User cardList2 = dao.detail(new User());
+		User cardList2 = dao.detail(new User("dojo","","",height,weight,target_weight));
 			System.out.println("NUMBER：" + cardList2.getUser_id());
 			System.out.println("COMPANY" + cardList2.getPassword());
 			System.out.println("DEPARTMENT" + cardList2.getName());
 			System.out.println("POSITION" + cardList2.getHeight());
-			System.out.println("NAME" + cardList2.getName());
-			System.out.println("ZIPCODE" + cardList2.getZipCode());
+			System.out.println("NAME" + cardList2.getWeight());
+			System.out.println("ZIPCODE" + cardList2.getTarget_weight());
 			System.out.println();
 }
-
+}
+/*
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
 		Bc insRec = new Bc(" ","会社名６", "部署名６", "役職名６",
@@ -81,3 +82,4 @@ public class BcDAOTest {
 		}
 	}
 }
+*/
