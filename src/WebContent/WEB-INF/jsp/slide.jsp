@@ -22,7 +22,7 @@
   <div class="slider">
         <div class="slider-inner">
         <c:forEach var="e" items="${manageSlideList}" >
-            <div class="slider-item"><img src="${e.picture"></div>
+           <div class="slider-item"><img src="${e.picture}"></div>
             </c:forEach>
         </div>
   <div class="button1" style="height:400px;">
