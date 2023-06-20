@@ -61,6 +61,7 @@ public class BoardServlet extends HttpServlet {
         String name = request.getParameter("name");
         String chattext = request.getParameter("chattext");
         
+        
         //JavaBeansに格納
         Board bo = new Board();
         bo.setName(name);
@@ -70,7 +71,7 @@ public class BoardServlet extends HttpServlet {
         AddChattextLogic acl = new AddChattextLogic();
         acl.executeAddChattext(bo);
 
-        // 今入力されたコメントと既存のコメントをh2から取得
+        // 今入力されたコメントと既存のコメントをh2dbから取得
         FindChattextLogic fcl = new FindChattextLogic();
         List<Board> list = fcl.executeFindChattext();
 

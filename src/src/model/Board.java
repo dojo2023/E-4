@@ -4,20 +4,24 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class Board implements Serializable {
+    private int id;
     private String name;
     private String chattext;
     private Timestamp date;
-    private int cpoint;
-    
-    private String titlename;
-    private String titleimage;
-    
+	private int counter;
+
 
     public Timestamp getDate() {
         return date;
     }
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
     public String getName() {
         return name;
@@ -31,24 +35,13 @@ public class Board implements Serializable {
     public void setChattext(String chattext) {
         this.chattext = chattext;
     }
-	public int getCpoint() {
-		return cpoint;
+	public int getCounter() {
+		// TODO 自動生成されたメソッド・スタブ
+		return counter;
 	}
-	public void setCpoint(int cpoint) {
-		this.cpoint = cpoint;
-	}
-	public String getTitlename() {
-		return titlename;
-	}
-	public void setTitlename(String titlename) {
-		this.titlename = titlename;
-	}
-	public String getTitleimage() {
-		return titleimage;
-	}
-	public void setTitleimage(String titleimage) {
-		this.titleimage = titleimage;
+	public void setCounter(int counter) {
+		// TODO 自動生成されたメソッド・スタブ
+		this.counter = counter;
 	}
 
 }
-

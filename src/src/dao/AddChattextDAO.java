@@ -9,34 +9,30 @@ import model.Board;
 
 public class AddChattextDAO {
 
-    // DBにid,name,commentを加えるメソッド
-    public AddChattextDAO(Board bo) {
-    	if(bo.getName().isEmpty()) {
-            bo.setName( "名無し");
+    // DBにchattext,date,counterを加えるメソッド
+    public void insert(Board bo) {
+    	if(bo.getChattext().isEmpty()) {   
         }
-        if(bo.getChattext().isEmpty()) {
-            bo.setChattext( "コメント無し");
+        if(bo.getCounter().isEmpty()) {
+            bo.setCounter( "0");
         }
+        
 
-
-        final String jdbcId = "user_id";
+        final String jdbcId = "id";
         final String jdbcPass = "password";
-        final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
+        final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=JST";
 
         Connection con = null;
+
         try {
 
-            con = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/sobaudon", "test", "pass");
+            con = DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
 
             System.out.println("Connected....");
 
             try {
-            	// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
 
-				// データベースに接続する
-
-                PreparedStatement ps = con.prepareStatement("INSERT INTO board (name, chattext) VALUES (?, ?)");
+                PreparedStatement ps = con.prepareStatement("INSERT INTO board (name, Chattext) VALUES (?, ?)");
 
                 ps.setString(1, bo.getName());
                 ps.setString(2, bo.getChattext());
@@ -45,14 +41,14 @@ public class AddChattextDAO {
                 int r = ps.executeUpdate();
 
                 if (r != 0) {
-                    System.out.println(r + "件の書き込みを追加しました。");
+                    System.out.println(r + "書き込みを追加しました。");
                 } else {
                     System.out.println("書き込みできませんでした。");
                 }
 
                 ps.close();
 
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 // データベース接続の切断
