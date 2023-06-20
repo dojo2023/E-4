@@ -1,3 +1,6 @@
+[サンプルデータ用ID,pass]
+INSERT INTO USER (USER_ID, PASSWORD) VALUES ('test', 'pass');
+
 [USERテーブル作成]
 CREATE TABLE  USER(
   USER_ID VARCHAR(12) PRIMARY KEY,
