@@ -48,29 +48,39 @@
 				<label><input id="reg_check" type="checkbox" name="bf_se_no" value="1">たべていない</label>
 				<label><input type='hidden' value="0" name="bf_se_ot"></label>
 				<label><input id="reg_check" type="checkbox" name="bf_se_ot" value="1">その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
+				<input class="reg_text" type="text" maxlength="100" name="bftext">
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="lu_se_st" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="lu_se_ma" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_se_si" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_se_no" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="lu_se_ot" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
+				<label><input type='hidden' value="0" name="lu_se_st"></label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_st" value="1">主食</label>
+				<label><input type='hidden' value="0" name="lu_se_ma"></label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_ma" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="lu_se_si"></label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_si" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="lu_se_no"></label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_no" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="lu_se_ot"></label>
+				<label><input id="reg_check" type="checkbox" name="lu_se_ot" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="lutext">
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="di_se_st" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="di_se_ma" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_se_si" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_se_no" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="di_se_ot" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
+				<label><input type='hidden' value="0" name="di_se_st"></label>
+				<label><input id="reg_check" type="checkbox" name="di_se_st" value="1">主食</label>
+				<label><input type='hidden' value="0" name="di_se_ma"></label>
+				<label><input id="reg_check" type="checkbox" name="di_se_ma" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="di_se_si"></label>
+				<label><input id="reg_check" type="checkbox" name="di_se_si" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="di_se_no"></label>
+				<label><input id="reg_check" type="checkbox" name="di_se_no" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="di_se_ot"></label>
+				<label><input id="reg_check" type="checkbox" name="di_se_ot" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="ditext">
 			</td>
 		</tr>
 		<tr>
@@ -106,7 +116,7 @@
 			<td>
 				<p class="registration_p">写真</p>
 				<input type="file" name="picture">
-				<img src="/sobaudon/body/小嶋駿也_typing_0517.png">
+				<img src="body/<%=filename %>">
 			</td>
 		</tr>
 	</table>
