@@ -45,9 +45,10 @@ public class LoginServlet extends HttpServlet {
 		// ログイン処理を行う
 		UserDao uDao = new UserDao();
 		if (uDao.Login(new User(id, pw, name, height, weight, target_weight))) {	// ログイン成功
+		User loginUser = new User(id, pw, name, height, weight, target_weight);
 		// セッションスコープにIDを格納する
 		HttpSession session = request.getSession();
-		session.setAttribute("id",id);
+		session.setAttribute("loginUser",loginUser);
 
 		// 登録サーブレットにリダイレクトする
 		response.sendRedirect("/sobaudon/RegistrationServlet");
