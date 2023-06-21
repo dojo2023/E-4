@@ -33,54 +33,56 @@
 	<a url="">
 		<img src="" alt="広告">
 	</a>
+<!-- 称号 -->
+	<div class="achivement">称号</div>
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data">
 	<table>
 		<tr>
 			<th>朝</th>
-			<td><label><input type='hidden' value="0" name="bf_se_st"></label>
-				<label><input id="reg_check" type="checkbox" name="bf_se_st" value="1">主食</label>
-				<label><input type='hidden' value="0" name="bf_se_ma"></label>
-				<label><input id="reg_check" type="checkbox" name="bf_se_ma" value="1">主菜</label>
-				<label><input type='hidden' value="0" name="bf_se_si"></label>
-				<label><input id="reg_check" type="checkbox" name="bf_se_si" value="1">副菜</label>
-				<label><input type='hidden' value="0" name="bf_se_no"></label>
-				<label><input id="reg_check" type="checkbox" name="bf_se_no" value="1">たべていない</label>
-				<label><input type='hidden' value="0" name="bf_se_ot"></label>
-				<label><input id="reg_check" type="checkbox" name="bf_se_ot" value="1">その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="bftext">
+			<td><label><input type='hidden' value="0" name="BF_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="BF_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="BF_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="BFTEXT">
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				<label><input type='hidden' value="0" name="lc_se_st"></label>
-				<label><input id="reg_check" type="checkbox" name="lc_se_st" value="1">主食</label>
-				<label><input type='hidden' value="0" name="lc_se_ma"></label>
-				<label><input id="reg_check" type="checkbox" name="lc_se_ma" value="1">主菜</label>
-				<label><input type='hidden' value="0" name="lc_se_si"></label>
-				<label><input id="reg_check" type="checkbox" name="lc_se_si" value="1">副菜</label>
-				<label><input type='hidden' value="0" name="lc_se_no"></label>
-				<label><input id="reg_check" type="checkbox" name="lc_se_no" value="1">たべていない</label>
-				<label><input type='hidden' value="0" name="lc_se_ot"></label>
-				<label><input id="reg_check" type="checkbox" name="lc_se_ot" value="1">その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="lctext">
+				<label><input type='hidden' value="0" name="LC_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="LC_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="LC_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="LCTEXT">
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				<label><input type='hidden' value="0" name="dn_se_st"></label>
-				<label><input id="reg_check" type="checkbox" name="dn_se_st" value="1">主食</label>
-				<label><input type='hidden' value="0" name="dn_se_ma"></label>
-				<label><input id="reg_check" type="checkbox" name="dn_se_ma" value="1">主菜</label>
-				<label><input type='hidden' value="0" name="dn_se_si"></label>
-				<label><input id="reg_check" type="checkbox" name="dn_se_si" value="1">副菜</label>
-				<label><input type='hidden' value="0" name="dn_se_no"></label>
-				<label><input id="reg_check" type="checkbox" name="dn_se_no" value="1">たべていない</label>
-				<label><input type='hidden' value="0" name="dn_se_ot"></label>
-				<label><input id="reg_check" type="checkbox" name="dn_se_ot" value="1">その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="dntext">
+				<label><input type='hidden' value="0" name="DN_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="DN_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="DN_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="DNTEXT">
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +90,6 @@
 				<p class="registration_p">運動</p>
 				<label><input type="radio" name="EXERCISE" value="0">あり</label>
 				<label><input type="radio" name="EXERCISE" value="1">なし</label>
-
 			</td>
 		</tr>
 		<tr>
@@ -110,12 +111,13 @@
 				<p class="registration_p">体重</p>
 				<input class="reg_text" type="text" name="DAYWEIGHT">
 				<p class="registration_p">bmi</p>
+				<input class="reg_text" type="text" name="BMI" disabled>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">写真</p>
-				<input type="file" name="picture">
+				<input type="file" name="PICTURE" width="200" height="300">
 			</td>
 		</tr>
 	</table>

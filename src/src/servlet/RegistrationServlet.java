@@ -62,6 +62,7 @@ public class RegistrationServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = (String)session.getAttribute("USER_ID");
+		user_id = "Dog";
 		String date = (String)session.getAttribute("DATE");
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
@@ -78,7 +79,7 @@ public class RegistrationServlet extends HttpServlet {
 		String lc_se_no = request.getParameter("LC_SE_NO");
 		String lc_se_ot = request.getParameter("LC_SE_OT");
 		String lunch = (lc_se_st + lc_se_ma + lc_se_si + lc_se_no + lc_se_ot);
-		String lctext = request.getParameter("LUTEXT");
+		String lctext = request.getParameter("LCTEXT");
 
 		String dn_se_st = request.getParameter("DN_SE_ST");
 		String dn_se_ma = request.getParameter("DN_SE_MA");
@@ -86,7 +87,7 @@ public class RegistrationServlet extends HttpServlet {
 		String dn_se_no = request.getParameter("DN_SE_NO");
 		String dn_se_ot = request.getParameter("DN_SE_OT");
 		String dinner = (dn_se_st + dn_se_ma + dn_se_si + dn_se_no + dn_se_ot);
-		String dntext = request.getParameter("DITEXT");
+		String dntext = request.getParameter("DNTEXT");
 
 		String snack1 = request.getParameter("SNACK");
 		int snack = Integer.parseInt(snack1);
@@ -102,7 +103,7 @@ public class RegistrationServlet extends HttpServlet {
 		String picture = request.getParameter("PICTURE");
 
 		//partオブジェクトとしてnameがpictureのものを取得
-		Part part = request.getPart("picture");
+		Part part = request.getPart("PICTURE");
 		//ファイル名を取得
 		String filename = part.getSubmittedFileName();
 		//String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
@@ -120,8 +121,7 @@ public class RegistrationServlet extends HttpServlet {
 		}
 
 		ManageDao mDao = new ManageDao();
-		mDao.insert(new Manage(user_id , date ,breakfast ,bftext ,lunch ,lctext ,dinner ,dntext,snack ,exercise ,drink ,dayweight,picture,bmi,counter));
-			// 登録成功
+		mDao.insert(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
