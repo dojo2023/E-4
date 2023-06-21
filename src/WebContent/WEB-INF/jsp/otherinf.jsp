@@ -29,79 +29,100 @@
 	</ul>
 	<!-- ヘッダー（ここまで） -->
 </header>
+<!-- 選択した日付 -->
+	<div >選択した日付</div>
+<!-- ~~さんの情報 -->
+	<div>[nickname]さんの情報</div>
 <!-- 広告 -->
 	<a url="">
 		<img src="" alt="広告">
 	</a>
+<!-- 称号 -->
+	<div class="achivement">称号</div>
 <main>
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
 <c:forEach var="other" items="${otherInfo}" >
 	<table>
 		<tr>
 			<th>朝</th>
-			<td>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="bf_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
+			<td><label><input type='hidden' value="0" name="BF_SE_ST" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1" disabled>主食</label>
+				<label><input type='hidden' value="0" name="BF_SE_MA" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_MA" value="1" disabled>主菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_SI" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_SI" value="1" disabled>副菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_NO" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_NO" value="1" disabled>たべていない</label>
+				<label><input type='hidden' value="0" name="BF_SE_OT" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_OT" value="1" disabled>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="BFTEXT" disabled>
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="lu_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
+				<label><input type='hidden' value="0" name="LC_SE_ST" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_ST" value="1" disabled>主食</label>
+				<label><input type='hidden' value="0" name="LC_SE_MA" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_MA" value="1" disabled>主菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_SI" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_SI" value="1" disabled>副菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_NO" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_NO" value="1" disabled>たべていない</label>
+				<label><input type='hidden' value="0" name="LC_SE_OT" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_OT" value="1" disabled>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="LCTEXT" disabled>
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=staple>主食</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=main>主菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=side>副菜</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=not_eat>たべていない</label>
-				<label><input id="reg_check" type="checkbox" name="di_select" value=other_eat>その他</label><br>
-				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
+				<label><input type='hidden' value="0" name="DN_SE_ST" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_ST" value="1" disabled>主食</label>
+				<label><input type='hidden' value="0" name="DN_SE_MA" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_MA" value="1" disabled>主菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_SI" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_SI" value="1" disabled>副菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_NO" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_NO" value="1" disabled>たべていない</label>
+				<label><input type='hidden' value="0" name="DN_SE_OT" disabled></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_OT" value="1" disabled>その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="DNTEXT" disabled>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">運動</p>
-				<label><input type="radio" name="stretch" value="Yes">あり</label>
-				<label><input type="radio" name="stretch" value="No">なし</label>
-
+				<label><input type="radio" name="EXERCISE" value="0" disabled>あり</label>
+				<label><input type="radio" name="EXERCISE" value="1" disabled>なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<label><input type="radio" name="drink" value="Yes">あり</label>
-				<label><input type="radio" name="drink" value="No">なし</label>
+				<label><input type="radio" name="DRINK" value="0" disabled>あり</label>
+				<label><input type="radio" name="DRINK" value="1" disabled>なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="snack" value="Yes">あり</label>
-				<label><input type="radio" name="snack" value="No">なし</label>
+				<label><input type="radio" name="SNACK" value="0" disabled>あり</label>
+				<label><input type="radio" name="SNACK" value="1" disabled>なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">体重</p>
-				<input class="reg_text" type="text" name="weight">
+				<input class="reg_text" type="text" name="DAYWEIGHT" disabled>
 				<p class="registration_p">bmi</p>
 			</td>
 		</tr>
 	</table>
 </c:forEach>
 </form>
+<!-- 称号 -->
+	<div class="achivement">称号</div>
 </main>
 </body>
 </html>
