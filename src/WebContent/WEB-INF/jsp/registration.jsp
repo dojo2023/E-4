@@ -94,21 +94,21 @@
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<label><input type="radio" name="drink" value="0">あり</label>
-				<label><input type="radio" name="drink" value="1">なし</label>
+				<label><input type="radio" name="DRINK" value="0">あり</label>
+				<label><input type="radio" name="DRINK" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="snack" value="0">あり</label>
-				<label><input type="radio" name="snack" value="1">なし</label>
+				<label><input type="radio" name="SNACK" value="0">あり</label>
+				<label><input type="radio" name="SNACK" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">体重</p>
-				<input class="reg_text" type="text" name="weight">
+				<input class="reg_text" type="text" name="DAYWEIGHT">
 				<p class="registration_p">bmi</p>
 			</td>
 		</tr>
