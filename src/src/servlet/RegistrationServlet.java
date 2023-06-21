@@ -62,6 +62,7 @@ public class RegistrationServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = (String)session.getAttribute("USER_ID");
+		user_id = "1";
 		String date = (String)session.getAttribute("DATE");
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
