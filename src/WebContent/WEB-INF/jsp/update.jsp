@@ -35,7 +35,7 @@
 	<a url="">
 		<img src="" alt="広告">
 	</a>
-	<!-- 称号 -->
+<!-- 称号 -->
 	<div class="achivement">称号</div>
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet.java" enctype="multipart/form-data">
