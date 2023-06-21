@@ -14,7 +14,9 @@
   <img src="/img/logo.png" style="width:100px" />
 </a>
 <div class="position">
-  <div>写真の日付</div>
+  <c:forEach var="e" items="${manageSlideList}" >
+    <div class="slider-item"><img src="${e.date}"></div>
+  </c:forEach>
   <div class="achievement">称号（right: 0;）</div>
 </div>
 <article>
@@ -34,10 +36,10 @@
     <button id="stopBtn" class="button1">停止</button>
     <input type="button" value="リセット" class="button1">
     <select name="spead" id="spead" class="button1">
-  <option value="遅い">遅い</option>
-  <option value="速い">速い</option>
-  <option value="すごい速い">すごい速い</option>
-</select>
+      <option value="遅い">遅い</option>
+      <option value="速い">速い</option>
+      <option value="すごい速い">すごい速い</option>
+    </select>
   </div>
 </article>
 <!-- JavaScript（ここから） -->
