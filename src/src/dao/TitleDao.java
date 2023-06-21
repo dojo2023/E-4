@@ -11,9 +11,9 @@ import java.util.List;
 import model.Title;
 
 public class TitleDao {
-	public List<Title> list() {
+	public List<Title> list(Title param) {
 		Connection conn = null;
-		List<Title> TitleList = new ArrayList<Title>();
+		List<Title> titleList = new ArrayList<Title>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -23,30 +23,35 @@ public class TitleDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from TITLE ";
+			String sql = "select * from TITLE where USER_ID like ? and DATE like ? order by DATE";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (param.getTitle_id() != null) {
+
+			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Title card = new Title(
+				Title title = new Title(
 					rs.getString("TITLEID"),
 					rs.getInt("TITLEPOINT"),
 					rs.getString("TITLENAME"),
 					rs.getString("TITLEIMAGE")
 				);
-				TitleList.add(card);
+				titleList.add(title);
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			TitleList = null;
+			titleList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			TitleList = null;
+			titleList = null;
 		}
 		finally {
 			// データベースを切断
@@ -56,12 +61,12 @@ public class TitleDao {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					TitleList = null;
+					titleList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return TitleList;
+		return titleList;
 	}
 }
