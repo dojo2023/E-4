@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import model.Manage;
+import dao.ManageDao;
+import model.Graph;
+import model.User;
 
 /**
  * Servlet implementation class CalendarServlet
@@ -28,7 +32,19 @@ public class CalendarServlet extends HttpServlet {
 					//response.sendRedirect("/sobaudon/LoginServlet");
 					//return;
 				//}
-				Manege graph = new Manage();
+				HttpSession session = request.getSession();
+				User usr =  (User)session.getAttribute("profile");
+				String user_id = usr.getUser_id();
+
+
+				//Manage graph = new Manage(user_id,date,date,breakfast,bftext,
+					//	lunch,dinner,dntext,snack,exercise,drink,dayweight,picture,bmi,counter);
+
+				ManageDao md = new ManageDao();
+				List<Graph> lg = new List<Graph>();
+
+
+
 
 				// カレンダーページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
