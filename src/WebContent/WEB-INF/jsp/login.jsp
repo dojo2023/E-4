@@ -15,6 +15,7 @@
 <h1>きょうから(仮)</h1>
 <!-- <img src="#">-->
 	<div class="login_container">
+	<p>${error}</p>
 	<form method="POST" action="/sobaudon/LoginServlet">
 		<p class="login_p">ID</p>
 		<input class="lt_text" type="text" name="user_id"><br>
@@ -29,5 +30,4 @@
 	</div>
 </div>
 </body>
-<script src="/sobaudon/js/login.js"></script>
 </html>

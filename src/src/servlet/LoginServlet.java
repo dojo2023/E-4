@@ -46,9 +46,13 @@ public class LoginServlet extends HttpServlet {
 		UserDao uDao = new UserDao();
 		if (uDao.Login(new User(id, pw, name, height, weight, target_weight))) {	// ログイン成功
 		User loginUser = new User(id, pw, name, height, weight, target_weight);
+
+		//個人のプロフィール取得する
+		User profile = uDao.detail(loginUser);
+
 		// セッションスコープにIDを格納する
 		HttpSession session = request.getSession();
-		session.setAttribute("loginUser",loginUser);
+		session.setAttribute("profile", profile);
 
 		// 登録サーブレットにリダイレクトする
 		response.sendRedirect("/sobaudon/RegistrationServlet");
@@ -56,6 +60,12 @@ public class LoginServlet extends HttpServlet {
 
 	else {
 		// ログイン失敗
+		//エラーメッセージを設定
+		String error = "IDまたはパスワードが一致しません";
+
+		//エラーメッセージをリクエストスコープに格納
+		request.setAttribute("error", error);
+
 		// ログインページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);

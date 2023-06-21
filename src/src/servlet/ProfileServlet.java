@@ -24,18 +24,16 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//ユーザのプロフィールをセッションスコープから取得
 		HttpSession session = request.getSession();
-		User user_inf = (User)session.getAttribute("loginUser");
+		User user_inf = (User)session.getAttribute("profile");
 
-		UserDao uDao = new UserDao();
-		//検索処理を行う
-			User profile = uDao.detail(user_inf);
-		//更新内容をリクエストスコープに格納する
-		request.setAttribute("profile", profile);
+		//をリクエストスコープに格納する
+		request.setAttribute("user_inf", user_inf);
+
 		// プロフィール編集画面にフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
-			dispatcher.forward(request, response);
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+		dispatcher.forward(request, response);
 
 		}
 
@@ -45,7 +43,6 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		//NUMBER(regist.jspのname属性)を入れる変数 number
 		String user_id = request.getParameter("USER_ID");
 		String password = request.getParameter("PASSWORD");
 		String name = request.getParameter("NAME");
@@ -57,10 +54,16 @@ public class ProfileServlet extends HttpServlet {
 		UserDao uDao = new UserDao();
 		uDao.update(new model.User(user_id, password, name, height, weight, target_weight));
 
+		//保存していたユーザ情報を削除 p239
+		HttpSession session = request.getSession();
+		session.removeAttribute("profile");
+
 		//検索処理を行う
 		User profile = uDao.detail(new model.User(user_id, password, name, height, weight, target_weight));
-		//更新内容をリクエストスコープに格納する
-		request.setAttribute("profile", profile);
+
+		//更新したユーザのプロフィールをセッションスコープに格納する
+		session.setAttribute("profile", profile);
+
 		//更新した内容で更新画面に戻る
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
 		dispatcher.forward(request, response);
