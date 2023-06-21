@@ -29,64 +29,96 @@
 	</ul>
 	<!-- ヘッダー（ここまで） -->
 </header>
+<!-- 選択した日付 -->
+	<div >選択した日付</div>
 <!-- 広告 -->
 	<a url="">
 		<img src="" alt="広告">
 	</a>
+	<!-- 称号 -->
+	<div class="achivement">称号</div>
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet.java" enctype="multipart/form-data">
-	<table class="update_table">
+	<table>
 		<tr>
 			<th>朝</th>
-			<td>
-				<input class="reg_check" type="checkbox" name="bf_select">
-				<input class="reg_text" type="text" maxlength="100" name="bf_remarks">
+			<td><label><input type='hidden' value="0" name="BF_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="BF_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="BF_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="BF_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="BF_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="BFTEXT">
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
 			<td>
-				<input class="reg_check" type="checkbox" name="lu_select">
-				<input class="reg_text" type="text" maxlength="100" name="lu_remarks">
+				<label><input type='hidden' value="0" name="LC_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="LC_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="LC_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="LC_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="LC_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="LCTEXT">
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
 			<td>
-				<input class="reg_check" type="checkbox" name="di_select">
-				<input class="reg_text" type="text" maxlength="100" name="di_remarks">
+				<label><input type='hidden' value="0" name="DN_SE_ST"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_ST" value="1">主食</label>
+				<label><input type='hidden' value="0" name="DN_SE_MA"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_MA" value="1">主菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_SI"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_SI" value="1">副菜</label>
+				<label><input type='hidden' value="0" name="DN_SE_NO"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_NO" value="1">たべていない</label>
+				<label><input type='hidden' value="0" name="DN_SE_OT"></label>
+				<label><input id="reg_check" type="checkbox" name="DN_SE_OT" value="1">その他</label><br>
+				<input class="reg_text" type="text" maxlength="100" name="DNTEXT">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				運動
-				<input class="reg_radio" type="radio" name="stretch">
+				<p class="registration_p">運動</p>
+				<label><input type="radio" name="EXERCISE" value="0">あり</label>
+				<label><input type="radio" name="EXERCISE" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				飲酒
-				<input class="reg_radio" type="radio" name="drink">
+				<p class="registration_p">飲酒</p>
+				<label><input type="radio" name="DRINK" value="0">あり</label>
+				<label><input type="radio" name="DRINK" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				間食
-				<input class="reg_radio" type="radio" name="snack">
+				<p class="registration_p">間食・夜食</p>
+				<label><input type="radio" name="SNACK" value="0">あり</label>
+				<label><input type="radio" name="SNACK" value="1">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				体重
-				<input class="reg_text" type="text" name="weight">
-				bmi
-
+				<p class="registration_p">体重</p>
+				<input class="reg_text" type="text" name="DAYWEIGHT">
+				<p class="registration_p">bmi</p>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				写真
-				<input class="reg_pic" type="file" name="picture">
+				<p class="registration_p">写真</p>
+				<input type="file" name="PICTURE" width="200" height="300">
 			</td>
 		</tr>
 	</table>
