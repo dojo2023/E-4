@@ -111,6 +111,7 @@
 				<p class="registration_p">体重</p>
 				<input class="reg_text" type="text" name="DAYWEIGHT">
 				<p class="registration_p">bmi</p>
+				<input class="reg_text" type="text" name="BMI" disabled>
 			</td>
 		</tr>
 		<tr>
