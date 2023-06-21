@@ -62,6 +62,7 @@ public class RegistrationServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = (String)session.getAttribute("USER_ID");
+		user_id = "Dog";
 		String date = (String)session.getAttribute("DATE");
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
@@ -121,7 +122,6 @@ public class RegistrationServlet extends HttpServlet {
 
 		ManageDao mDao = new ManageDao();
 		mDao.insert(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
-			// 登録成功
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
