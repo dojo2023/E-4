@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>閲覧</title>
+<title>カレンダー</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">-
 </head>
 <body>

@@ -8,7 +8,13 @@ window.onload = function () {
     showProcess(today, calendar);
 };
 
-
+function formatDate(dt) {
+    var y = dt.getFullYear();
+    var m = ('00' + (dt.getMonth()+1)).slice(-2);
+    var d = ('00' + dt.getDate()).slice(-2);
+    return (y + '/' + m + '/' + d);
+  }
+let today1 = formatDate(today);
 
 // 選んだ日付を選択
 function addOption(){
@@ -147,8 +153,6 @@ addOption();
     let select = document.querySelector('[name="monthdate"]');
     select.onchange = event => {
     option(select.value);
-    let str = document.querySelector('#header').textContent
-    var cut1 = str.substr(0, str.indexOf('年'));
 }
 
 // 前の月を表示
@@ -232,310 +236,624 @@ function createProcess(year, month) {
     }
     return calendar;
 }
-for (let i = 1; i < 32; i ++) {
-    $(document).on('click', '#days' + i, function () {
-        console.log(showDate.getFullYear() + "-" + (showDate.getMonth() + 1) + "-" + parseInt(this.textContent) > today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + parseInt(this.textContent));
 
-        let str = document.querySelector('#header').textContent;
-        var cut1 = str.substr(0, str.indexOf('年'));
-        //if (showDate.getFullYear() + "/" + showDate.getMonth() + "/"  +  parseInt(this.textContent) == today.getFullYear() + "/" + today.getMonth()+ "/" + today.getDate()) {
-          //  window.alert("未来の日付は選択できません！！");
-        //} else {
-            if (cut1 != showDate.getFullYear()) {
-                showDate.setFullYear(parseInt(cut1));
-            }
-            document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-            document.calendar_date.submit();
-        //}
-        showDate.setFullYear(today.getFullYear());
-    });
-}
-
-/*
 $(document).on('click', '#days' + 1, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "01";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
-    console.log("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent)
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 2, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "02";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 3, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "03";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 4, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "04";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 5, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "05";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 6, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "06";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 7, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "07";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 8, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "08";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 9, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "09";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 10, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "10";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 11, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "11";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 12, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "12";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 13, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "13";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 14, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "14";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 15, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "15";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 16, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "16";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 17, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "17";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 18, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "18";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 19, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "19";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 20, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "20";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 21, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "21";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 22, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "22";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 23, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "23";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 24, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "24";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 25, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "25";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 26, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "26";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 27, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "27";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 28, function () {
     let str = document.querySelector('#header').textContent;
     let cut1 = str.substr(0, str.indexOf('年'));
-
-    if (showDate.getFullYear() >= today.getFullYear() && showDate.getMonth() >= today.getMonth() && parseInt(this.textContent) > today.getDate()) {
-        window.alert("未来の日付は選択できません！！");
-    } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-    document.calendar_date.submit();
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
     }
-    console.log(showDate.getFullYear() >= today.getFullYear() && showDate.getMonth() >= today.getMonth() && parseInt(this.textContent) > today.getDate())
-    console.log(parseInt(this.textContent) > today.getDate());
-    console.log("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "28";
+
+    if (post1 > today1)  {
+        window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
+    } else {
+    document.getElementById('calendar_date').setAttribute("value", post1);
+    document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
+    }
 });
 $(document).on('click', '#days' + 29, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "29";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 30, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "30";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
 $(document).on('click', '#days' + 31, function () {
-    if (showDate > today) {
+    let str = document.querySelector('#header').textContent;
+    let cut1 = str.substr(0, str.indexOf('年'));
+    if (cut1 != showDate.getFullYear()) {
+        showDate.setFullYear(parseInt(cut1));
+    }
+    let month = ( '00' + (showDate.getMonth() + 1) ).slice( -2 );
+    let post1 = showDate.getFullYear() + "/" + month + "/" + "31";
+
+    if (post1 > today1)  {
         window.alert("未来の日付は選択できません！！");
+        console.log(post1 > today1)
+        console.log(post1);
     } else {
-    console.log(showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
-   document.getElementById('calendar_date').setAttribute("value", showDate.getFullYear() + "/" + (showDate.getMonth() + 1) + "/" + this.textContent);
+    document.getElementById('calendar_date').setAttribute("value", post1);
     document.calendar_date.submit();
+    console.log(post1 > today1)
+    console.log(post1);
     }
 });
-*/

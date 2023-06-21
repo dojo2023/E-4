@@ -1,14 +1,18 @@
 @charset "UTF-8";
 
+body {
+	position: relative;
+}
+
 .slider {
+	position: absolute;
   width: 450px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto;
     border-color: black;
-	position: absolute;
-	top: 0;
-    right: 32%;
+	top: 10%;
+    right: 35%;
 }
 .slider-item {
   width: 450px;
@@ -40,7 +44,6 @@ img{
 }
 article {
   width: 1200px;
-  position: relative;
 }
 
 .advertisement{
@@ -49,18 +52,25 @@ article {
 	height:500px;
 }
 
-.button1{
-    min-width: 200px;
-    max-width: 600px;
+.button{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+    width: 600px;
+    height: 100px;
     padding: 10px;
-	right: 32%;
-	bottom: 0%;
-	width:66px;
-	height:36px;
+	right: 28%;
+	bottom: 0;
 
 }
-.button{
-	width:66px;
-	height:36px;
 
+.button1{
+	width: 100px;
+	height: 50px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    /*background: #cbe8fa;*/
+    cursor: pointer;
 }

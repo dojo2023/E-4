@@ -33,10 +33,12 @@
 	<a url="">
 		<img src="" alt="広告">
 	</a>
+<!-- 称号 -->
+	<div class="achivement">称号</div>
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data">
 	<table>
-	<tr>
+		<tr>
 			<th>朝</th>
 			<td><label><input type='hidden' value="0" name="BF_SE_ST"></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1">主食</label>
@@ -109,12 +111,13 @@
 				<p class="registration_p">体重</p>
 				<input class="reg_text" type="text" name="DAYWEIGHT">
 				<p class="registration_p">bmi</p>
+				<input class="reg_text" type="text" name="BMI" disabled>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">写真</p>
-				<input type="file" name="PICTURE">
+				<input type="file" name="PICTURE" width="200" height="300">
 			</td>
 		</tr>
 	</table>
