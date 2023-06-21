@@ -12,7 +12,7 @@ import model.Bbs;
 
 public class BbsDao {
 	public List<Bbs> list() {
-		Connection conn = null;
+		Connection con = null;
 		List<Bbs> BbsList = new ArrayList<Bbs>();
 
 		try {
@@ -20,11 +20,11 @@ public class BbsDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
+			con = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
 			String sql = "select * from BBS ";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt = con.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -39,6 +39,7 @@ public class BbsDao {
 					rs.getString("DATE")
 				);
 				BbsList.add(card);
+				
 			}
 		}
 		catch (SQLException e) {
@@ -51,9 +52,9 @@ public class BbsDao {
 		}
 		finally {
 			// データベースを切断
-			if (conn != null) {
+			if (con != null) {
 				try {
-					conn.close();
+					con.close();
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
@@ -65,4 +66,34 @@ public class BbsDao {
 		// 結果を返す
 		return BbsList;
 	}
+	public void callName(){
+		Connection con = null;
+		try {
+			//loading jdbc driver
+			Class.forName("org.h2.Driver");
+			con = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
+			String sql = "select USER set NAME=? where USER_ID=?";
+			PreparedStatement pStmt = con.prepareStatement(sql);
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (con != null) {
+				try {
+					con.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
 }
+
+
