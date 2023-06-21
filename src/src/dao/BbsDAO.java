@@ -10,9 +10,74 @@ import java.util.List;
 
 import model.Bbs;
 
-public class FindChattextDAO {
+public class BbsDAO {
 
-    public  List<Bbs> select(Bbs bbs) {
+    // DBにchattext,date,counterを加えるメソッド
+    public boolean insert(Bbs bo) {
+    	/*if(bo.getChattext().isEmpty()) {   
+        }*/
+        
+
+        final String jdbcId = "sa";
+        final String jdbcPass = "";
+        final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
+
+        Connection con = null;
+
+        try {
+
+            con = DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
+
+            System.out.println("Connected....");
+
+            try {
+            	/*
+            	 user_id name chattext cpoint date visiter
+
+            	 */
+                PreparedStatement pStmt = con.prepareStatement("INSERT INTO bbs (user_id,name,chattext,date,visitor)"
+                		+ " VALUES (?, ?, ?, ?, ?)");
+                pStmt.setString(1, bo.getUser_id());
+                pStmt.setString(2, bo.getName());
+                pStmt.setString(3, bo.getChattext());
+                pStmt.setString(4, bo.getDate());
+                pStmt.setInt(5, bo.getVisitor());
+
+                // ひな形を送信
+                int r = pStmt.executeUpdate();
+
+                if (r != 0) {
+                    System.out.println(r + "書き込みを追加しました。");
+                    return true;
+                } else {
+                    System.out.println("書き込みできませんでした。");
+                }
+
+                pStmt.close();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                // データベース接続の切断
+                if (con != null) {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+            System.out.println("Connection Failed.");
+
+        }
+		return false;
+
+    }
+    //select method
+public  List<Bbs> select(Bbs bbs) {
     	
         final String jdbcId = "sa";
         final String jdbcPass = "";
@@ -102,35 +167,6 @@ public class FindChattextDAO {
         	throw new RuntimeException(e);
         }
     }
+ //update method
 }
 
-                    /*rs.close();
-                    st.close();
-
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                // データベース接続の切断
-                if (con != null) {
-                    try {
-                        con.close();
-
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Connection Failed.");
-            return null;
-        }
-        return list;
-
-    }
-
-}*/

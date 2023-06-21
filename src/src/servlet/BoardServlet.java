@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.AddChattextLogic;
-import model.Board;
+import model.Bbs;
 import model.FindChattextLogic;
 
 /**
@@ -40,7 +40,7 @@ public class BoardServlet extends HttpServlet {
 
         // 既存のコメントを確認
         FindChattextLogic fcl = new FindChattextLogic();
-        List<Board> list = fcl.executeFindChattext();
+        List<Bbs> list = fcl.executeFindChattext();
 
         // セッションスコープにコメントリストを保存
         HttpSession session = request.getSession();
@@ -63,7 +63,7 @@ public class BoardServlet extends HttpServlet {
         
         
         //JavaBeansに格納
-        Board bo = new Board();
+        Bbs bo = new Bbs();
         bo.setName(name);
         bo.setChattext(chattext);
 
@@ -73,7 +73,7 @@ public class BoardServlet extends HttpServlet {
 
         // 今入力されたコメントと既存のコメントをh2dbから取得
         FindChattextLogic fcl = new FindChattextLogic();
-        List<Board> list = fcl.executeFindChattext();
+        List<Bbs> list = fcl.executeFindChattext();
 
         // セッションスコープにコメントリストを保存
         HttpSession session = request.getSession();
