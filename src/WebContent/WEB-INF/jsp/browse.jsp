@@ -4,11 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>閲覧</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src=js\code.jquery.com_jquery-3.7.0.min.js></script>
-<script src="js\calendar.js"></script>
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="js\glaph.js"></script>
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">
 </head>
 <body>
  <header>
@@ -32,20 +28,33 @@
   <!-- ヘッダー（ここまで） -->
   </header>
   <main>
-  <div class="wrapper">
-          <!--yyyy年mm月を表示-->
-          <h1 id="header"></h1>
-          <!--ボタンクリックで移動-->
-          <div id="next-prev-button">
-              <button id="prev" onclick="prev()"><</button>
-              <button id="next" onclick="next()">></button>
-          </div>
-          <!-- 広告 -->
-          <a url=""><img src="" alt="広告"></a>
-          <!--カレンダー-->
-          <div id="calendar"> </div>
+    <form method="POST" action="/sobaudon/CalendarServlet" name="calendar_date">
+      <input type="hidden" id="calendar_date" value="">
+    </form>
+
+    <form name="dateform">
+      <select name="monthdate" id="monthdate">
+      </select>
+    </form>
+    <div class="wrapper">
+      <!--yyyy年mm月を表示-->
+      <h1 id="header"></h1>
+      <!--ボタンクリックで移動-->
+      <div id="next-prev-button">
+        <button id="prev" onclick="prev()"><</button>
+        <button id="next" onclick="next()">></button>
       </div>
-  <div id="chart_div"></div>
+      <!-- 広告 -->
+      <a url=""><img src="" alt="広告"></a>
+      <!--カレンダー-->
+      <div id="calendar"></div>
+    </div>
+    <!-- グラフ -->
+    <div id="chart_div"></div>
   </main>
+<script src=/sobaudon/js/code.jquery.com_jquery-3.7.0.min.js></script>
+<script src="/sobaudon/js/calendar.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/sobaudon/js/glaph.js"></script>
 </body>
 </html>
