@@ -5,9 +5,9 @@ import java.util.List;
 import dao.FindChattextDAO;
 
 public class FindChattextLogic {
-    public List<Board> executeFindChattext() {
+    public List<Bbs> executeFindChattext() {
         FindChattextDAO fcdao = new FindChattextDAO();
-        List<Board> list = fcdao.findchattext();
+        List<Bbs> list = fcdao.findchattext();
         return list;
     }
 

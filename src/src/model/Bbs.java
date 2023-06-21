@@ -1,28 +1,22 @@
 package model;
+
 import java.io.Serializable;
 
 public class Bbs implements Serializable {
-	private String user_id;
-	private String name;
-	private int cpoint;
-	private String chattext;
-	private String date;
-
-	public Bbs(String user_id, int cpoint, String name, String chattext, String date) {
+    private String user_id;
+    private String name;
+    private String chattext;
+    private String date;
+	private int visitor;
+	
+	
+	public Bbs(String user_id, String name, String chattext, String date, int visitor) {
 		super();
-		this.setUser_id(user_id);
-		this.setCpoint(cpoint);
-		this.setName(name);
-		this.setChattext(chattext);
-		this.setDate(date);
-	}
-
-	public Bbs() {
-		this.setUser_id("");
-		this.setCpoint(Integer.parseInt(""));
-		this.setName("");
-		this.setChattext("");
-		this.setName("");
+		this.user_id = user_id;
+		this.name = name;
+		this.chattext = chattext;
+		this.date = date;
+		this.visitor = visitor;
 	}
 	public String getUser_id() {
 		return user_id;
@@ -30,11 +24,11 @@ public class Bbs implements Serializable {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public int getCpoint() {
-		return cpoint;
+	public String getName() {
+		return name;
 	}
-	public void setCpoint(int cpoint) {
-		this.cpoint = cpoint;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getChattext() {
 		return chattext;
@@ -48,12 +42,13 @@ public class Bbs implements Serializable {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
-	public String getName() {
-		return name;
+	public int getVisitor() {
+		return visitor;
+	}
+	public void setVisitor(int visitor) {
+		this.visitor = visitor;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+
+
 }
