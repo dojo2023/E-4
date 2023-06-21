@@ -121,8 +121,8 @@
 	</table>
 </c:forEach>
 </form>
-<!-- 称号 -->
-	<div class="achivement">称号</div>
 </main>
+<!-- 前回の称号 -->
+	<div class="achivement">前回の称号</div>
 </body>
 </html>

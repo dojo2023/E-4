@@ -7,6 +7,21 @@ public class Point implements Serializable {
 	private int cpoint;
 	private int ppoint;
 
+	//コンストラクタ設定
+	public Point(String user_id, int cpoint, int ppoint) {
+		this.user_id = user_id;
+		this.cpoint = cpoint;
+		this.ppoint = ppoint;
+	}
+
+	//初期値設定
+	public Point() {
+		this.user_id = "";
+		this.cpoint = 0;
+		this.ppoint = 0;
+	}
+
+	//get set
 	public String getUser_id() {
 		return user_id;
 	}

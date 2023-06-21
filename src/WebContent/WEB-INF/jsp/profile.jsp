@@ -11,7 +11,6 @@
 </head>
 <body>
 <div class="lp_wrapper">
-	<div class="login-container">
 	<form method="POST" action="/sobaudon/ProfileServlet">
 		<p class="login_p">ID</p>
 		<input class="l_text" type="text" name="USER_ID" value="${profile.user_id}" readonly><br>
@@ -30,11 +29,10 @@
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)" ><br>
 	</form>
-	</div>
 </div>
 
 <div class="title">
-	<table class="ctitle">
+	<table>
 		<tr>
 		<td id="tn">レジェンド</td>
 		<td rowspan="2"><img src="./img/titletest.png"></td>
