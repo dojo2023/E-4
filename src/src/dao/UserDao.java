@@ -146,7 +146,7 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update USER set NAME=?, =?, HEIGHT=?, TARGET_WEIGHT=? where USER_ID=?";
+			String sql = "update USER set NAME=?, HEIGHT=?, TARGET_WEIGHT=? where USER_ID=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			if (user.getName() != null && !user.getName().equals("")) {
 				pStmt.setString(1, user.getName());
