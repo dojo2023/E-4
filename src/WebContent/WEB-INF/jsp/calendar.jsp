@@ -1,35 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>カレンダー</title>
-<link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">-
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">
 </head>
 <body>
- <header>
-  <!-- ヘッダー（ここから） -->
-     <h1 id="logo_login">
-       ロゴ
-     </h1>
-    <h2>
-      ~さんの目標体重
-    </h2>
-    <h2 id="date"></h2>
-      <a href="/sobaudon/LoginServlet">ログアウト</a>
-    <ul>
-      <li><a href="/sobaudon/RegistrationServlet">登録</a></li>
-      <li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
-      <li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
-      <li><a href="/sobaudon/BoardServlet">掲示板</a></li>
-      <li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
-      <li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
-    </ul>
-  <!-- ヘッダー（ここまで） -->
+  <header>
+	<%@ include file="header.jsp" %>
   </header>
   <main>
+	<c:forEach var="e" items="${lg}">
+	  <input class="data" type="hidden" value="${e.date}">
+      <input class="data" type="hidden" value="${e.dayweight}">
+      <input class="data" type="hidden" value="${e.bmi}">
+	</c:forEach>
+
     <form method="POST" action="/sobaudon/CalendarServlet" name="calendar_date">
-      <input type="hidden" id="calendar_date" value="">
+      <input type="hidden" id="calendar_date" name="calendar" value="">
     </form>
 
     <form name="dateform">
@@ -52,6 +42,8 @@
     <!-- グラフ -->
     <div id="chart_div"></div>
   </main>
+  <%@ include file="title.jsp" %>
+  <%@ include file="footer.jsp" %>
 <script src=/sobaudon/js/code.jquery.com_jquery-3.7.0.min.js></script>
 <script src="/sobaudon/js/calendar.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>

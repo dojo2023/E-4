@@ -9,7 +9,9 @@
 <meta charset="UTF-8">
 
 <title>掲示板</title>
-<link rel="stylesheet" href="/sobaudon/webcontent/css/board.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
 </head>
 <body>
 <header>
@@ -28,15 +30,25 @@
 	</ul>
 	<!-- ヘッダー（ここまで） -->
 </header>
-<div class = "bssinf">
-	<c:forEach var="list" items="${listAttribute}">
-	<p>
-	<%--名前--%><c:out value="${list.name}"/>：　
-	<%--訪問数--%><c:out value="${list.visiter}"/>：　
-	<%--日付--%><c:out value="${list.time}"/>：　<br>
-	<%--投稿内容--%><c:out value="${list.chattext}"/>：　</p>
-	</c:forEach>
-</div>
+<c:forEach var="e" items="${list}" >
+
+	ニックネーム:<c:out value="${e.name}"></c:out>　<br>
+	<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
+	
+<!-- 
+	<table class="List">
+	<tr>
+	<td>ニックネーム<input type="text" name="NAME" value="${e.name}"></td>
+	<td>投稿内容<input type="text" name="CHATTEXT" value="${e.chattext}"></td>
+	<td>日付<input type="text" name="DATE" value="${e.date}"></td>
+	</tr>
+	</table>
+ -->	<br>
+	<hr>
+	<br>
+</c:forEach>
+
+
 <form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
 <div class = "rw">
 <!--テキストエリアに入力があったらチェックを行う関数を用意する。-->

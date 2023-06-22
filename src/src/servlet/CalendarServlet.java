@@ -1,7 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -53,10 +53,8 @@ public class CalendarServlet extends HttpServlet {
 				ManageDao md = new ManageDao();
 		//登録した過去30日分のuser_id、日付、体重、bmiを取得
 				List<Graph> lg = md.selectGraph(new Graph(user_id,date,dayweight,bmi));
+				Collections.reverse(lg);
 				request.setAttribute("lg", lg);
-				for(Graph graph : lg) {
-			        System.out.println(graph.getUser_id() +  "," + graph.getDate() + "," + graph.getDayweight() + "," + graph.getBmi());
-				}
 				// カレンダーページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/calendar.jsp");
 				dispatcher.forward(request, response);
@@ -75,8 +73,8 @@ public class CalendarServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String date = request.getParameter("calendar_date");
-
+				String date = request.getParameter("calendar");
+				System.out.println(date);
 				//Manage graph = new Manage(user_id , date ,breakfast ,bftext ,lunch ,lctext ,dinner ,dntext,snack ,exercise ,drink ,dayweight,picture,bmi,counter);
 
 
