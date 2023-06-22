@@ -41,7 +41,7 @@
 	<table>
 		<tr>
 			<th>朝</th>
-			<td><label><input type='hidden' value="0" name="BF_SE_ST"></label>
+			<td><label><input type='hidden' value='0' name='BF_SE_ST'></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1">主食</label>
 				<label><input type='hidden' value="0" name="BF_SE_MA"></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_MA" value="1">主菜</label>
