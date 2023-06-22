@@ -88,6 +88,7 @@ public class UserDao {
 			rs2.next();
 			if (rs2.getInt("count(*)") == 1) {
 				idSerch = false;
+			//ユーザidが重複しなかった場合登録処理を行う
 			} else {
 				String sql = "insert into USER(USER_ID,PASSWORD,NAME,HEIGHT,WEIGHT,TARGET_WEIGHT)  values (?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);

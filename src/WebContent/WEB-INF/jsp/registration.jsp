@@ -35,6 +35,7 @@
 	</a>
 <!-- 称号 -->
 	<div class="achivement">称号</div>
+<img src="C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\sobaudon\body\小嶋駿也_typing_0516.png">
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data">
 	<table>
@@ -88,22 +89,22 @@
 		<tr>
 			<td>
 				<p class="registration_p">運動</p>
-				<label><input type="radio" name="EXERCISE" value="0">あり</label>
-				<label><input type="radio" name="EXERCISE" value="1">なし</label>
+				<label><input type="radio" name="EXERCISE" value="1">あり</label>
+				<label><input type="radio" name="EXERCISE" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<label><input type="radio" name="DRINK" value="0">あり</label>
-				<label><input type="radio" name="DRINK" value="1">なし</label>
+				<label><input type="radio" name="DRINK" value="1">あり</label>
+				<label><input type="radio" name="DRINK" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="SNACK" value="0">あり</label>
-				<label><input type="radio" name="SNACK" value="1">なし</label>
+				<label><input type="radio" name="SNACK" value="1">あり</label>
+				<label><input type="radio" name="SNACK" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
