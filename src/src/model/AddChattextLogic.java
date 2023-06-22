@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import dao.AddChattextDAO;
 
@@ -7,3 +7,4 @@ public class AddChattextLogic {
         AddChattextDAO acdao = new AddChattextDAO(bo);
     }
 }
+*/

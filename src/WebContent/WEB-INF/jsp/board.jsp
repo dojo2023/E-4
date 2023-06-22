@@ -37,10 +37,11 @@
 	<%--投稿内容--%><c:out value="${list.chattext}"/>：　</p>
 	</c:forEach>
 </div>
-<form action="/sobaudon/BoardServlet" method="post" name="form1" onSubmit="return check()">
+<form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
 <div class = "rw">
+<!--テキストエリアに入力があったらチェックを行う関数を用意する。-->
 <p>コメント:<br>
-<textarea name="chattext" rows="5" cols="40"></textarea>
+<textarea name="chattext" rows="5" cols="40" onChange="check()"></textarea>
 </p>
 <p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
 </div>
@@ -60,6 +61,16 @@
 	</table>
 </div>
 <script>
+function check()
+{
+    //②次にその関数内でテキストエリアの値を取得。
+    txt = document.form1.chattext.value;
+    //③その後、その文字列の文字数を取得。
+    n = txt.length;
+    //④最後にその文字数が制限文字数以上だった場合、アラートを実行。
+    if (n > 200) alert("200文字以内で入力してください");
+}
+/*
 //button要素を取得
 const saveBtn = document.querySelector('.save_btn');
 
@@ -79,7 +90,8 @@ saveBtn.addEventListener('click', () =< {
     const nowMinute = now.getMinutes();
 
     //div要素（保存日時）のテキストとして表示
-    saveDate.innerText = `初回保存 ${nowYear}/${nowMon}/${nowDate} ${nowHour}:${nowMinute}`;
+    saveDate.innerText = `初回保存 ${nowYear}/${nowMon}/${nowDate} ${nowHour}:${nowMinute}`;*/
+    
 </script>
 </body>
 </html>

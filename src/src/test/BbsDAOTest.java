@@ -6,14 +6,14 @@ import model.Bbs;
 public class BbsDAOTest {
 	public static void main(String[] args) {
 		BbsDAO dao = new BbsDAO();
-		String user_id = "AAA";
+		String user_id = "AAU";
 		String name = "AUU";
 		String chattext = "TEST";
 		String date = "2023/06/14"; 
 		int visitor = 0;
 		// insert()のテスト
 				System.out.println("---------- insert()のテスト ----------");
-				Bbs insRec = new Bbs(user_id,name,chattext, date,visitor);
+				Bbs insRec = new Bbs(user_id,name,chattext, date,visitor, 0);
 				if (dao.insert(insRec)) {
 					System.out.println("登録成功！");
 				}
