@@ -7,9 +7,9 @@
 <title>きょうから｜プロフィール</title>
 <!-- ログインcssの挿入 -->
 <link rel="stylesheet" href="/sobaudon/css/login.css">
-<link rel="stylesheet" href="/sobaudon/css/title.css">
 </head>
 <body>
+<%@ include file="header.jsp" %>
 <div class="lp_wrapper">
 	<form method="POST" action="/sobaudon/ProfileServlet">
 		<p class="login_p">ID</p>
@@ -31,5 +31,6 @@
 	</form>
 </div>
 <%@ include file="title.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

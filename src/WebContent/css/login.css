@@ -36,11 +36,10 @@
 	position:relative;
 	border:3px solid rgb(19, 104, 181);
 	padding:10px;
-	margin:0 auto;
+	margin:20px  auto;
 	width:580px;
 	height:420px;
 	text-align:center;
-	margin-top:150px;
 }
 .login_container{
 	margin-top:50px;
