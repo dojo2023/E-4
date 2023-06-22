@@ -62,7 +62,6 @@ public class RegistrationServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = (String)session.getAttribute("USER_ID");
-		user_id = "Dog";
 		String date = (String)session.getAttribute("DATE");
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
@@ -96,8 +95,7 @@ public class RegistrationServlet extends HttpServlet {
 		String drink1 = request.getParameter("DRINK");
 		int drink = Integer.parseInt(drink1);
 		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
-		//String height1 = (String)session.getAttribute("HEIGHT");
-		String height1 = "1.6";
+		String height1 = (String)session.getAttribute("HEIGHT");
 		double height =Double.parseDouble(height1);
 		double bmi = ((dayweight/height)/height);
 		String picture = request.getParameter("PICTURE");
@@ -114,7 +112,7 @@ public class RegistrationServlet extends HttpServlet {
 
 		part.write(path+File.separator+filename);
 
-		picture = path+File.separator+filename;
+		picture = "sobaudon/body/"+filename;
 
 		//登録を押した際のカウント
 		String counter = "0" ;

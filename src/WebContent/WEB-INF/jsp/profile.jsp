@@ -30,17 +30,6 @@
 		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)" ><br>
 	</form>
 </div>
-
-<div class="title">
-	<table>
-		<tr>
-		<td id="tn">レジェンド</td>
-		<td rowspan="2"><img src="./img/titletest.png"></td>
-		</tr>
-		<tr>
-		<td id="tl">87pt</td>
-		</tr>
-	</table>
-</div>
+<%@ include file="title.jsp" %>
 </body>
 </html>
