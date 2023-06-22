@@ -63,8 +63,9 @@ public class UserDao {
 	}
 
 	// 引数userで指定されたレコードを登録する
-	public void insert(User user) {
+	public boolean insert(User user) {
 		Connection conn = null;
+		boolean idSerch = true;
 
 		try {
 			// JDBCドライバを読み込む
@@ -74,49 +75,63 @@ public class UserDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
-			String sql = "insert into USER(USER_ID,PASSWORD,NAME,HEIGHT,WEIGHT,TARGET_WEIGHT)  values (?, ?, ?, ?, ?, ?)";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			//String sql = "insert into USER(USER_ID,PASSWORD,NAME,HEIGHT,WEIGHT,TARGET_WEIGHT)  values (?, ?, ?, ?, ?, ?)";
+			String sql2 = "select count(*) from USER where USER_ID = ?";
+			//PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt2 = conn.prepareStatement(sql2);
 
 			//SQL文を完成させる
-			if (user.getUser_id() != null && !user.getUser_id().equals("")) {
-				pStmt.setString(1, user.getUser_id());
+			pStmt2.setString(1, user.getUser_id());
+
+			//ユーザidがすでに登録されているかを調べる
+			ResultSet rs2 = pStmt2.executeQuery();
+			rs2.next();
+			if (rs2.getInt("count(*)") == 1) {
+				idSerch = false;
+			} else {
+				String sql = "insert into USER(USER_ID,PASSWORD,NAME,HEIGHT,WEIGHT,TARGET_WEIGHT)  values (?, ?, ?, ?, ?, ?)";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				//SQL文を完成させる
+				if (user.getUser_id() != null && !user.getUser_id().equals("")) {
+					pStmt.setString(1, user.getUser_id());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+				if (user.getPassword() != null && !user.getPassword().equals("")) {
+					pStmt.setString(2, user.getPassword());
+				}
+				else {
+					pStmt.setString(2, null);
+				}
+				if (user.getName() != null && !user.getName().equals("")) {
+					pStmt.setString(3, user.getName());
+				}
+				else {
+					pStmt.setString(3, null);
+				}
+				if (user.getHeight() != null) {
+					pStmt.setDouble(4, user.getHeight());
+				}
+				else {
+					pStmt.setString(4, null);
+				}
+				if (user.getWeight() != null) {
+					pStmt.setDouble(5, user.getWeight());
+				}
+				else {
+					pStmt.setString(5, null);
+				}
+				if (user.getTarget_weight() != null) {
+					pStmt.setDouble(6, user.getTarget_weight());
+				}
+				else {
+					pStmt.setString(6, null);
+				}
+				// SQL文を実行する
+				pStmt.executeUpdate();
+				}
 			}
-			else {
-				pStmt.setString(1, null);
-			}
-			if (user.getPassword() != null && !user.getPassword().equals("")) {
-				pStmt.setString(2, user.getPassword());
-			}
-			else {
-				pStmt.setString(2, null);
-			}
-			if (user.getName() != null && !user.getName().equals("")) {
-				pStmt.setString(3, user.getName());
-			}
-			else {
-				pStmt.setString(3, null);
-			}
-			if (user.getHeight() != null) {
-				pStmt.setDouble(4, user.getHeight());
-			}
-			else {
-				pStmt.setString(4, null);
-			}
-			if (user.getWeight() != null) {
-				pStmt.setDouble(5, user.getWeight());
-			}
-			else {
-				pStmt.setString(5, null);
-			}
-			if (user.getTarget_weight() != null) {
-				pStmt.setDouble(6, user.getTarget_weight());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
-			// SQL文を実行する
-			pStmt.executeUpdate();
-		}
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -134,6 +149,7 @@ public class UserDao {
 				}
 			}
 		}
+		return idSerch;
 	}
 	// 引数userで指定されたレコードを更新する
 	public void update(User user) {

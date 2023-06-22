@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -40,10 +39,10 @@ public class CalendarServlet extends HttpServlet {
 				String user_id = usr.getUser_id();
 				Calendar cal = Calendar.getInstance();
 		        //SimpleDateFormatで書式を指定
-		        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		        //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
-		        System.out.println(sdf.format(cal.getTime()));
-				String date = sdf.format(cal.getTime());
+		        //System.out.println(sdf.format(cal.getTime()));
+				String date = "";
 				double dayweight = 0;
 				double bmi = 0;
 
