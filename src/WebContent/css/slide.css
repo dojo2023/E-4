@@ -6,7 +6,7 @@ body {
 
 .slider {
 	position: absolute;
-  width: 450px;
+    width: 450px;
     height: 400px;
     overflow: hidden;
     margin: 0 auto;
@@ -14,36 +14,17 @@ body {
 	top: 10%;
     right: 35%;
 }
-.slider-item {
-  width: 450px;
-  height: 350px;
-  float: left;
-}
-img{
-  width:100%;
-}
-.slider-inner {
-  width: 300%;
 
-  animation: slider 10s infinite ease;
+.slider img {
+	width: 450px;
+    height: 400px;
+  position: absolute; /* absoluteで画像を重ねる */
+    display: none; /* 画像を非表示に非表示 */
 }
 
-@keyframes slider {
-	0% {
-	transform: translateX(0);
-	}
-	33% {
-	transform: translateX(-450px);
-	}
-	66% {
-	transform: translateX(-900px);
-	}
-	100% {
-	transform: translateX(0);
-	}
-}
+
 article {
-  width: 1200px;
+  width: 300px;
 }
 
 .advertisement{
