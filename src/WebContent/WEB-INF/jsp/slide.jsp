@@ -10,25 +10,43 @@
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+        });
+</script>-->
+
 </head>
 <body>
-<a href="/sobaudon/RegistrationServlet" style="padding-bottom:0;">
-  <img src="/img/logo.png" style="width:100px" />
-</a>
+<%@ include file="header.jsp" %>
+<script type="text/javascript" src="/sobaudon/js/slide.js"></script>
+
 <div class="position">
   <div>写真の日付</div>
-  <div class="achievement">称号（right: 0;）</div>
 </div>
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
     <div class="slider">
-        <!-- <c:forEach var="e" items="${manageSlideList}" >
+         <c:forEach var="e" items="${manageSlideList}" >
            <div class="slider img"><img src="${e.picture}"></div>
-            </c:forEach> -->
+            </c:forEach>
+            <img src="./img/titletest.png">
             <img src="./img/test1.png">
             <img src="./img/titletest.png">
-            <img src="./img/advertisement.png">
       </div>
+      <!-- <div class="slider">
+<img src="./img/titletest.png" width="500" height="300" alt="">
+<img src="./img/test1.png" width="500" height="300" alt="">
+<img src="./img/titletest.png" width="500" height="300" alt="">
+<img src="./img/test1.png" width="500" height="300" alt="">
+</div>-->
   <div class="button">
     <button id="startBtn" class="button1">開始</button>
     <button id="stopBtn" class="button1">停止</button>
@@ -40,7 +58,7 @@
 </select>
   </div>
 </article>
-<!-- JavaScript（ここから） -->
+<!-- JavaScript（ここから）
 <script>
 'use strict'
 
@@ -83,5 +101,7 @@ $(function() {
 
 </script>
 <!-- JavaScript（ここまで） -->
+<%@ include file="title.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
