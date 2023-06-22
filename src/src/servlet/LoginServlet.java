@@ -35,8 +35,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("user_id");
-		String pw = request.getParameter("password");
+		String id = request.getParameter("USER_ID");
+		String pw = request.getParameter("PASSWORD");
 		String name ="";
 		Double height = null;
 		Double weight = null;
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 	else {
 		// ログイン失敗
 		//エラーメッセージを設定
-		String error = "IDまたはパスワードが一致しません";
+		String error = "IDまたはパスワードが一致しません。";
 
 		//エラーメッセージをリクエストスコープに格納
 		request.setAttribute("error", error);
