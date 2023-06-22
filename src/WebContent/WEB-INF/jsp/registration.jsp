@@ -35,6 +35,7 @@
 	</a>
 <!-- 称号 -->
 	<div class="achivement">称号</div>
+<img src="C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\sobaudon\body\小嶋駿也_typing_0516.png">
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data">
 	<table>

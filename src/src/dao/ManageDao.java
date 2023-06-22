@@ -109,99 +109,99 @@ public class ManageDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
-				String sql = "insert into MANAGE values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				String sql = "insert into MANAGE values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
 				if (manage.getUser_id() != null && !manage.getUser_id().equals("")) {
-					pStmt.setString(2, manage.getUser_id());
+					pStmt.setString(1, manage.getUser_id());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+				if (manage.getDate() != null && !manage.getDate().equals("")) {
+					pStmt.setString(2, manage.getDate());
 				}
 				else {
 					pStmt.setString(2, null);
 				}
-				if (manage.getDate() != null && !manage.getDate().equals("")) {
-					pStmt.setString(3, manage.getDate());
+				if (manage.getBreakfast() != null && !manage.getBreakfast().equals("")) {
+					pStmt.setString(3, manage.getBreakfast());
 				}
 				else {
 					pStmt.setString(3, null);
 				}
-				if (manage.getBreakfast() != null && !manage.getBreakfast().equals("")) {
-					pStmt.setString(4, manage.getBreakfast());
+				if (manage.getBftext() != null && !manage.getBftext().equals("")) {
+					pStmt.setString(4, manage.getBftext());
 				}
 				else {
 					pStmt.setString(4, null);
 				}
-				if (manage.getBftext() != null && !manage.getBftext().equals("")) {
-					pStmt.setString(5, manage.getBftext());
+				if (manage.getLunch() != null && !manage.getLunch().equals("")) {
+					pStmt.setString(5, manage.getLunch());
 				}
 				else {
 					pStmt.setString(5, null);
 				}
-				if (manage.getLunch() != null && !manage.getLunch().equals("")) {
-					pStmt.setString(6, manage.getLunch());
+				if (manage.getLctext() != null && !manage.getLctext().equals("")) {
+					pStmt.setString(6, manage.getLctext());
 				}
 				else {
 					pStmt.setString(6, null);
 				}
-				if (manage.getLctext() != null && !manage.getLctext().equals("")) {
-					pStmt.setString(7, manage.getLctext());
+				if (manage.getDinner() != null && !manage.getDinner().equals("")) {
+					pStmt.setString(7, manage.getDinner());
 				}
 				else {
 					pStmt.setString(7, null);
 				}
-				if (manage.getDinner() != null && !manage.getDinner().equals("")) {
-					pStmt.setString(8, manage.getDinner());
+				if (manage.getDntext() != null && !manage.getDntext().equals("")) {
+					pStmt.setString(8, manage.getDntext());
 				}
 				else {
 					pStmt.setString(8, null);
 				}
-				if (manage.getDntext() != null && !manage.getDntext().equals("")) {
-					pStmt.setString(9, manage.getDntext());
+				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
+					pStmt.setInt(9, manage.getSnack());
 				}
 				else {
 					pStmt.setString(9, null);
 				}
-				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
-					pStmt.setInt(10, manage.getSnack());
+				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
+					pStmt.setInt(10, manage.getExercise());
 				}
 				else {
 					pStmt.setString(10, null);
 				}
-				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
-					pStmt.setInt(11, manage.getExercise());
+				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
+					pStmt.setInt(11, manage.getDrink());
 				}
 				else {
 					pStmt.setString(11, null);
 				}
-				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
-					pStmt.setInt(12, manage.getDrink());
+				if (manage.getDayweight() >= 0 && manage.getDayweight() <= 200) {
+					pStmt.setDouble(12, manage.getDayweight());
 				}
 				else {
 					pStmt.setString(12, null);
 				}
-				if (manage.getDayweight() >= 0 && manage.getDayweight() <= 200) {
-					pStmt.setDouble(13, manage.getDayweight());
+				if (manage.getPicture() != null && !manage.getPicture().equals("")) {
+					pStmt.setString(13, manage.getPicture());
 				}
 				else {
 					pStmt.setString(13, null);
 				}
-				if (manage.getPicture() != null && !manage.getPicture().equals("")) {
-					pStmt.setString(14, manage.getPicture());
+				if (manage.getBmi() >= 10 && manage.getBmi() <= 50) {
+					pStmt.setDouble(14, manage.getBmi());
 				}
 				else {
 					pStmt.setString(14, null);
 				}
-				if (manage.getBmi() >= 10 && manage.getBmi() <= 50) {
-					pStmt.setDouble(15, manage.getBmi());
+				if (manage.getCounter() != null && !manage.getCounter().equals("")) {
+					pStmt.setString(15, manage.getCounter());
 				}
 				else {
 					pStmt.setString(15, null);
-				}
-				if (manage.getCounter() != null && !manage.getCounter().equals("")) {
-					pStmt.setString(16, manage.getCounter());
-				}
-				else {
-					pStmt.setString(16, null);
 				}
 
 				// SQL文を実行する
