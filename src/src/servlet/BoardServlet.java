@@ -45,9 +45,9 @@ public class BoardServlet extends HttpServlet {
         List<Bbs> list = fct.selectAll();
 
         // セッションスコープにコメントリストを保存
-        HttpSession session = request.getSession();
-        session.setAttribute("listAttribute", list);
-        
+       // HttpSession session = request.getSession();
+     //   session.setAttribute("listAttribute", list);
+        request.setAttribute("list", list);
         
         RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/jsp/board.jsp");
         rd.forward(request, response);

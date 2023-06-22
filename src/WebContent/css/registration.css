@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+/*お試し用ヘッダー*/
 header {
-	color : #aaaaff
+	background-color : #aaaaff;
+}
+/*お試し用フッター*/
+footer {
+	background-color : #aaaaff;
+}
+
+
+/*登録ボタン*/
+.reg_submit{
+	float : right;
+	padding : 10px 30px 10px 30px;
+	margin-right : 15px;
+	margin-bottom : 10px;
 }
