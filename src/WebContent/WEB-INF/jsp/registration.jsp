@@ -181,9 +181,11 @@
 	var errorMessageObj = document.getElementById('error_message');
 
 	regiObj.onsubmit = function() {
-		if (formObj_bf_eat1.value == 0 || formObj_bf_eat2.value == 0 || formObj_bf_eat3.value == 0 || formObj_bf_eat4.value == 0 || formObj_bf_eat5.value == 0
-			 || formObj_lc_eat1.value == 0 || formObj_lc_eat2.value == 0 || formObj_lc_eat3.value == 0 || formObj_lc_eat4.value == 0 || formObj_lc_eat5.value == 0
-			 || formObj_dn_eat1.value == 0 || formObj_dn_eat2.value == 0 || formObj_dn_eat3.value == 0 || formObj_dn_eat4.value == 0 || formObj_dn_eat5.value == 0) {
+		if(formObj_bf_eat1.value == "0" && formObj_bf_eat2.value == "0" && formObj_bf_eat3.value == "0" && formObj_bf_eat4.value == "0" && formObj_bf_eat5.value == "0"
+			 && formObj_lc_eat1.value == "0" && formObj_lc_eat2.value == "0" && formObj_lc_eat3.value == "0" && formObj_lc_eat4.value == "0" && formObj_lc_eat5.value == "0"
+			 && formObj_dn_eat1.value == "0" && formObj_dn_eat2.value == "0" && formObj_dn_eat3.value == "0" && formObj_dn_eat4.value == "0" && formObj_dn_eat5.value == "0"
+		)
+		{
 			errorMessageObj.textContent = ' ※朝食,昼食,夕食のいずれかのチェックボックスの入力は必須です ';
 			return false;
 		}
