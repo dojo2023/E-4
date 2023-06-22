@@ -167,14 +167,17 @@ public  List<Bbs> select(Bbs bbs) {
         		PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM BBS");
         		ResultSet rs = pStmt.executeQuery();
         		// id,name,commentを格納するリスト
-                List<Bbs> list = new ArrayList<>();
+                List<Bbs> list = new ArrayList<Bbs>();
                 while (rs.next()) {
-                    rs.getString("USER_ID");
-                    rs.getString("NAME");
-                    rs.getString("CHATTEXT");
-                    rs.getString("DATE");
-                    rs.getInt("VISITOR");
-                    rs.getInt("BBSID");
+                	Bbs bbs = new Bbs(
+                    rs.getString("USER_ID"),
+                    rs.getString("NAME"),
+                    rs.getString("CHATTEXT"),
+                    rs.getString("DATE"),
+                    rs.getInt("VISITOR"),
+                    rs.getInt("BBSID")
+                    );
+                	list.add(bbs);
         	}
                 return list;
         	}
