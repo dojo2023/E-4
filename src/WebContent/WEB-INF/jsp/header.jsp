@@ -15,7 +15,7 @@
 		<p><span>${profile.name}</span>さんの目標体重は<span>${profile.target_weight}</span>kgです。</p>
 		<div class="header_right">
 		<a class="logout l_header" href="/sobaudon/LoginServlet">ログアウト</a>
-		<p class="day">2023/06/22</p>
+		<p class="day" id="time"></p>
 		</div>
 	</div>
 	<div class="header_bottom">
@@ -32,4 +32,5 @@
 	</div>
 </header>
 </body>
+<script src="/sobaudon/js/time.js"></script>
 </html>
