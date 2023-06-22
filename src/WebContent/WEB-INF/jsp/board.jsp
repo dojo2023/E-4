@@ -9,13 +9,14 @@
 <meta charset="UTF-8">
 
 <title>掲示板</title>
-<link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
+
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
 </head>
 <body>
+<%@ include file="header.jsp" %>
 <header>
-	<!-- ヘッダー（ここから） -->
+	<!-- ヘッダー
 	<h1 id="logo_login">
 		ロゴ
 	</h1>
@@ -28,7 +29,7 @@
 		<li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
 		<li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
 	</ul>
-	<!-- ヘッダー（ここまで） -->
+	ヘッダー（ここまで) -->
 </header>
 <c:forEach var="e" items="${list}" >
 
@@ -61,7 +62,7 @@
 
 
 
-<div class="title">
+<!-- <div class="title">
 	<table>
 		<tr>
 		<td id="tn">レジェンド</td>
@@ -71,7 +72,7 @@
 		<td id="tl">pt</td>
 		</tr>
 	</table>
-</div>
+</div> -->
 <script>
 function check()
 {
@@ -105,5 +106,7 @@ saveBtn.addEventListener('click', () =< {
     saveDate.innerText = `初回保存 ${nowYear}/${nowMon}/${nowDate} ${nowHour}:${nowMinute}`;*/
     
 </script>
+<%@ include file="title.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
