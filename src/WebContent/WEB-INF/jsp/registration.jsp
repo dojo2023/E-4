@@ -89,22 +89,22 @@
 		<tr>
 			<td>
 				<p class="registration_p">運動</p>
-				<label><input type="radio" name="EXERCISE" value="0">あり</label>
-				<label><input type="radio" name="EXERCISE" value="1">なし</label>
+				<label><input type="radio" name="EXERCISE" value="1">あり</label>
+				<label><input type="radio" name="EXERCISE" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">飲酒</p>
-				<label><input type="radio" name="DRINK" value="0">あり</label>
-				<label><input type="radio" name="DRINK" value="1">なし</label>
+				<label><input type="radio" name="DRINK" value="1">あり</label>
+				<label><input type="radio" name="DRINK" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<p class="registration_p">間食・夜食</p>
-				<label><input type="radio" name="SNACK" value="0">あり</label>
-				<label><input type="radio" name="SNACK" value="1">なし</label>
+				<label><input type="radio" name="SNACK" value="1">あり</label>
+				<label><input type="radio" name="SNACK" value="0">なし</label>
 			</td>
 		</tr>
 		<tr>
