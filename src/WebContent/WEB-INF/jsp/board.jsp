@@ -9,7 +9,9 @@
 <meta charset="UTF-8">
 
 <title>掲示板</title>
-<link rel="stylesheet" href="/sobaudon/webcontent/css/board.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
+<link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
 </head>
 <body>
 <header>
@@ -30,8 +32,8 @@
 </header>
 <c:forEach var="e" items="${list}" >
 
-	ニックネーム:<c:out value="${e.name}"></c:out>　*<c:out value="${e.date}"></c:out><br>
-	投稿内容:<c:out value="${e.chattext}"></c:out><br>
+	ニックネーム:<c:out value="${e.name}"></c:out>　<br>
+	<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
 	
 <!-- 
 	<table class="List">
