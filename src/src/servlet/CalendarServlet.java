@@ -37,7 +37,7 @@ public class CalendarServlet extends HttpServlet {
 		//セッションスコープからuser_idを取得
 				User usr =  (User)session.getAttribute("profile");
 				String user_id = usr.getUser_id();
-				Calendar cal = Calendar.getInstance();
+				//Calendar cal = Calendar.getInstance();
 		        //SimpleDateFormatで書式を指定
 		        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		        //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
