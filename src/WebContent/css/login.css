@@ -8,7 +8,6 @@
 .error{
 	color:red;
 }
-
 .login_wrapper{
 	border:3px solid rgb(19, 104, 181);
 	padding:10px;
@@ -36,17 +35,16 @@
 	position:relative;
 	border:3px solid rgb(19, 104, 181);
 	padding:10px;
-	margin:0 auto;
+	margin:20px  auto;
 	width:580px;
 	height:420px;
 	text-align:center;
-	margin-top:150px;
 }
 .login_container{
 	margin-top:50px;
 }
 
-
+/*テキスト*/
 p{
 	display:inline-block;
 }
@@ -68,6 +66,7 @@ p{
 	border:2px solid rgb(0, 166, 255);
 }
 
+/*ボタン*/
 .l_button{
 	border:2px solid rgb(0, 166, 255);
 	background-color:white;
@@ -76,14 +75,23 @@ p{
 	margin-top:30px;
 	font-weight:bold;
 }
+.l_button:hover{
+	background-color:rgb(227, 227, 227);
+}
 
 .ln_button{
 	margin-top:70px;
 	font-size:16px;
 	width:190px;
 }
+.lp_button{
+	display:block;
+	margin-left:100px;
+	margin:10px  auto;
+}
 
-.new_button{
-	margin-bottom:20px;
+/*変更不可*/
+.read{
+	background-color:rgb(227, 227, 227);
 }
 

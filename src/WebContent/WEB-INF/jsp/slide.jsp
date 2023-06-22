@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
 <title>スライドショー画面</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/slide.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 <a href="/sobaudon/RegistrationServlet" style="padding-bottom:0;">
@@ -19,16 +21,14 @@
 </div>
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
-  <div class="slider">
-        <div class="slider-inner">
-        <c:forEach var="e" items="${manageSlideList}" >
-           <!-- <div class="slider-item"><img src="${e.picture}"></div> -->
-            </c:forEach>
-            <div class="slider-item"><img src="./img/test1.png"></div>
-           <div class="slider-item"><img src="./img/test1.png"></div>
-           <div class="slider-item"><img src="./img/test1.png"></div>
-        </div>
-  </div>
+    <div class="slider">
+        <!-- <c:forEach var="e" items="${manageSlideList}" >
+           <div class="slider img"><img src="${e.picture}"></div>
+            </c:forEach> -->
+            <img src="./img/test1.png">
+            <img src="./img/titletest.png">
+            <img src="./img/advertisement.png">
+      </div>
   <div class="button">
     <button id="startBtn" class="button1">開始</button>
     <button id="stopBtn" class="button1">停止</button>
@@ -46,20 +46,39 @@
 
 let temperature;
 
-const stopBtn = document.getElementById('stopBtn')
-const startBtn = document.getElementById('startBtn')
-const sliders = document.querySelectorAll('.slide-inner')
+$(function() {
+	 $('.slider').each(function() {
+	   // スライド（画像）の数を取得
+	   var $slides = $(this).find('img'),
+	       slideNum = $slides.length,
+	       currentIdx = 0; // 何番目か
 
-stopBtn.addEventListener('click', function() {
-   sliders.forEach( function(slider){
-      slider.style.animation = 'none';
-});
-}, false);
-startBtn.addEventListener('click', function() {
-   sliders.forEach( function(slider){
-      slider.style.animation = 'animation: slider 10s infinite ease';
-});
-}, false);
+	   // 最初の画像をフェードイン
+	   $(".slider img").eq(currentIdx).fadeIn();
+
+	   // 3秒後に次のスライドを表示
+	   setTimeout(dispNextSlide, 3000);
+
+	   // 次のスライドを表示するメソッド
+	   function dispNextSlide() {
+	     var nextIdx = currentIdx + 1;
+
+	     // 最後のスライドの場合ははじめに戻る
+	     if (nextIdx > (slideNum - 1)) {
+	       nextIdx = 0
+	     }
+
+	     // 現在のスライドをフェードアウト
+	     $(".slider img").eq(currentIdx).fadeOut();
+
+	     // 次のスライドをフェードイン
+	     $(".slider img").eq(nextIdx).fadeIn();
+
+	     // インデックスを更新
+	     currentIdx = nextIdx;
+	   }
+	 });
+	});
 
 
 </script>

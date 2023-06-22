@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 称号cssの挿入 -->
+<link rel="stylesheet" href="/sobaudon/css/title.css">
 </head>
 <body>
 <div class="title">

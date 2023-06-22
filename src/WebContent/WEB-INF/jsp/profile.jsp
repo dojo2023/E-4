@@ -7,29 +7,29 @@
 <title>きょうから｜プロフィール</title>
 <!-- ログインcssの挿入 -->
 <link rel="stylesheet" href="/sobaudon/css/login.css">
-<link rel="stylesheet" href="/sobaudon/css/title.css">
 </head>
 <body>
-<div class="lp_wrapper">
+<%@ include file="header.jsp" %>
 	<form method="POST" action="/sobaudon/ProfileServlet">
+	<div class="lp_wrapper">
 		<p class="login_p">ID</p>
-		<input class="l_text" type="text" name="USER_ID" value="${profile.user_id}" readonly><br>
+		<input class="l_text read" type="text" name="USER_ID" value="${profile.user_id}" readonly><br>
 		<p class="login_p">Password</p>
-		<input class="l_text" type="password" name="PASSWORD" value="${profile.password}" readonly><br>
+		<input class="l_text read" type="password" name="PASSWORD" value="${profile.password}" readonly><br>
 		<p class="login_p">ニックネーム</p>
 		<input class="l_text" type="text" name="NAME" minlength="2" value="${profile.name}"><br>
 		 <!-- required placeholder="2~20文字で入力してください。" -->
 		<p class="login_p">身長</p>
 		<input class="l_text" type="text" name="HEIGHT" placeholder="(cm)で小数第1位まで入力してください。" value="${profile.height}"><br>
 		<p class="login_p">体重</p>
-		<input class="l_text" type="text" name="WEIGHT" value="${profile.weight}" readonly><br>
+		<input class="l_text read" type="text" name="WEIGHT" value="${profile.weight}" readonly><br>
 		<p class="login_p">目標体重</p>
 		<input class="l_text" type="text" name="TARGET_WEIGHT" placeholder="(kg)で小数第1位まで入力してください。" value="${profile.target_weight}"><br>
-
+	</div>
 		<!-- onclick～がないとクリックされたと認識しない -->
-		<input class="l_button new_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)" ><br>
+		<input class="l_button lp_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)" ><br>
 	</form>
-</div>
 <%@ include file="title.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
