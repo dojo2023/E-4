@@ -1,12 +1,13 @@
 @charset "UTF-8";
-	/*
+/*
 	*{
 		outline:1px solid red;
 	}
-	*/
+*/
 body{
 	margin:0;
 }
+/*ヘッダー*/
 .header_img{
 	float:left;
 	display: flex;
@@ -40,13 +41,31 @@ header{
 li{
 	display:inline-block;
 	list-style:none;
-	margin-right:20px;
-}
-.conrainer{
-	width:80%;
-	height:2000px;
-}
 
+}
+/*ユーザ情報*/
+span{
+	font-weight:bold;
+	color:blue;
+}
+/*タブ*/
+a{
+	padding:8px;
+	text-decoration:none;
+	color:black;
+	background-color:white;
+	display:inline-block;
+}
+.l_header:hover{
+	background-color:rgb(227, 227, 227);
+}
+.logout{
+	background-color:rgb(227, 227, 227);
+}
+.logout:hover{
+	background-color:white;
+}
+/*フッター*/
 footer{
 	background-color:rgb(193, 217, 236);
 	width:100%;

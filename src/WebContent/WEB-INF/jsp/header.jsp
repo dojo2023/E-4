@@ -12,21 +12,21 @@
 <header>
 	<img class="header_img" src="#" alt="きょうから">
 	<div class="header_top">
-		<p>[ニックネーム]さんの目標体重は[〇〇]kgです。</p>
+		<p><span>${profile.name}</span>さんの目標体重は<span>${profile.target_weight}</span>kgです。</p>
 		<div class="header_right">
-		<a class="logout" href="#">ログアウト</a>
+		<a class="logout l_header" href="/sobaudon/LoginServlet">ログアウト</a>
 		<p class="day">2023/06/22</p>
 		</div>
 	</div>
 	<div class="header_bottom">
 		<nav>
 			<ul>
-				<li>登録</li>
-				<li>カレンダー</li>
-				<li>スライドショー</li>
-				<li>掲示板</li>
-				<li>ヘルプ</li>
-				<li>プロフール</li>
+				<li><a class="l_header" href="/sobaudon/RegistrationServlet">登録</a></li>
+      			<li><a class="l_header" href="/sobaudon/CalendarServlet">カレンダー</a></li>
+      			<li><a class="l_header" href="/sobaudon/SlideServlet">スライドショー</a></li>
+      			<li><a class="l_header" href="/sobaudon/BoardServlet">掲示板</a></li>
+      			<li><a class="l_header" href="/sobaudon/HelpServlet">ヘルプ</a></li>
+      			<li><a class="l_header" href="/sobaudon/ProfileServlet">プロフィール</a></li>
 			</ul>
 		</nav>
 	</div>

@@ -45,7 +45,6 @@
 	margin-top:50px;
 }
 
-
 p{
 	display:inline-block;
 }
@@ -75,14 +74,21 @@ p{
 	margin-top:30px;
 	font-weight:bold;
 }
+.l_button:hover{
+	background-color:rgb(227, 227, 227);
+}
 
 .ln_button{
 	margin-top:70px;
 	font-size:16px;
 	width:190px;
 }
-
-.new_button{
-	margin-bottom:20px;
+.lp_button{
+	display:block;
+	margin-left:100px;
+	margin:10px  auto;
+}
+.read{
+	background-color:rgb(227, 227, 227);
 }
 
