@@ -48,12 +48,12 @@ public class Manage implements Serializable {
 		this.lctext = "";
 		this.dinner = "";
 		this.dntext = "";
-		//this.snack = "";
-		//this.exercise = "";
-		//this.drink = "";
-		//this.dayweight = "";
+		this.snack = 0;
+		this.exercise = 0;
+		this.drink = 0;
+		this.dayweight = 0;
 		this.picture = "";
-		//this.bmi = "";
+		this.bmi = 0;
 		this.counter = "";
 	}
 

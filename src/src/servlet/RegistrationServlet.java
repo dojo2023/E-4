@@ -114,6 +114,8 @@ public class RegistrationServlet extends HttpServlet {
 
 		part.write(path+File.separator+filename);
 
+		picture = path+File.separator+filename;
+
 		//登録を押した際のカウント
 		String counter = "0" ;
 		if(request.getParameter("submit").equals("登録")) {
