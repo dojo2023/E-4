@@ -90,7 +90,8 @@ public  List<Bbs> select(Bbs bbs) {
         	
         	Class.forName("org.h2.Driver");
         	try(Connection connection = DriverManager.getConnection(jdbcUrl,jdbcId,jdbcPass);){
-        		PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM BBS WHERE USER_ID LIKE ? AND NAME LIKE ? AND CHATTEXT LIKE ? AND DATE LIKE ?");
+        		//自動採番new String[]{"bbsid"}の追加
+        		PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM BBS WHERE USER_ID LIKE ? AND NAME LIKE ? AND CHATTEXT LIKE ? AND DATE LIKE ?",new String[]{"bbsid"});
         		if (bbs.getUser_id() != null && !bbs.getUser_id().equals("")) {
     				pStmt.setString(1, "%" + bbs.getUser_id() + "%");
     			}
@@ -115,6 +116,19 @@ public  List<Bbs> select(Bbs bbs) {
     			else {
     				pStmt.setString(4, "%");
     			}
+    			if (bbs.getDate() != null && !bbs.getDate().equals("")) {
+    				pStmt.setString(4, bbs.getDate());
+    			}
+    			else {
+    				pStmt.setString(4, "%");
+    			}
+    			//追加
+    			if (bbs.getBbsid() != 0) {
+    				pStmt.setInt(4, bbs.getBbsid());
+    			}
+    			else {
+    				pStmt.setString(4, "%");
+    			}
     		
         		ResultSet rs = pStmt.executeQuery();
         		// id,name,commentを格納するリスト
@@ -125,7 +139,8 @@ public  List<Bbs> select(Bbs bbs) {
     				rs.getString("NAME"),
     				rs.getString("CHATTEXT"),
     				rs.getString("DATE"),
-    				rs.getInt("VISITOR")
+    				rs.getInt("VISITOR"),
+    				rs.getInt("BBSID")
     				);
     				list.add(b);
     			}
@@ -136,7 +151,7 @@ public  List<Bbs> select(Bbs bbs) {
         	throw new RuntimeException(e);
         }
     }
- public  List<Bbs> selectAll(Bbs bbs) {
+ public  List<Bbs> selectAll() {
     	
         final String jdbcId = "sa";
         final String jdbcPass = "";
@@ -159,6 +174,7 @@ public  List<Bbs> select(Bbs bbs) {
                     rs.getString("CHATTEXT");
                     rs.getString("DATE");
                     rs.getInt("VISITOR");
+                    rs.getInt("BBSID");
         	}
                 return list;
         	}

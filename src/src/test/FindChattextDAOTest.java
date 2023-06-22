@@ -11,7 +11,7 @@ public class FindChattextDAOTest {
 				
 				// select()のテスト
 				System.out.println("---------- select()のテスト ----------");
-				List<Bbs> list =dao.select(new Bbs("","","","",1));
+				List<Bbs> list =dao.select(new Bbs("","","","",1,0));
 				for(Bbs bbs : list) {
 					System.out.println("USER_ID：" + bbs.getUser_id());
 					System.out.println("NAME" + bbs.getName());
