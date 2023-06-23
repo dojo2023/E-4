@@ -27,9 +27,10 @@
 <div class = "rw">
 <!--テキストエリアに入力があったらチェックを行う関数を用意する。-->
 <p class = "chat">コメント:<br>
-<textarea name="chattext" rows="5" cols="40" minlength="1" required placeholder="文字を入力してください。"onChange="check()"></textarea>
+<textarea name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
-<p class="savebtn"><input class = "button" type="submit" value="送信"><input class = "button" type="reset" value="リセット"></p>
+<p id = "inputlength">0文字</p>
+<p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
 </div>
 </form>
 
@@ -44,6 +45,10 @@ function check()
     //④最後にその文字数が制限文字数以上だった場合、アラートを実行。
     if (n > 200) alert("200文字以内で入力してください");
 }
+
+function ShowLength( str ) {
+	   document.getElementById("inputlength").innerHTML = str.length + "文字";
+	}
 
 </script>
 <%@ include file="title.jsp" %>
