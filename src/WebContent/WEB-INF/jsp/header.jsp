@@ -10,7 +10,9 @@
 </head>
 <body>
 <header>
-	<img class="header_img" src="#" alt="きょうから">
+	<div class="title_logo">
+	<img class="header_img" src="./img/titlelo.png" alt="きょうから">
+	</div>
 	<div class="header_top">
 		<p><span>${profile.name}</span>さんの目標体重は<span>${profile.target_weight}</span>kgです。</p>
 		<div class="header_right">
