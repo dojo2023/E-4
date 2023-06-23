@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.ManageDao;
 import model.ManageSlide;
+import model.User;
 
 /**
  * Servlet implementation class SlideServlet
@@ -49,8 +50,9 @@ public class SlideServlet extends HttpServlet {
 		//}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_id = (String) session.getAttribute("USER_ID");
-				String name = (String) session.getAttribute("NAME");
+				User user_id1 = (User)session.getAttribute("profile");
+				String user_id = user_id1.getUser_id();
+				String name = user_id1.getName();
 				String picture = null;
 
 				// 検索処理を行う
