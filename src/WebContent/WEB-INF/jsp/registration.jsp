@@ -9,14 +9,12 @@
 	<link rel="stylesheet" href="/sobaudon/css/registration.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<!-- ヘッダー -->
+	<%@ include file="header.jsp" %>
 <!-- 広告 -->
 	<a url="">
 		<img src="" alt="広告">
 	</a>
-<!-- 称号 -->
-	<div class="achivement">称号</div>
-<img src="C:\pleiades\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\sobaudon\body\小嶋駿也_typing_0516.png">
 <main>
 <form method="POST" action="/sobaudon/RegistrationServlet" enctype="multipart/form-data" id="regi_form">
 	<table class="regi_table">
@@ -173,7 +171,9 @@
 		errorMessageObj.textContent = null;
 	};
 </script>
-<%@ include file="title.jsp" %>
-<%@ include file="footer.jsp" %>
+<!-- 称号 -->
+	<%@ include file="title.jsp" %>
+<!-- フッター -->
+	<%@ include file="footer.jsp" %>
 </body>
 </html>
