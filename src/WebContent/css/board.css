@@ -1,6 +1,8 @@
 @charset "UTF-8";
-.rw{
-	display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+.rw {
+width: 100px;
+height: 100px;
+position: absolute; /* 子要素はabsoluteを指定 */
+bottom: 90px; /* 上を基準 */
+right: 235px; /* 左を基準 */
 }
