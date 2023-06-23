@@ -23,8 +23,9 @@ header{
 }
 .header_top{
 	float:left;
-	display: flex;
-	margin:20px 0 0 180px;
+	/*display: flex;*/
+	margin:20px 30px 0 245px;
+	width:650px;
 }
 .logout{
 	display: inline-block;
@@ -34,8 +35,13 @@ header{
 	display: inline-block;
 	font-weight:bold;
 }
+.header_name{
+	float:left;
+	width:300px;
+	margin-top:15px;
+}
 .header_right{
-	margin-left:280px;
+	float:right;
 }
 .header_bottom{
 	float: left;
