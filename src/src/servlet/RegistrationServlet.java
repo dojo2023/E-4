@@ -39,14 +39,36 @@ public class RegistrationServlet extends HttpServlet {
 
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
-	/*	if (session.getAttribute("id") == null) {
+		if (session.getAttribute("profile") == null) {
 			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
-	*/
-		// 登録ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
-		dispatcher.forward(request, response);
+
+		// リクエストパラメータを取得する
+				request.setCharacterEncoding("UTF-8");
+
+				Calendar cal = Calendar.getInstance();
+				//SimpleDateFormatで書式を指定
+		        SimpleDateFormat sdf = new SimpleDateFormat("HH");
+		        //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
+		        //System.out.println(sdf.format(cal.getTime()));
+
+		        //if ((int)sdf < 3) {}
+
+		        User user_id1 = (User)session.getAttribute("profile");
+				String user_id = user_id1.getUser_id();
+				String date = (String)sdf.format(cal.getTime());
+
+				ManageDao md = new ManageDao();
+				Manage data = null;
+				data = md.select(user_id , date);
+				if (data.getCounter() == null) {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
+					dispatcher.forward(request, response);
+				}else {
+					response.sendRedirect("/sobaudon/UpdateServlet");
+				}
+
 	}
 
 	/**
@@ -57,11 +79,11 @@ public class RegistrationServlet extends HttpServlet {
 
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
-	/*	if (session.getAttribute("id") == null) {
+		if (session.getAttribute("profile") == null) {
 			response.sendRedirect("/servlet/LoginServlet");
 			return;
 		}
-	*/
+
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 
@@ -78,8 +100,9 @@ public class RegistrationServlet extends HttpServlet {
 		String date = (String)sdf.format(cal.getTime());
 
 		ManageDao md = new ManageDao();
-		Manage data = md.select(user_id , date);
-		if (data == null) {
+		Manage data = null;
+		data = md.select(user_id , date);
+		if (data.getCounter() == null) {
 			String bf_se_st = request.getParameter("BF_SE_ST");
 			String bf_se_ma = request.getParameter("BF_SE_MA");
 			String bf_se_si = request.getParameter("BF_SE_SI");
@@ -139,64 +162,71 @@ public class RegistrationServlet extends HttpServlet {
 
 		}else {
 
-		String bf_se_st = request.getParameter("BF_SE_ST");
-		String bf_se_ma = request.getParameter("BF_SE_MA");
-		String bf_se_si = request.getParameter("BF_SE_SI");
-		String bf_se_no = request.getParameter("BF_SE_NO");
-		String bf_se_ot = request.getParameter("BF_SE_OT");
-		String breakfast = (bf_se_st + bf_se_ma + bf_se_si + bf_se_no + bf_se_ot);
-		String bftext = request.getParameter("BFTEXT");
+			String bf_se_st = request.getParameter("BF_SE_ST");
+			String bf_se_ma = request.getParameter("BF_SE_MA");
+			String bf_se_si = request.getParameter("BF_SE_SI");
+			String bf_se_no = request.getParameter("BF_SE_NO");
+			String bf_se_ot = request.getParameter("BF_SE_OT");
+			String breakfast = (bf_se_st + bf_se_ma + bf_se_si + bf_se_no + bf_se_ot);
+			String bftext = request.getParameter("BFTEXT");
 
-		String lc_se_st = request.getParameter("LC_SE_ST");
-		String lc_se_ma = request.getParameter("LC_SE_MA");
-		String lc_se_si = request.getParameter("LC_SE_SI");
-		String lc_se_no = request.getParameter("LC_SE_NO");
-		String lc_se_ot = request.getParameter("LC_SE_OT");
-		String lunch = (lc_se_st + lc_se_ma + lc_se_si + lc_se_no + lc_se_ot);
-		String lctext = request.getParameter("LCTEXT");
+			String lc_se_st = request.getParameter("LC_SE_ST");
+			String lc_se_ma = request.getParameter("LC_SE_MA");
+			String lc_se_si = request.getParameter("LC_SE_SI");
+			String lc_se_no = request.getParameter("LC_SE_NO");
+			String lc_se_ot = request.getParameter("LC_SE_OT");
+			String lunch = (lc_se_st + lc_se_ma + lc_se_si + lc_se_no + lc_se_ot);
+			String lctext = request.getParameter("LCTEXT");
 
-		String dn_se_st = request.getParameter("DN_SE_ST");
-		String dn_se_ma = request.getParameter("DN_SE_MA");
-		String dn_se_si = request.getParameter("DN_SE_SI");
-		String dn_se_no = request.getParameter("DN_SE_NO");
-		String dn_se_ot = request.getParameter("DN_SE_OT");
-		String dinner = (dn_se_st + dn_se_ma + dn_se_si + dn_se_no + dn_se_ot);
-		String dntext = request.getParameter("DNTEXT");
+			String dn_se_st = request.getParameter("DN_SE_ST");
+			String dn_se_ma = request.getParameter("DN_SE_MA");
+			String dn_se_si = request.getParameter("DN_SE_SI");
+			String dn_se_no = request.getParameter("DN_SE_NO");
+			String dn_se_ot = request.getParameter("DN_SE_OT");
+			String dinner = (dn_se_st + dn_se_ma + dn_se_si + dn_se_no + dn_se_ot);
+			String dntext = request.getParameter("DNTEXT");
 
-		int snack = Integer.parseInt(request.getParameter("SNACK"));
-		int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
-		int drink = Integer.parseInt(request.getParameter("DRINK"));
+			int snack = Integer.parseInt(request.getParameter("SNACK"));
+			int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
+			int drink = Integer.parseInt(request.getParameter("DRINK"));
 
-		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
-		User height1 = (User)session.getAttribute("profile");
-		double height = height1.getHeight();
-		double bmi = ((dayweight/height)/height);
-		String picture = request.getParameter("PICTURE");
+			double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
+			User height1 = (User)session.getAttribute("profile");
+			double height = height1.getHeight();
+			height = height / 100;
+			double bmi1 = ((dayweight/height)/height);
+			double bmi = Math.floor(bmi1 * 10) / 10;
+			String picture = request.getParameter("PICTURE");
 
-		//partオブジェクトとしてnameがpictureのものを取得
-		Part part = request.getPart("PICTURE");
-		//ファイル名を取得
-		String filename = part.getSubmittedFileName();
-		//String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
-		//アップロードするフォルダ
-		String path = getServletContext().getRealPath("/body");
+			System.out.print(bmi);
 
-		System.out.println(path);
+			//partオブジェクトとしてnameがpictureのものを取得
+			Part part = request.getPart("PICTURE");
+			//ファイル名を取得
+			String filename = part.getSubmittedFileName();
+			//String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+			//アップロードするフォルダ
+			String path = getServletContext().getRealPath("/body");
 
-		part.write(path+File.separator+filename);
+			System.out.println(path);
 
-		picture = "sobaudon/body/"+filename;
+			part.write(path+File.separator+filename);
 
-		//登録を押した際のカウント
-		String counter = "0" ;
-		if(request.getParameter("submit").equals("登録")) {
-			counter = "1";
+			picture = "sobaudon/body/"+filename;
+
+			//登録を押した際のカウント
+			String counter = "0" ;
+			if(request.getParameter("submit").equals("登録")) {
+				counter = "1";
+			}
+
+			ManageDao mDao = new ManageDao();
+			mDao.insert(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
+
 		}
-
-		ManageDao mDao = new ManageDao();
-		mDao.insert(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
-
-		}
+		Manage search = md.select(user_id , date);
+		System.out.println(search.getBmi());
+		request.setAttribute("search", search);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
