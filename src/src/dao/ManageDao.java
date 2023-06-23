@@ -161,19 +161,19 @@ public class ManageDao {
 				else {
 					pStmt.setString(8, null);
 				}
-				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
+				if (manage.getSnack() == 0 || manage.getSnack() == 1) {
 					pStmt.setInt(9, manage.getSnack());
 				}
 				else {
 					pStmt.setString(9, null);
 				}
-				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
+				if (manage.getExercise() == 0 || manage.getExercise() == 1) {
 					pStmt.setInt(10, manage.getExercise());
 				}
 				else {
 					pStmt.setString(10, null);
 				}
-				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
+				if (manage.getDrink() == 0 || manage.getDrink() == 1) {
 					pStmt.setInt(11, manage.getDrink());
 				}
 				else {
@@ -284,19 +284,19 @@ public class ManageDao {
 				else {
 					pStmt.setString(6, null);
 				}
-				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
+				if (manage.getSnack() == 0 || manage.getSnack() == 1) {
 					pStmt.setInt(7, manage.getSnack());
 				}
 				else {
 					pStmt.setString(7, null);
 				}
-				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
+				if (manage.getExercise() == 0 || manage.getExercise() == 1) {
 					pStmt.setInt(8, manage.getExercise());
 				}
 				else {
 					pStmt.setString(8, null);
 				}
-				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
+				if (manage.getDrink() == 0 || manage.getDrink() == 1) {
 					pStmt.setInt(9, manage.getDrink());
 				}
 				else {
