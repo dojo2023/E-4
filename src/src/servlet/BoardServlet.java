@@ -92,7 +92,11 @@ public class BoardServlet extends HttpServlet {
         // DBに格納
         BbsDAO acl = new BbsDAO();
         acl.insert(bo);
-
+        
+        BbsDAO fct = new BbsDAO();
+        List<Bbs> list = fct.selectAll();
+        
+        request.setAttribute("list", list);
         // 今入力されたコメントと既存のコメントをh2dbから取得
        /*
         FindChattextLogic fcl = new FindChattextLogic();

@@ -1,16 +1,20 @@
 @charset "UTF-8";
-/*
-	*{
+
+	/**{
 		outline:1px solid red;
-	}
-*/
+	}*/
+
 body{
 	margin:0;
 }
 /*ヘッダー*/
-.header_img{
+.title_logo{
 	float:left;
 	display: flex;
+}
+.header_img{
+	height:50%;
+
 }
 header{
 	background-color:rgb(193, 217, 236);
@@ -20,14 +24,15 @@ header{
 .header_top{
 	float:left;
 	display: flex;
-	margin-left:300px;
+	margin:20px 0 0 180px;
 }
 .logout{
 	display: inline-block;
 }
 .day{
-	margin-left:20px;
+	margin-left:10px;
 	display: inline-block;
+	font-weight:bold;
 }
 .header_right{
 	margin-left:280px;
@@ -43,7 +48,7 @@ li{
 	list-style:none;
 }
 
-/*ユーザ情報*/
+/*ニックネーム＋目標体重*/
 span{
 	font-weight:bold;
 	color:blue;
@@ -75,8 +80,9 @@ a{
 footer{
 	background-color:rgb(193, 217, 236);
 	width:100%;
-	height:80px;
+	height:90px;
 }
+
 #footer{
 	float:right;
 	margin-top:50px;
