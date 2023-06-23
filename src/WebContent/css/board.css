@@ -2,7 +2,10 @@
 .rw {
 width: 100px;
 height: 100px;
-position: absolute; /* 子要素はabsoluteを指定 */
-bottom: 90px; /* 上を基準 */
-right: 235px; /* 左を基準 */
+position: absolute;
+bottom: 90px;
+right: 235px; 
 }
+/*#main {
+  height: 600px;
+}*/

@@ -11,7 +11,7 @@
 <title>掲示板</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
 </head>
-<body>
+<body class = "txt">
 <%@ include file="header.jsp" %>
 <c:forEach var="e" items="${list}" >
 
