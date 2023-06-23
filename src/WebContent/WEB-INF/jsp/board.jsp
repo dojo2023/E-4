@@ -29,7 +29,7 @@
 <p class = "chat">コメント:<br>
 <textarea name="chattext" rows="5" cols="40" minlength="1" required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
-<p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
+<p class="savebtn"><input class = "button" type="submit" value="送信"><input class = "button" type="reset" value="リセット"></p>
 </div>
 </form>
 

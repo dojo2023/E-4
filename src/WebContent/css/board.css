@@ -6,6 +6,10 @@ position: absolute;
 bottom: 90px;
 right: 235px; 
 }
-/*#main {
+.button{
+display:flex;
+}
+
+#main {
   height: 600px;
-}*/
+}
