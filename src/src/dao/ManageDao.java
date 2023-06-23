@@ -15,9 +15,9 @@ import model.ManageSlide;
 
 public class ManageDao {
 		// 引数paramで検索項目を指定し、検索結果のリストを返す
-		public List<Manage> select(Manage param) {
+		public Manage select(String user_id , String date) {
 			Connection conn = null;
-			List<Manage> manageList = new ArrayList<Manage>();
+			Manage manageList = new Manage();
 
 			try {
 				// JDBCドライバを読み込む
@@ -31,14 +31,14 @@ public class ManageDao {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (param.getUser_id() != null) {
-					pStmt.setString(1, "%" + param.getUser_id() + "%");
+				if (user_id != null) {
+					pStmt.setString(1, user_id);
 				}
 				else {
 					pStmt.setString(1, "%");
 				}
-				if (param.getDate() != null) {
-					pStmt.setString(2, "%" + param.getDate() + "%");
+				if (date != null) {
+					pStmt.setString(2, date);
 				}
 				else {
 					pStmt.setString(2, "%");
@@ -49,7 +49,7 @@ public class ManageDao {
 
 
 				// 結果表をコレクションにコピーする
-				while (rs.next()) {
+				if (rs.next()) {
 					Manage manage = new Manage(
 					rs.getString("USER_ID"),
 					rs.getString("DATE"),
@@ -68,7 +68,7 @@ public class ManageDao {
 					rs.getString("COUNTER")
 
 					);
-					manageList.add(manage);
+					manageList = manage;
 				}
 			}
 			catch (SQLException e) {
@@ -161,19 +161,19 @@ public class ManageDao {
 				else {
 					pStmt.setString(8, null);
 				}
-				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
+				if (manage.getSnack() == 0 || manage.getSnack() == 1) {
 					pStmt.setInt(9, manage.getSnack());
 				}
 				else {
 					pStmt.setString(9, null);
 				}
-				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
+				if (manage.getExercise() == 0 || manage.getExercise() == 1) {
 					pStmt.setInt(10, manage.getExercise());
 				}
 				else {
 					pStmt.setString(10, null);
 				}
-				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
+				if (manage.getDrink() == 0 || manage.getDrink() == 1) {
 					pStmt.setInt(11, manage.getDrink());
 				}
 				else {
@@ -284,19 +284,19 @@ public class ManageDao {
 				else {
 					pStmt.setString(6, null);
 				}
-				if (manage.getSnack() == 0 && manage.getSnack() == 1) {
+				if (manage.getSnack() == 0 || manage.getSnack() == 1) {
 					pStmt.setInt(7, manage.getSnack());
 				}
 				else {
 					pStmt.setString(7, null);
 				}
-				if (manage.getExercise() == 0 && manage.getExercise() == 1) {
+				if (manage.getExercise() == 0 || manage.getExercise() == 1) {
 					pStmt.setInt(8, manage.getExercise());
 				}
 				else {
 					pStmt.setString(8, null);
 				}
-				if (manage.getDrink() == 0 && manage.getDrink() == 1) {
+				if (manage.getDrink() == 0 || manage.getDrink() == 1) {
 					pStmt.setInt(9, manage.getDrink());
 				}
 				else {
