@@ -14,7 +14,7 @@
 	<img class="header_img" src="./img/titlelo.png" alt="きょうから">
 	</div>
 	<div class="header_top">
-		<p><span>${profile.name}</span>さんの目標体重は<span>${profile.target_weight}</span>kgです。</p>
+		<div class="header_name"><span>${profile.name}</span>さんの目標体重は<span>${profile.target_weight}</span>kgです。</div>
 		<div class="header_right">
 		<a class="logout l_header" href="/sobaudon/LoginServlet">ログアウト</a>
 		<p class="day" id="time"></p>

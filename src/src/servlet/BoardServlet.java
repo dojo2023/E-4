@@ -74,7 +74,7 @@ public class BoardServlet extends HttpServlet {
         //ここから3文は日付取得
         Calendar cal = Calendar.getInstance();
         //SimpleDateFormatで書式を指定
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/ HH:mm:ss");
         //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
         String date = (sdf.format(cal.getTime()));
         
