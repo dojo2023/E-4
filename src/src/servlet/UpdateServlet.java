@@ -23,7 +23,7 @@ public class UpdateServlet extends HttpServlet {
 
 		//もしログインしていなかったらログインサーブレットへリダイレクト
 	/*	HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("profile") == null) {
 			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
@@ -40,7 +40,7 @@ public class UpdateServlet extends HttpServlet {
 
 	/*	//もしログインしていなかったらログインサーブレットへリダイレクト
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("profile") == null) {
 			response.sendRedirect("/servlet/LoginServlet");
 			return;
 		}

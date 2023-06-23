@@ -26,7 +26,7 @@
 	<table class="regi_table">
 		<tr>
 			<th>朝</th>
-			<td>
+			<td class="regi_check">
 				<div class=bf_eat_st>
 					<label><input id="reg_check1" type="checkbox" name="BF_SE_ST" value="1" class="check">主食</label>
 					<label><input type='hidden' value='0' name='BF_SE_ST'></label>
@@ -52,7 +52,7 @@
 		</tr>
 		<tr>
 			<th>昼</th>
-			<td>
+			<td class="regi_check">
 				<div class=lc_eat_st>
 					<label><input id="reg_check6" type="checkbox" name="LC_SE_ST" value="1" class="check">主食</label>
 					<label><input type='hidden' value="0" name="LC_SE_ST"></label>
@@ -78,7 +78,7 @@
 		</tr>
 		<tr>
 			<th>夜</th>
-			<td>
+			<td class="regi_check">
 				<div class=dn_eat_st>
 					<label><input id="reg_check11" type="checkbox" name="DN_SE_ST" value="1" class="check">主食</label>
 					<label><input type='hidden' value="0" name="DN_SE_ST"></label>
@@ -136,7 +136,7 @@
 			</td>
 		</tr>
 	</table>
-	<input class="reg_submit" type="submit" name="submit" value="登録"><br>
+	<input class="regi_submit" type="submit" name="submit" value="登録"><br>
 	<div>
 		<span id="error_message"></span>
 	</div>
