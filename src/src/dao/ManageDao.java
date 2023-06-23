@@ -15,9 +15,9 @@ import model.ManageSlide;
 
 public class ManageDao {
 		// 引数paramで検索項目を指定し、検索結果のリストを返す
-		public List<Manage> select(Manage param) {
+		public Manage select(String user_id , String date) {
 			Connection conn = null;
-			List<Manage> manageList = new ArrayList<Manage>();
+			Manage manageList = new Manage();
 
 			try {
 				// JDBCドライバを読み込む
@@ -31,14 +31,14 @@ public class ManageDao {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (param.getUser_id() != null) {
-					pStmt.setString(1, "%" + param.getUser_id() + "%");
+				if (user_id != null) {
+					pStmt.setString(1, user_id);
 				}
 				else {
 					pStmt.setString(1, "%");
 				}
-				if (param.getDate() != null) {
-					pStmt.setString(2, "%" + param.getDate() + "%");
+				if (date != null) {
+					pStmt.setString(2, date);
 				}
 				else {
 					pStmt.setString(2, "%");
@@ -49,7 +49,7 @@ public class ManageDao {
 
 
 				// 結果表をコレクションにコピーする
-				while (rs.next()) {
+				if (rs.next()) {
 					Manage manage = new Manage(
 					rs.getString("USER_ID"),
 					rs.getString("DATE"),
@@ -68,7 +68,7 @@ public class ManageDao {
 					rs.getString("COUNTER")
 
 					);
-					manageList.add(manage);
+					manageList = manage;
 				}
 			}
 			catch (SQLException e) {

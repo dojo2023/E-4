@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.ManageDao;
 import model.Graph;
+import model.Manage;
 import model.User;
 
 
@@ -72,9 +73,17 @@ public class CalendarServlet extends HttpServlet {
 				}*/
 
 		// リクエストパラメータを取得する
+				HttpSession session = request.getSession();
 				request.setCharacterEncoding("UTF-8");
 				String date = request.getParameter("calendar");
 				System.out.println(date);
+				User usr =  (User)session.getAttribute("profile");
+				String user_id = usr.getUser_id();
+				ManageDao md = new ManageDao();
+				Manage data = md.select(user_id , date );
+				request.setAttribute("data", data);
+
+
 				//Manage graph = new Manage(user_id , date ,breakfast ,bftext ,lunch ,lctext ,dinner ,dntext,snack ,exercise ,drink ,dayweight,picture,bmi,counter);
 
 
