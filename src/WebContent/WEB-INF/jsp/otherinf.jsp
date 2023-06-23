@@ -9,26 +9,8 @@
 	<link rel="stylesheet" href="/sobaudon/css/registration.css">
 </head>
 <body>
-<header>
-	<!-- ヘッダー（ここから） -->
-	<h1 id="logo_login">
-		ロゴ
-	</h1>
-	<h2>
-		~さんの目標体重
-	</h2>
-	<h2 id="date"></h2>
-	<a href="/sobaudon/LoginServlet">ログアウト</a>
-	<ul>
-		<li><a href="/sobaudon/RegistrationServlet">登録</a></li>
-		<li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
-		<li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
-		<li><a href="/sobaudon/BoardServlet">掲示板</a></li>
-		<li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
-		<li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
-	</ul>
-	<!-- ヘッダー（ここまで） -->
-</header>
+<!-- ヘッダー -->
+	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
 	<div >選択した日付</div>
 <!-- ~~さんの情報 -->
@@ -37,8 +19,6 @@
 	<a url="">
 		<img src="" alt="広告">
 	</a>
-<!-- 称号 -->
-	<div class="achivement">称号</div>
 <main>
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
 <c:forEach var="other" items="${otherInfo}" >
@@ -47,16 +27,16 @@
 			<th>朝</th>
 			<td>
 			<div class=bf_eat_form>
-				<label><input type='hidden' value='0' name='BF_SE_ST'></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_ST" value="1" class="check">主食</label>
-				<label><input type='hidden' value="0" name="BF_SE_MA"></label>
+				<label><input type='hidden' value='0' name='BF_SE_ST'></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_MA" value="1" class="check">主菜</label>
-				<label><input type='hidden' value="0" name="BF_SE_SI"></label>
+				<label><input type='hidden' value="0" name="BF_SE_MA"></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_SI" value="1" class="check">副菜</label>
-				<label><input type='hidden' value="0" name="BF_SE_NO"></label>
+				<label><input type='hidden' value="0" name="BF_SE_SI"></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_NO" value="1" class="check">たべていない</label>
-				<label><input type='hidden' value="0" name="BF_SE_OT"></label>
+				<label><input type='hidden' value="0" name="BF_SE_NO"></label>
 				<label><input id="reg_check" type="checkbox" name="BF_SE_OT" value="1" class="check">その他</label><br>
+				<label><input type='hidden' value="0" name="BF_SE_OT"></label>
 			</div>
 				<input class="eat_text" type="text" maxlength="100" name="BFTEXT">
 			</td>
@@ -65,16 +45,16 @@
 			<th>昼</th>
 			<td>
 			<div class=lc_eat_form>
-				<label><input type='hidden' value="0" name="LC_SE_ST"></label>
 				<label><input id="reg_check" type="checkbox" name="LC_SE_ST" value="1" class="check">主食</label>
-				<label><input type='hidden' value="0" name="LC_SE_MA"></label>
+				<label><input type='hidden' value="0" name="LC_SE_ST"></label>
 				<label><input id="reg_check" type="checkbox" name="LC_SE_MA" value="1" class="check">主菜</label>
-				<label><input type='hidden' value="0" name="LC_SE_SI"></label>
+				<label><input type='hidden' value="0" name="LC_SE_MA"></label>
 				<label><input id="reg_check" type="checkbox" name="LC_SE_SI" value="1" class="check">副菜</label>
-				<label><input type='hidden' value="0" name="LC_SE_NO"></label>
+				<label><input type='hidden' value="0" name="LC_SE_SI"></label>
 				<label><input id="reg_check" type="checkbox" name="LC_SE_NO" value="1" class="check">たべていない</label>
-				<label><input type='hidden' value="0" name="LC_SE_OT"></label>
+				<label><input type='hidden' value="0" name="LC_SE_NO"></label>
 				<label><input id="reg_check" type="checkbox" name="LC_SE_OT" value="1" class="check">その他</label><br>
+				<label><input type='hidden' value="0" name="LC_SE_OT"></label>
 			</div>
 				<input class="eat_text" type="text" maxlength="100" name="LCTEXT">
 			</td>
@@ -83,16 +63,16 @@
 			<th>夜</th>
 			<td>
 			<div class=dn_eat_form>
-				<label><input type='hidden' value="0" name="DN_SE_ST"></label>
 				<label><input id="reg_check" type="checkbox" name="DN_SE_ST" value="1" class="check">主食</label>
-				<label><input type='hidden' value="0" name="DN_SE_MA"></label>
+				<label><input type='hidden' value="0" name="DN_SE_ST"></label>
 				<label><input id="reg_check" type="checkbox" name="DN_SE_MA" value="1" class="check">主菜</label>
-				<label><input type='hidden' value="0" name="DN_SE_SI"></label>
+				<label><input type='hidden' value="0" name="DN_SE_MA"></label>
 				<label><input id="reg_check" type="checkbox" name="DN_SE_SI" value="1" class="check">副菜</label>
-				<label><input type='hidden' value="0" name="DN_SE_NO"></label>
+				<label><input type='hidden' value="0" name="DN_SE_SI"></label>
 				<label><input id="reg_check" type="checkbox" name="DN_SE_NO" value="1" class="check">たべていない</label>
-				<label><input type='hidden' value="0" name="DN_SE_OT"></label>
+				<label><input type='hidden' value="0" name="DN_SE_NO"></label>
 				<label><input id="reg_check" type="checkbox" name="DN_SE_OT" value="1" class="check">その他</label><br>
+				<label><input type='hidden' value="0" name="DN_SE_OT"></label>
 			</div>
 				<input class="eat_text" type="text" maxlength="100" name="DNTEXT">
 			</td>
@@ -135,7 +115,11 @@
 </c:forEach>
 </form>
 </main>
+<!-- 称号 -->
+	<%@ include file="title.jsp" %>
 <!-- 前回の称号 -->
 	<div class="achivement">前回の称号</div>
+<!-- フッター -->
+	<%@ include file="footer.jsp" %>
 </body>
 </html>
