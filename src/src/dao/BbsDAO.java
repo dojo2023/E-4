@@ -14,9 +14,9 @@ public class BbsDAO {
 
     // DBにchattext,date,counterを加えるメソッド
     public boolean insert(Bbs bo) {
-    	/*if(bo.getChattext().isEmpty()) {   
+    	/*if(bo.getChattext().isEmpty()) {
         }*/
-        
+
 
         final String jdbcId = "sa";
         final String jdbcPass = "";
@@ -78,16 +78,16 @@ public class BbsDAO {
     }
     //select method
 public  List<Bbs> select(Bbs bbs) {
-    	
+
         final String jdbcId = "sa";
         final String jdbcPass = "";
         final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
-        
+
         System.out.println("Connected....");
-        
+
         try {
         	DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
-        	
+
         	Class.forName("org.h2.Driver");
         	try(Connection connection = DriverManager.getConnection(jdbcUrl,jdbcId,jdbcPass);){
         		//自動採番new String[]{"bbsid"}の追加
@@ -129,7 +129,7 @@ public  List<Bbs> select(Bbs bbs) {
     			else {
     				pStmt.setString(4, "%");
     			}
-    		
+
         		ResultSet rs = pStmt.executeQuery();
         		// id,name,commentを格納するリスト
                 List<Bbs> list = new ArrayList<>();
@@ -146,25 +146,25 @@ public  List<Bbs> select(Bbs bbs) {
     			}
                 return list;
         	}
-                
+
         }catch(ClassNotFoundException | SQLException e) {
         	throw new RuntimeException(e);
         }
     }
  public  List<Bbs> selectAll() {
-    	
+
         final String jdbcId = "sa";
         final String jdbcPass = "";
         final String jdbcUrl = "jdbc:h2:file:C:/dojo6/data/suDB";
-        
+
         System.out.println("Connected....");
-        
+
         try {
         	DriverManager.getConnection(jdbcUrl, jdbcId, jdbcPass);
-        	
+
         	Class.forName("org.h2.Driver");
         	try(Connection connection = DriverManager.getConnection(jdbcUrl,jdbcId,jdbcPass);){
-        		PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM BBS");
+        		PreparedStatement pStmt = connection.prepareStatement("SELECT * FROM BBS ORDER BY DATE DESC");
         		ResultSet rs = pStmt.executeQuery();
         		// id,name,commentを格納するリスト
                 List<Bbs> list = new ArrayList<Bbs>();
@@ -181,7 +181,7 @@ public  List<Bbs> select(Bbs bbs) {
         	}
                 return list;
         	}
-                
+
         }catch(ClassNotFoundException | SQLException e) {
         	throw new RuntimeException(e);
         }
