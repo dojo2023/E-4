@@ -1,5 +1,5 @@
 [サンプルデータ用ID,pass]
-INSERT INTO USER (USER_ID, PASSWORD) VALUES ('test', 'pass');
+INSERT INTO USER (USER_ID, PASSWORD) VALUES ('plmol', 'PASSWORD');
 追加なし
 
 [USERテーブル作成]

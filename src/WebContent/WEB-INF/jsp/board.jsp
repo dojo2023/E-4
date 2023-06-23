@@ -39,7 +39,7 @@
 <!-- 
 	<table class="List">
 	<tr>
-	<td>ニックネーム<input type="text" name="NAME" value="${e.name}"></td>
+	<td><a href="/sobaudon/RegistrationServlet">ニックネーム</a><input type="text" name="NAME" value="${e.name}"></td>
 	<td>投稿内容<input type="text" name="CHATTEXT" value="${e.chattext}"></td>
 	<td>日付<input type="text" name="DATE" value="${e.date}"></td>
 	</tr>
