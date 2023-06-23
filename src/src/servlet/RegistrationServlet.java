@@ -15,6 +15,7 @@ import javax.servlet.http.Part;
 
 import dao.ManageDao;
 import model.Manage;
+import model.User;
 
 /**
  * Servlet implementation class RegistrationServlet
@@ -95,8 +96,8 @@ public class RegistrationServlet extends HttpServlet {
 		String drink1 = request.getParameter("DRINK");
 		int drink = Integer.parseInt(drink1);
 		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
-		String height1 = (String)session.getAttribute("HEIGHT");
-		double height =Double.parseDouble(height1);
+		User height1 = (User)session.getAttribute("profile");
+		double height = height1.getHeight();
 		double bmi = ((dayweight/height)/height);
 		String picture = request.getParameter("PICTURE");
 
