@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -62,8 +64,16 @@ public class RegistrationServlet extends HttpServlet {
 	*/
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String user_id = (String)session.getAttribute("USER_ID");
-		String date = (String)session.getAttribute("DATE");
+
+		Calendar cal = Calendar.getInstance();
+		//SimpleDateFormatで書式を指定
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/hh");
+        //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
+        System.out.println(sdf.format(cal.getTime()));
+
+        User user_id1 = (User)session.getAttribute("profile");
+		String user_id = user_id1.getUser_id();
+		String date = (String)sdf.format(cal.getTime());
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
 		String bf_se_ma = request.getParameter("BF_SE_MA");
@@ -89,17 +99,17 @@ public class RegistrationServlet extends HttpServlet {
 		String dinner = (dn_se_st + dn_se_ma + dn_se_si + dn_se_no + dn_se_ot);
 		String dntext = request.getParameter("DNTEXT");
 
-		String snack1 = request.getParameter("SNACK");
-		int snack = Integer.parseInt(snack1);
-		String exercise1 = request.getParameter("EXERCISE");
-		int exercise = Integer.parseInt(exercise1);
-		String drink1 = request.getParameter("DRINK");
-		int drink = Integer.parseInt(drink1);
+		int snack = Integer.parseInt(request.getParameter("SNACK"));
+		int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
+		int drink = Integer.parseInt(request.getParameter("DRINK"));
+
 		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
 		User height1 = (User)session.getAttribute("profile");
 		double height = height1.getHeight();
 		double bmi = ((dayweight/height)/height);
 		String picture = request.getParameter("PICTURE");
+
+		System.out.println(drink);
 
 		//partオブジェクトとしてnameがpictureのものを取得
 		Part part = request.getPart("PICTURE");

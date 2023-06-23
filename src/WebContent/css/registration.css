@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-/*お試し用ヘッダー*/
-header {
-	background-color : #aaaaff;
-}
-/*お試し用フッター*/
-footer {
-	background-color : #aaaaff;
-}
-
-
 /*登録ボタン*/
 .reg_submit{
 	float : right;
