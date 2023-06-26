@@ -11,7 +11,8 @@ public class ManageDAOTest {
 		ManageDao dao = new ManageDao();
 		// select()のテスト
 				System.out.println("---------- select()のテスト ----------");
-				List<ManageSlide> cardList2 = dao.selectSlide("dojo");
+				String user_id = "dojo";
+				List<ManageSlide> cardList2 = dao.selectSlide(user_id);
 				for (ManageSlide card : cardList2) {
 					System.out.println("NUMBER：" + card.getUser_id());
 					System.out.println("COMPANY：" + card.getDate());

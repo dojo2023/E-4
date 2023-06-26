@@ -41,9 +41,6 @@ public class SlideServlet extends HttpServlet {
 		ManageDao mDao = new ManageDao();
 		List<ManageSlide> manageSlideList = mDao.selectSlide(user_id);
 
-		for(ManageSlide li:manageSlideList) {
-			System.out.println(li.getDate());
-		}
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("manageSlideList", manageSlideList);
 
