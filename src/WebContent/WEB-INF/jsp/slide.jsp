@@ -27,7 +27,7 @@
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
     <div class="slider">
-            <img decoding="async" id="mypic" src="/sobaudon/body/宇奈月温泉.jpeg">
+            <img decoding="async" id="mypic" src="/sobaudon/body/test1.png">
       </div>
 
   <div class="button">

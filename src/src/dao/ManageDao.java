@@ -370,15 +370,15 @@ public class ManageDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 						// SQL文を準備する
-						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID = ? AND PICTURE != ''OR PICTURE != NULL ORDER BY DATE";
+						String sql = "select USER_ID,DATE,PICTURE from MANAGE WHERE USER_ID = ? AND PICTURE != ''OR PICTURE != NULL ORDER BY DATE";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
 						if (user_id != null) {
-							pStmt.setString(1, "%" + user_id + "%");
+							pStmt.setString(1, user_id);
 						}
 						else {
-							pStmt.setString(1, "%");
+							pStmt.setString(1, "");
 						}
 
 						// SQL文を実行し、結果表を取得する
