@@ -86,7 +86,8 @@ public class CalendarServlet extends HttpServlet {
 
 
 				// 更新ページにフォワードする
-				response.sendRedirect("/sobaudon/UpdateServlet");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/update.jsp");
+				dispatcher.forward(request, response);
 	}
 
 }

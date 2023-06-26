@@ -17,17 +17,17 @@
 
 <div class="position">
 <c:forEach var="e" items="${manageSlideList}" >
-	<p>${e.picture}</p>
-	<p>${e.date}</p>
   <input class="b" type="hidden" value="${e.date}">
   <input class="slider_img" type="hidden" value="${e.picture}">
   </c:forEach>
-  <p id="date">日付</p>
 </div>
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
     <div class="slider">
-            <img decoding="async" id="mypic" src="/sobaudon/body/宇奈月温泉.jpeg">
+    <c:forEach var="e" items="${manageSlideList}" >
+    <input class="slider_img" type="hidden" value="${e.picture}">
+    </c:forEach>
+            <img decoding="async" id="mypic" src="/sobaudon/body/test1.png">
       </div>
 
   <div class="button">

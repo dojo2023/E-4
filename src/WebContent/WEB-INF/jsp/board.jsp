@@ -14,9 +14,9 @@
 <body class = "txt">
 <%@ include file="header.jsp" %>
 <c:forEach var="e" items="${list}" >
-<form action = "<%= request.getContextPath() %>/BrowseServlet" method="post" >
+<form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
 <input class="data" type="hidden" name= "USER_ID" value="${e.user_id}">
-<input value="ニックネーム:${e.name}" type = "submit" name = "submit">
+<input value="ニックネーム:${e.name}" type = "submit">
 </form><br>
 <c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
  
@@ -30,11 +30,9 @@
 <p class = "chat">コメント:<br>
 <textarea name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
-<!-- css -->
 <p id = "inputlength">0文字</p>
-<div class = "flexbox">
-<input type="submit" value="投稿"><input type="reset" value="リセット">
-</div>
+<p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
+
 </div>
 </form>
 
