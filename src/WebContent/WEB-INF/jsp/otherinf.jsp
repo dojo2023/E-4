@@ -29,7 +29,7 @@
 <input type="hidden" id="getbf3" value="${oth_search.drink}">
 
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
-	<table class="regi_table">
+	<table class="regi_ue">
 		<tr>
 			<th>朝</th>
 			<td>
@@ -84,7 +84,8 @@
 				<input class="eat_text" type="text" maxlength="100" name="DNTEXT" value="${oth_search.dntext}" disabled>
 			</td>
 		</tr>
-
+	</table>
+	<table class="regi_shita">
 		<tr>
 		<th>運動</th>
 			<td>
