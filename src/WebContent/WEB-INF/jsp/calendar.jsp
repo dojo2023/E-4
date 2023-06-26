@@ -23,10 +23,13 @@
     </form>
 
     <form name="dateform">
+      <!-- プルダウン -->
       <select name="monthdate" id="monthdate">
       </select>
     </form>
+
     <div class="wrapper">
+      <p class="inf">日付をクリックするとその日の登録ページに飛びます。</p>
       <!--yyyy年mm月を表示-->
       <h1 id="header"></h1>
       <!--ボタンクリックで移動-->
@@ -34,11 +37,14 @@
         <button id="prev" onclick="prev()"><</button>
         <button id="next" onclick="next()">></button>
       </div>
-      <!-- 広告 -->
-      <a url=""><img src="" alt="広告"></a>
+
+      <!-- 広告 ページ残したまま飛ぶ -->
+      <a href="https://www.seplus.jp/" target="_blank"><img src="./img/titletest.png" alt="広告" class="ad"></a>
+
       <!--カレンダー-->
       <div id="calendar"></div>
     </div>
+
     <!-- グラフ -->
     <div id="chart_div"></div>
   </main>

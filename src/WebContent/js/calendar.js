@@ -196,7 +196,8 @@ function showProcess(date) {
 // カレンダー作成
 function createProcess(year, month) {
     // 曜日
-    var calendar = "<table><tr class='dayOfWeek'>";
+    //カレンダーテーブル
+    var calendar = "<table class='calendar'><tr class='dayOfWeek'>";
     for (var i = 0; i < week.length; i++) {
         calendar += "<th>" + week[i] + "</th>";
     }

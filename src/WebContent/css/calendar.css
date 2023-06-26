@@ -5,6 +5,7 @@
     max-width: 600px;
     margin: 0 auto;
     color: #666;
+    height:680px;
 }
 #header {
     text-align: center;
@@ -32,6 +33,14 @@ th, td {
     padding-bottom: 10px;
     text-align: center;
 }
+
+/*日付にカーソル合わせると色変わる*/
+.calendar td:hover{
+	background-color:pink;
+	cursor:pointer;
+	font-weight:bold;
+}
+
 /*日曜日*/
 td:first-child {
     color: red;
@@ -72,4 +81,33 @@ td.today {
 }
 #next {
     float: right;
+}
+
+.inf{
+	text-align:center;
+	font-weight:bold;
+	color:gray;
+}
+/*グラフ*/
+#chart_div{
+	border:3px solid #ddd;
+	width:23%;
+	height:25%;
+	position:absolute;
+	top:350px;
+	left:920px;
+}
+/*プルダウン*/
+#monthdate{
+	color:red;
+}
+
+/*広告*/
+.ad{
+	border:1px solid pink;
+	width:240px;
+	height:500px;
+	position:absolute;
+	top:200px;
+	left:20px;
 }
