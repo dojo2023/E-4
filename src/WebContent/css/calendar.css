@@ -116,7 +116,7 @@ td.today {
 .ad{
 	width:240px;
 	height:500px;
-	position:absolute;
+	position:relative;
 	top:200px;
 	left:20px;
 	opacity:1;
