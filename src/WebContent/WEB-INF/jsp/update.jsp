@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
 	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
-	<div >選択した日付</div>
+	<div >${search.date}</div>
 <!-- 広告 -->
 	<a url="">
 		<img src="" alt="広告">
@@ -138,6 +138,7 @@
 			</td>
 		</tr>
 	</table>
+	<input type="hidden" value="${search.date}" name="DATE">
 	<input class="regi_submit" type="submit" name="submit" value="更新">
 </form>
 </main>
