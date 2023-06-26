@@ -3,20 +3,16 @@
 width: 100px;
 height: 100px;
 position: absolute;
-bottom: 90px;
+bottom: 180px;
 right: 235px; 
 }
-.rw>label{
-    display: inline-block;
-    padding: 5px;
-    cursor: pointer;
-}
-.rw>label:hover{
-    color: red;
-}
-.rw>label>input{
-    margin-right: 5px;
-    cursor: pointer;
+.flexbox {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
 }
 /*.button{
 display:flex;
