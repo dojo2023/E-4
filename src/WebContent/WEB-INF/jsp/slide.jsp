@@ -17,7 +17,6 @@
 
 <div class="position">
 <c:forEach var="e" items="${manageSlideList}" >
-	<p>${e.date}</p>
   <input class="b" type="hidden" value="${e.date}">
   <input class="slider_img" type="hidden" value="${e.picture}">
   </c:forEach>
