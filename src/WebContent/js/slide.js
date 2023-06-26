@@ -1,6 +1,6 @@
 
 // class名"a"の要素を取得
-const elements = document.getElementsByClassName('slide img');
+const elements = document.getElementsByClassName('slider_img');
 const elementsd = document.getElementsByClassName('b');
 
 let paused = true;  // 開始、停止用

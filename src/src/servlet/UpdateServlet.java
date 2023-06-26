@@ -7,6 +7,7 @@ import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,13 @@ import model.User;
  * Servlet implementation class UpdateServlet
  */
 @WebServlet("/UpdateServlet")
+@MultipartConfig(
+		//location="C:\\dojo6\\src\\WebContent\\body",
+		maxFileSize=1000000
+
+	)
+
+
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -132,6 +140,7 @@ public class UpdateServlet extends HttpServlet {
 		ManageDao md = new ManageDao();
 		Manage search = md.select(user_id , date);
 		request.setAttribute("search", search);
+
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/update.jsp");
 		dispatcher.forward(request, response);

@@ -14,20 +14,17 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<script type="text/javascript" src="/sobaudon/js/slide.js"></script>
 
 <div class="position">
 <c:forEach var="e" items="${manageSlideList}" >
-  <div><input class="b" type="hidden" value="${e.date}"></div>
+  <input class="b" type="hidden" value="${e.date}">
+  <input class="slider_img" type="hidden" value="${e.picture}">
   </c:forEach>
   <p id="date">日付</p>
 </div>
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
     <div class="slider">
-         <c:forEach var="e" items="${manageSlideList}" >
-           <input class="slider img" type="hidden" value="${e.picture}">
-            </c:forEach>
             <img decoding="async" id="mypic" src="" width="400" height="300">
       </div>
 
@@ -46,5 +43,6 @@
 
 <%@ include file="title.jsp" %>
 <%@ include file="footer.jsp" %>
+<script type="text/javascript" src="/sobaudon/js/slide.js"></script>
 </body>
 </html>
