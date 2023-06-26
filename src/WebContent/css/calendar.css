@@ -88,7 +88,7 @@ td.today {
 	font-weight:bold;
 	color:gray;
 }
-/*グラフ*/
+/*グラフ スクロールしなくても全体がうつる位置*/
 #chart_div{
 	border:3px solid #ddd;
 	width:23%;
@@ -99,7 +99,11 @@ td.today {
 }
 /*プルダウン*/
 #monthdate{
-	color:red;
+	font-weight:bold;
+	position:absolute;
+	top:210px;
+	left:825px;
+	padding:10px;
 }
 
 /*広告*/
