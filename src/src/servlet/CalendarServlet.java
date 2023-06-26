@@ -65,24 +65,22 @@ public class CalendarServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/* もしもログインしていなかったらログインサーブレットにリダイレクトする
+		//もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
+				if (session.getAttribute("profile") == null) {
 					response.sendRedirect("/servlet/LoginServlet");
 					return;
-				}*/
+				}
 
 		// リクエストパラメータを取得する
-				HttpSession session = request.getSession();
 				request.setCharacterEncoding("UTF-8");
 				String date = request.getParameter("calendar");
 				System.out.println(date);
 				User usr =  (User)session.getAttribute("profile");
 				String user_id = usr.getUser_id();
 				ManageDao md = new ManageDao();
-				Manage data = md.select(user_id , date );
-				request.setAttribute("data", data);
-
+				Manage search = md.select(user_id , date );
+				request.setAttribute("search", search);
 
 				//Manage graph = new Manage(user_id , date ,breakfast ,bftext ,lunch ,lctext ,dinner ,dntext,snack ,exercise ,drink ,dayweight,picture,bmi,counter);
 

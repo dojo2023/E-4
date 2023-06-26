@@ -136,6 +136,7 @@
 			</td>
 		</tr>
 	</table>
+	<input type="hidden" value="${search.date}" name="DATE">
 	<input class="regi_submit" type="submit" name="submit" value="登録"><br>
 	<div>
 		<span id="error_message"></span>
