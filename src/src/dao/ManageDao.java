@@ -370,7 +370,7 @@ public class ManageDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 						// SQL文を準備する
-						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID LIKE ? ORDER BY DATE";
+						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID = ? AND PICTURE != '' ORDER BY DATE";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
