@@ -21,7 +21,6 @@
 	</a>
 <main>
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
-<c:forEach var="other" items="${otherInfo}" >
 	<table class="regi_table">
 		<tr>
 			<th>朝</th>
@@ -112,7 +111,6 @@
 			</td>
 		</tr>
 	</table>
-</c:forEach>
 </form>
 </main>
 <!-- 称号 -->
