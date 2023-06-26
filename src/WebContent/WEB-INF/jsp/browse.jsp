@@ -1,42 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>閲覧</title>
+<title>カレンダー</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">
 </head>
 <body>
- <header>
-  <!-- ヘッダー（ここから） -->
-     <h1 id="logo_login">
-       ロゴ
-     </h1>
-    <h2>
-      ~さんの目標体重
-    </h2>
-    <h2 id="date"></h2>
-      <a href="/sobaudon/LoginServlet">ログアウト</a>
-    <ul>
-      <li><a href="/sovaudon/RegistrationServlet">登録</a></li>
-      <li><a href="/sobaudon/CalendarServlet">カレンダー</a></li>
-      <li><a href="/sobaudon/SlideServlet">スライドショー</a></li>
-      <li><a href="/sobaudon/BoardServlet">掲示板</a></li>
-      <li><a href="/sobaudon/HelpServlet">ヘルプ</a></li>
-      <li><a href="/sobaudon/ProfileServlet">プロフィール</a></li>
-    </ul>
-  <!-- ヘッダー（ここまで） -->
+  <header>
+	<%@ include file="header.jsp" %>
   </header>
   <main>
-    <form method="POST" action="/sobaudon/CalendarServlet" name="calendar_date">
-      <input type="hidden" id="calendar_date" value="">
+	<c:forEach var="e" items="${lg}">
+	  <input class="data" type="hidden" value="${e.date}">
+      <input class="data" type="hidden" value="${e.dayweight}">
+      <input class="data" type="hidden" value="${e.bmi}">
+	</c:forEach>
+
+    <form method="POST" action="/sobaudon/BrowseServlet" name="calendar_date">
+      <input type="hidden" id="calendar_date" name="calendar" value="">
+      <input type="hidden" id="calendar_date" name="else" value="${else_id}">
     </form>
 
+
     <form name="dateform">
+      <!-- プルダウン -->
       <select name="monthdate" id="monthdate">
       </select>
     </form>
+
     <div class="wrapper">
+      <p class="inf">日付をクリックするとその日の登録ページに飛べます。</p>
       <!--yyyy年mm月を表示-->
       <h1 id="header"></h1>
       <!--ボタンクリックで移動-->
@@ -44,14 +39,19 @@
         <button id="prev" onclick="prev()"><</button>
         <button id="next" onclick="next()">></button>
       </div>
-      <!-- 広告 -->
-      <a url=""><img src="" alt="広告"></a>
+
+      <!-- 広告 ページ残したまま飛ぶ -->
+      <a href="https://www.seplus.jp/" target="_blank"><img src="./img/adv.png" alt="広告" class="ad"></a>
+
       <!--カレンダー-->
       <div id="calendar"></div>
     </div>
+
     <!-- グラフ -->
     <div id="chart_div"></div>
   </main>
+  <%@ include file="title.jsp" %>
+  <%@ include file="footer.jsp" %>
 <script src=/sobaudon/js/code.jquery.com_jquery-3.7.0.min.js></script>
 <script src="/sobaudon/js/calendar.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
