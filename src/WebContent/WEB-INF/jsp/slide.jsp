@@ -19,7 +19,7 @@
 
 <div class="position">
 <c:forEach var="e" items="${manageSlideList}" >
-  <div><input class="b" type="hidden" value="2023/06/26"></div>
+  <div><input class="b" type="hidden" value="${e.date}"></div>
   </c:forEach>
   <p id="date">日付</p>
 </div>
