@@ -52,12 +52,10 @@ public class SlideServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				User user_id1 = (User)session.getAttribute("profile");
 				String user_id = user_id1.getUser_id();
-				String name = user_id1.getName();
-				String picture = null;
 
 				// 検索処理を行う
 				ManageDao mDao = new ManageDao();
-				List<ManageSlide> manageSlideList = mDao.selectSlide(new ManageSlide(user_id, name, picture));
+				List<ManageSlide> manageSlideList = mDao.selectSlide(user_id);
 
 
 
