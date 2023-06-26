@@ -86,8 +86,7 @@ p{
 }
 .lp_button{
 	display:block;
-	margin-left:100px;
-	margin:10px  auto;
+	margin:10px  auto 30px auto;
 }
 
 /*変更不可*/

@@ -1,6 +1,7 @@
 var st1 = String(document.getElementById("getcheck1").value);
 var st2 = String(document.getElementById("getcheck2").value);
 var st3 = String(document.getElementById("getcheck3").value);
+
 let str1 = st1.charAt(0);
 let str2 = st1.charAt(1);
 let str3 = st1.charAt(2);
@@ -16,6 +17,7 @@ let str12 = st3.charAt(1);
 let str13 = st3.charAt(2);
 let str14 = st3.charAt(3);
 let str15 = st3.charAt(4);
+
 if (str1 === '1') {
     reg_check1.checked = true;
 }
@@ -61,9 +63,11 @@ if (str14 === '1') {
 if (str15 === '1') {
     reg_check15.checked = true;
 }
+
 var radio1 = document.getElementById("getbf1").value;
 var radio2 = document.getElementById("getbf2").value;
 var radio3 = document.getElementById("getbf3").value;
+
 if (radio1 === "1") {
     rd1.checked = true;
 } else {

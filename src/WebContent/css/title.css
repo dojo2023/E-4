@@ -3,7 +3,7 @@
 .title{
 	position:absolute;
 	top:168px;
-	left:950px;
+	left:930px;
 	text-align:center;
 	font-weight:bold;
 }
@@ -15,4 +15,7 @@ td{
 	padding: 10px;
 	width: 110px;
 	height: 45px;
+}
+.color{
+	color:black;
 }

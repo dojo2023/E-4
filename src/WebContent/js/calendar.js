@@ -32,7 +32,10 @@ function addOption(){
     let option11 = document.createElement("option");
     let option12 = document.createElement("option");
     if ((showDate.getMonth() + 1) > 0) {
-        option1.text = showDate.getFullYear() +"/"+ (showDate.getMonth() + 1);
+
+ //カレンダーのタイトル
+    //  option1.text = showDate.getFullYear() +"年"+ (showDate.getMonth() + 1 + "月");
+    	option1.text = showDate.getFullYear() +"/"+ (showDate.getMonth() + 1);
         option1.value = showDate.getMonth();
         monthdate.add(option1);
     } else {
@@ -196,7 +199,8 @@ function showProcess(date) {
 // カレンダー作成
 function createProcess(year, month) {
     // 曜日
-    var calendar = "<table><tr class='dayOfWeek'>";
+    //カレンダーテーブル
+    var calendar = "<table class='calendar'><tr class='dayOfWeek'>";
     for (var i = 0; i < week.length; i++) {
         calendar += "<th>" + week[i] + "</th>";
     }

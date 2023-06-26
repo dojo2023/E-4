@@ -11,7 +11,7 @@ import java.util.List;
 import model.Title;
 
 public class TitleDao {
-	public List<Title> list(Title param) {
+	public List<Title> list(Title title) {
 		Connection conn = null;
 		List<Title> titleList = new ArrayList<Title>();
 
@@ -23,12 +23,29 @@ public class TitleDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from TITLE where USER_ID like ? and DATE like ? order by DATE";
+			String sql = "select * from TITLE where TITLE_ID like ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (param.getTitle_id() != null) {
-
+			if (title.getTitle_id() != null) {
+				pStmt.setString(1, "%" + title.getTitle_id() + "%");
+			}else {
+				pStmt.setString(1, "%");
+			}
+			if (title.getTitle_point() != 0) {
+				pStmt.setString(2, "%" + title.getTitle_point() + "%");
+			}else {
+				pStmt.setString(2, "%");
+			}
+			if (title.getTitle_name() != null) {
+				pStmt.setString(3, "%" + title.getTitle_name() + "%");
+			}else {
+				pStmt.setString(3, "%");
+			}
+			if (title.getTitle_image() != null) {
+				pStmt.setString(4, "%" + title.getTitle_image() + "%");
+			}else {
+				pStmt.setString(4, "%");
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -36,14 +53,15 @@ public class TitleDao {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Title title = new Title(
+				Title new_title = new Title(
 					rs.getString("TITLEID"),
 					rs.getInt("TITLEPOINT"),
 					rs.getString("TITLENAME"),
 					rs.getString("TITLEIMAGE")
 				);
-				titleList.add(title);
+				titleList.add(new_title);
 			}
+
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

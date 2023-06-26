@@ -12,11 +12,11 @@
 <div class="title">
 	<table>
 		<tr>
-		<td>レジェンド</td>
+		<td><span class="color">レジェンド</span></td>
 		<td rowspan="2"><img src="./img/titletest.png"></td>
 		</tr>
 		<tr>
-		<td>87pt</td>
+		<td><span class="color">87pt</span></td>
 		</tr>
 	</table>
 </div>

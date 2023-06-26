@@ -49,7 +49,6 @@ public class PointDao {
 		}
 	}
 
-
 	//登録されているユーザの現ポイントを前回のポイントにコピー 引数なし　void
 	public void copy() {
 		Connection conn = null;
