@@ -85,6 +85,7 @@
 			</td>
 		</tr>
 	</table>
+
 	<table class="regi_shita">
 		<tr>
 		<th>運動</th>

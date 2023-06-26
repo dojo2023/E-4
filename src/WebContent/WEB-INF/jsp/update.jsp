@@ -25,7 +25,7 @@
 <input type="hidden" id="getbf2" value="${search.exercise}">
 <input type="hidden" id="getbf3" value="${search.drink}">
 <form method="POST" action="/sobaudon/UpdateServlet" enctype="multipart/form-data">
-	<table class="regi_check">
+	<table class="table_ue">
 		<tr>
 			<th>朝</th>
 			<td class="regi_check">
@@ -104,7 +104,9 @@
 					<input class="eat_text" type="text" maxlength="100" name="DNTEXT" value="${search.dntext}">
 			</td>
 		</tr>
+	</table>
 
+	<table class="table_shita">
 		<tr>
 		<th>運動</th>
 			<td>
