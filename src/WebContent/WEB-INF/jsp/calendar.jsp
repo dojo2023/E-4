@@ -40,7 +40,7 @@
       </div>
 
       <!-- 広告 ページ残したまま飛ぶ -->
-      <a href="https://www.seplus.jp/" target="_blank"><img src="./img/titletest.png" alt="広告" class="ad"></a>
+      <a href="https://www.seplus.jp/" target="_blank"><img src="./img/adv.png" alt="広告" class="ad"></a>
 
       <!--カレンダー-->
       <div id="calendar"></div>
