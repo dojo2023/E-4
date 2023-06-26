@@ -244,7 +244,7 @@ public class ManageDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
-				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where USER_ID=?, DATE=?";
+				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where USER_ID=? AND DATE=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -370,7 +370,7 @@ public class ManageDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 						// SQL文を準備する
-						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID = ? AND PICTURE != '' ORDER BY DATE";
+						String sql = "select USER_ID,DATE,PICTURE, from MANAGE WHERE USER_ID = ? AND PICTURE != ''OR PICTURE != NULL ORDER BY DATE";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
@@ -434,22 +434,17 @@ public class ManageDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 						// SQL文を準備する
-						String sql = "select USER_ID,DATE,DAYWEIGHT,BMI from MANAGE WHERE USER_ID LIKE ? AND DATE LIKE ? ORDER BY DATE DESC LIMIT 30";
+						String sql = "select USER_ID,DATE,DAYWEIGHT,BMI from MANAGE WHERE USER_ID = ?  AND DAYWEIGHT IS NOT null ORDER BY DATE DESC LIMIT 30";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
 						if (Graph.getUser_id() != null) {
-							pStmt.setString(1, "%" + Graph.getUser_id() + "%");
+							pStmt.setString(1, Graph.getUser_id());
 						}
 						else {
 							pStmt.setString(1, "%");
 						}
-						if (Graph.getDate() != null) {
-							pStmt.setString(2, "%" + Graph.getDate() + "%");
-						}
-						else {
-							pStmt.setString(2, "%");
-						}
+
 
 						// SQL文を実行し、結果表を取得する
 						ResultSet rs = pStmt.executeQuery();
