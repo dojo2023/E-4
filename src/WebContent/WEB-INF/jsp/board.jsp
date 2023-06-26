@@ -16,8 +16,8 @@
 <c:forEach var="e" items="${list}" >
 <form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
 <input class="data" type="hidden" name= "USER_ID" value="${e.user_id}">
-</form>
-ニックネーム:<a href="/sobaudon/BrowseServlet"><c:out value="${e.name}"></c:out></a>　<br>
+<input value="ニックネーム:${e.name}" type = "submit">
+</form><br>
 <c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
  
 <br>
