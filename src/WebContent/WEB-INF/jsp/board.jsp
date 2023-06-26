@@ -15,12 +15,13 @@
 <%@ include file="header.jsp" %>
 <c:forEach var="e" items="${list}" >
 <form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
-<input class="data" type="hidden" value="${e.date}"></form>
-	ニックネーム:<a href="/sobaudon/BrowseServlet"><c:out value="${e.name}"></c:out></a>　<br>
-	<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
+<input class="data" type="hidden" name= "USER_ID" value="${e.user_id}">
+<input value="ニックネーム:${e.name}" type = "submit">
+</form><br>
+<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
  
-    <br>
-	<br>
+<br>
+<br>
 </c:forEach>
 
 
@@ -33,7 +34,6 @@
 <p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
 
 </div>
-
 </form>
 
 

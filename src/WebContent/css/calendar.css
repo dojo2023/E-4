@@ -97,6 +97,7 @@ td.today {
 	top:350px;
 	left:920px;
 }
+
 /*プルダウン*/
 #monthdate{
 	font-size:20px;
@@ -113,10 +114,13 @@ td.today {
 
 /*広告*/
 .ad{
-	border:1px solid pink;
 	width:240px;
 	height:500px;
 	position:absolute;
 	top:200px;
 	left:20px;
+	opacity:1;
+}
+.ad:hover{
+	opacity:0.3;
 }
