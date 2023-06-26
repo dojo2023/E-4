@@ -32,7 +32,10 @@ function addOption(){
     let option11 = document.createElement("option");
     let option12 = document.createElement("option");
     if ((showDate.getMonth() + 1) > 0) {
-        option1.text = showDate.getFullYear() +"/"+ (showDate.getMonth() + 1);
+
+ //カレンダーのタイトル
+    //  option1.text = showDate.getFullYear() +"年"+ (showDate.getMonth() + 1 + "月");
+    	option1.text = showDate.getFullYear() +"/"+ (showDate.getMonth() + 1);
         option1.value = showDate.getMonth();
         monthdate.add(option1);
     } else {
