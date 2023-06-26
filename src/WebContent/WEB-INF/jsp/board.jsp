@@ -14,7 +14,8 @@
 <body class = "txt">
 <%@ include file="header.jsp" %>
 <c:forEach var="e" items="${list}" >
-
+<form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
+<input class="data" type="hidden" value="${e.date}"></form>
 	ニックネーム:<a href="/sobaudon/BrowseServlet"><c:out value="${e.name}"></c:out></a>　<br>
 	<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
  
@@ -25,13 +26,14 @@
 
 <form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
 <div class = "rw">
-<!--テキストエリアに入力があったらチェックを行う関数を用意する。-->
 <p class = "chat">コメント:<br>
 <textarea name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
 <p id = "inputlength">0文字</p>
 <p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
+
 </div>
+
 </form>
 
 
