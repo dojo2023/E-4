@@ -103,13 +103,14 @@ td.today {
 	font-size:20px;
 	font-weight:bold;
 	position:absolute;
-	padding:18px;
-	top:210px;
-	left:540px;
+	padding:10px;
 	/*
 	top:210px;
-	left:825px;
+	left:540px;
 	*/
+	top:200px;
+	left:815px;
+
 }
 
 /*広告*/
