@@ -11,7 +11,6 @@ import java.util.List;
 import model.Title;
 
 public class TitleDao {
-	private static int i = 0;
 
 	public List<Title> list(Title title) {
 		Connection conn = null;
@@ -28,52 +27,57 @@ public class TitleDao {
 			String sql = "select * from TITLE where TITLE_POINT >= ? and TITLE_POINT < ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			int i = 0;
-
 			// SQL文を完成させる
-			if (title.getTitle_point() >= 0 || title.getTitle_point() < 4) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+
+			//怠惰
+			if (title.getTitle_point() >= 0 && title.getTitle_point() < 4) {
+				pStmt.setInt(1 , 0);
+				pStmt.setInt(2 , 4);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
 			}
 
-			if (title.getTitle_point() >= 4 || title.getTitle_point() < 8) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+			//怠け
+			if (title.getTitle_point() >= 4 && title.getTitle_point() < 14) {
+				pStmt.setInt(1 , 4);
+				pStmt.setInt(2 , 14);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
 			}
 
-			if (title.getTitle_point() >= 8 || title.getTitle_point() < 16) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+			//一般
+			if (title.getTitle_point() >= 14 && title.getTitle_point() < 28) {
+				pStmt.setInt(1 , 14);
+				pStmt.setInt(2 , 28);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
 			}
 
-			if (title.getTitle_point() >= 16 || title.getTitle_point() < 32) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+			//エリート
+			if (title.getTitle_point() >= 28 && title.getTitle_point() < 56) {
+				pStmt.setInt(1 , 28);
+				pStmt.setInt(2 , 56);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
 			}
 
-			if (title.getTitle_point() >= 32 || title.getTitle_point() < 64) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+			//プロ
+			if (title.getTitle_point() >= 56 && title.getTitle_point() < 85) {
+				pStmt.setInt(1 , 56);
+				pStmt.setInt(2 , 85);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
 			}
 
-			if (title.getTitle_point() >= 60 || title.getTitle_point() < 200) {
-				pStmt.setInt(1,title.getTitle_point());
-				pStmt.setInt(2,title.getTitle_point());
+			//レジェ
+			if (title.getTitle_point() >= 85 && title.getTitle_point() < 200) {
+				pStmt.setInt(1 , 85);
+				pStmt.setInt(2 , 200);
 			}else {
 				pStmt.setString(1, null);
 				pStmt.setString(2, null);
