@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html dir="ltr">
 <head>
-<script src="slide.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <title>スライドショー画面</title>
