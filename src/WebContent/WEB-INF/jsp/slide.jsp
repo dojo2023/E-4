@@ -19,6 +19,7 @@
 <c:forEach var="e" items="${manageSlideList}" >
   <input class="b" type="hidden" value="${e.date}">
   </c:forEach>
+  <p id="date">日付</p>
 </div>
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
