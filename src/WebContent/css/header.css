@@ -24,7 +24,7 @@ header{
 .header_top{
 	float:left;
 	/*display: flex;*/
-	margin:20px 30px 0 245px;
+	margin:20px 30px 0 235px;
 	width:650px;
 }
 .logout{
