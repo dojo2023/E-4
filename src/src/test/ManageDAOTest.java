@@ -14,9 +14,9 @@ public class ManageDAOTest {
 				String user_id = "dojo";
 				List<ManageSlide> cardList2 = dao.selectSlide(user_id);
 				for (ManageSlide card : cardList2) {
-					System.out.println("NUMBER：" + card.getUser_id());
-					System.out.println("COMPANY：" + card.getDate());
-					System.out.println("DEPARTMENT：" + card.getPicture());
+					System.out.println("USER_ID：" + card.getUser_id());
+					System.out.println("DATE：" + card.getDate());
+					System.out.println("PICTURE：" + card.getPicture());
 					System.out.println();
 				}
 	}
