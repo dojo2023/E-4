@@ -28,7 +28,8 @@ public class TitleDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (title.getTitle_point() >= 0 && title.getTitle_point() < 4) {
+			//怠惰からレジェまでの条件
+			if(title.getTitle_point() >= 0 && title.getTitle_point() < 4) {
 				pStmt.setInt(1 , 0);
 				pStmt.setInt(2 , 4);
 			}else if(title.getTitle_point() >= 4 && title.getTitle_point() < 14){
@@ -51,7 +52,8 @@ public class TitleDao {
 				pStmt.setString(2, null);
 			}
 
-		/*	if (title.getTitle_id() != null) {
+		/*
+			if (title.getTitle_id() != null) {
 				pStmt.setString(2, "%" + title.getTitle_id() + "%");
 			}else {
 				pStmt.setString(2, "%");
