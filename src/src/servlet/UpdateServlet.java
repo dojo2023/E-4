@@ -74,6 +74,7 @@ public class UpdateServlet extends HttpServlet {
 
 		User user_id1 = (User)session.getAttribute("profile");
 		String user_id = user_id1.getUser_id();
+		request.setCharacterEncoding("UTF-8");
 		String date = request.getParameter("DATE");
 
 		String bf_se_st = request.getParameter("BF_SE_ST");
@@ -126,7 +127,7 @@ public class UpdateServlet extends HttpServlet {
 
 		part.write(path+File.separator+filename);
 
-		picture = "sobaudon/body/"+filename;
+		picture = "/sobaudon/body/"+filename;
 
 		//登録を押した際のカウント
 		String counter = "0" ;

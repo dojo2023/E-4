@@ -17,6 +17,8 @@
 
 <div class="position">
 <c:forEach var="e" items="${manageSlideList}" >
+	<p>${e.picture}</p>
+	<p>${e.date}</p>
   <input class="b" type="hidden" value="${e.date}">
   <input class="slider_img" type="hidden" value="${e.picture}">
   </c:forEach>
@@ -25,7 +27,7 @@
 <article>
   <div class="advertisement"><img src="./img/advertisement.png"></div>
     <div class="slider">
-            <img decoding="async" id="mypic" src="sobaudon/body/宇奈月温泉.jpeg" width="400" height="300">
+            <img decoding="async" id="mypic" src="/sobaudon/body/宇奈月温泉.jpeg">
       </div>
 
   <div class="button">
