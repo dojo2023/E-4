@@ -28,54 +28,22 @@ public class TitleDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-
-			//怠惰
 			if (title.getTitle_point() >= 0 && title.getTitle_point() < 4) {
 				pStmt.setInt(1 , 0);
 				pStmt.setInt(2 , 4);
-			}else {
-				pStmt.setString(1, null);
-				pStmt.setString(2, null);
-			}
-
-			//怠け
-			if (title.getTitle_point() >= 4 && title.getTitle_point() < 14) {
+			}else if(title.getTitle_point() >= 4 && title.getTitle_point() < 14){
 				pStmt.setInt(1 , 4);
 				pStmt.setInt(2 , 14);
-			}else {
-				pStmt.setString(1, null);
-				pStmt.setString(2, null);
-			}
-
-			//一般
-			if (title.getTitle_point() >= 14 && title.getTitle_point() < 28) {
+			}else if(title.getTitle_point() >= 14 && title.getTitle_point() < 28) {
 				pStmt.setInt(1 , 14);
 				pStmt.setInt(2 , 28);
-			}else {
-				pStmt.setString(1, null);
-				pStmt.setString(2, null);
-			}
-
-			//エリート
-			if (title.getTitle_point() >= 28 && title.getTitle_point() < 56) {
+			}else if(title.getTitle_point() >= 28 && title.getTitle_point() < 56) {
 				pStmt.setInt(1 , 28);
 				pStmt.setInt(2 , 56);
-			}else {
-				pStmt.setString(1, null);
-				pStmt.setString(2, null);
-			}
-
-			//プロ
-			if (title.getTitle_point() >= 56 && title.getTitle_point() < 85) {
+			}else if(title.getTitle_point() >= 56 && title.getTitle_point() < 85) {
 				pStmt.setInt(1 , 56);
 				pStmt.setInt(2 , 85);
-			}else {
-				pStmt.setString(1, null);
-				pStmt.setString(2, null);
-			}
-
-			//レジェ
-			if (title.getTitle_point() >= 85 && title.getTitle_point() < 200) {
+			}else if(title.getTitle_point() >= 85 && title.getTitle_point() < 200) {
 				pStmt.setInt(1 , 85);
 				pStmt.setInt(2 , 200);
 			}else {
