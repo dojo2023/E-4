@@ -9,8 +9,9 @@
 }
 
 /*チェックボックステーブル*/
-.regi_check{
+.table_ue{
 	padding : 1em 15em 1em 15em ;
 	margin-top : 5px;
 	margin-bottom : 5px;
+	outline : flex;
 }
