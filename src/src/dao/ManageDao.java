@@ -244,7 +244,7 @@ public class ManageDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 				// SQL文を準備する
-				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where NUMBER=?, DATE=?";
+				String sql = "update MANAGE set BREAKFAST=?, BFTEXT=?, LUNCH=?, LCTEXT=?, DINNER=?, DNTEXT=?, SNACK=?, EXERCISE=?, DRINK=?, DAYWEIGHT=?, PICTURE=?, BMI=?, COUNTER=? where USER_ID=?, DATE=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
