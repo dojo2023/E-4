@@ -32,7 +32,7 @@
 	<table class="regi_table">
 		<tr>
 			<th>朝</th>
-			<td>
+			<td class="bf_check">
 			<div class=bf_eat_form>
 				<label><input id="reg_check1" type="checkbox" name="BF_SE_ST" value="1" class="check" disabled>主食</label>
 				<label><input type='hidden' value='0' name='BF_SE_ST' disabled></label>
@@ -98,7 +98,6 @@
 			</td>
 		<th>間食・夜食</th>
 			<td>
-
 				<label><input id="rd5" type="radio" name="SNACK" value="1" disabled>あり</label>
 				<label><input id="rd6" type="radio" name="SNACK" value="0" disabled>なし</label>
 			</td>

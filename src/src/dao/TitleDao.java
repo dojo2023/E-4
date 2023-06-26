@@ -11,6 +11,8 @@ import java.util.List;
 import model.Title;
 
 public class TitleDao {
+	private static int i = 0;
+
 	public List<Title> list(Title title) {
 		Connection conn = null;
 		List<Title> titleList = new ArrayList<Title>();
@@ -23,17 +25,62 @@ public class TitleDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from TITLE where TITLE_ID like ?";
+			String sql = "select * from TITLE where TITLE_POINT >= ? and TITLE_POINT < ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			int i = 0;
+
 			// SQL文を完成させる
-			if (title.getTitle_id() != null) {
-				pStmt.setString(1, "%" + title.getTitle_id() + "%");
+			if (title.getTitle_point() >= 0 || title.getTitle_point() < 4) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
 			}else {
-				pStmt.setString(1, "%");
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
 			}
-			if (title.getTitle_point() != 0) {
-				pStmt.setString(2, "%" + title.getTitle_point() + "%");
+
+			if (title.getTitle_point() >= 4 || title.getTitle_point() < 8) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
+			}else {
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
+			}
+
+			if (title.getTitle_point() >= 8 || title.getTitle_point() < 16) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
+			}else {
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
+			}
+
+			if (title.getTitle_point() >= 16 || title.getTitle_point() < 32) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
+			}else {
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
+			}
+
+			if (title.getTitle_point() >= 32 || title.getTitle_point() < 64) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
+			}else {
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
+			}
+
+			if (title.getTitle_point() >= 60 || title.getTitle_point() < 200) {
+				pStmt.setInt(1,title.getTitle_point());
+				pStmt.setInt(2,title.getTitle_point());
+			}else {
+				pStmt.setString(1, null);
+				pStmt.setString(2, null);
+			}
+
+		/*	if (title.getTitle_id() != null) {
+				pStmt.setString(2, "%" + title.getTitle_id() + "%");
 			}else {
 				pStmt.setString(2, "%");
 			}
@@ -47,6 +94,7 @@ public class TitleDao {
 			}else {
 				pStmt.setString(4, "%");
 			}
+		*/
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
