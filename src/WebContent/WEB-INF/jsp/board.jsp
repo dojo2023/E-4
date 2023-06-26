@@ -31,7 +31,7 @@
 <textarea name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
 <p id = "inputlength">0文字</p>
-<p class="savebtn"><input type="submit" value="送信"><input type="reset" value="リセット"></p>
+<div class = "flexbox"><input type="submit" value="投稿"><input type="reset" value="リセット"></div>
 
 </div>
 </form>

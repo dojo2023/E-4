@@ -6,17 +6,10 @@ position: absolute;
 bottom: 90px;
 right: 235px; 
 }
-.rw>label{
-    display: inline-block;
-    padding: 5px;
-    cursor: pointer;
-}
-.rw>label:hover{
-    color: red;
-}
-.rw>label>input{
-    margin-right: 5px;
-    cursor: pointer;
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 }
 /*.button{
 display:flex;
