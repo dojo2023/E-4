@@ -11,6 +11,7 @@ import model.Point;
 public class PointDao {
 	//現ポイントを+1か－3するメソッド 引数―ユーザID/counter
 
+
 	//現ポイントをゼロに戻すメソッド 引数なし　void
 	public void zero(){
 		Connection conn = null;
