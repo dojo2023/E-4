@@ -115,5 +115,4 @@ public class BoardServlet extends HttpServlet {
      		dispatcher.forward(request, response);
      		*/
     }
-
 }
