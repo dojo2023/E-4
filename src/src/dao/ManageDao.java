@@ -487,5 +487,57 @@ public class ManageDao {
 					return GraphList;
 				}
 
+					// ログインできるならtrueを返すLoginメソッド
+					public boolean selectOr(String user_id, String date) {
+						Connection conn = null;
+						boolean Result = false;
 
-}
+						try {
+							// JDBCドライバを読み込む
+							Class.forName("org.h2.Driver");
+
+							// データベースに接続する
+							conn = DriverManager.getConnection("jdbc:h2:file:C:/dojo6/data/suDB", "sa", "");
+
+							// SELECT文を準備する
+							String sql = "select count(*) from MANAGE where USER_ID = ? and DATE = ?";
+							PreparedStatement pStmt = conn.prepareStatement(sql);
+							pStmt.setString(1, user_id);
+							pStmt.setString(2,date);
+
+							// SELECT文を実行し、結果表を取得する
+							ResultSet rs = pStmt.executeQuery();
+
+							// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+							rs.next();
+							if (rs.getInt("count(*)") == 1) {
+								Result = true;
+							}
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							Result = false;
+						}
+						catch (ClassNotFoundException e) {
+							e.printStackTrace();
+							Result = false;
+						}
+						finally {
+							// データベースを切断
+							if (conn != null) {
+								try {
+									conn.close();
+								}
+								catch (SQLException e) {
+									e.printStackTrace();
+									Result = false;
+								}
+							}
+						}
+
+						// 結果を返す
+						return Result;
+					}
+
+		}
+

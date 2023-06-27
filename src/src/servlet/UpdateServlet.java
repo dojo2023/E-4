@@ -75,8 +75,14 @@ public class UpdateServlet extends HttpServlet {
 		User user_id1 = (User)session.getAttribute("profile");
 		String user_id = user_id1.getUser_id();
 		request.setCharacterEncoding("UTF-8");
-		String date = request.getParameter("DATE");
-
+		String date = request.getParameter("DATE1");
+		ManageDao mDao = new ManageDao();
+		System.out.print(mDao.selectOr(user_id, date));
+		if (mDao.selectOr(user_id, date)) {
+			System.out.println(date);
+		} else {
+			date = request.getParameter("DATE2");
+		}
 		String bf_se_st = request.getParameter("BF_SE_ST");
 		String bf_se_ma = request.getParameter("BF_SE_MA");
 		String bf_se_si = request.getParameter("BF_SE_SI");
@@ -112,9 +118,9 @@ public class UpdateServlet extends HttpServlet {
 		double bmi1 = ((dayweight/height)/height);
 		double bmi = Math.floor(bmi1 * 10) / 10;
 		String picture = request.getParameter("PICTURE");
-
-		System.out.print(bmi);
-
+		if (picture == null) {
+			picture = "";
+		} else {
 		//partオブジェクトとしてnameがpictureのものを取得
 		Part part = request.getPart("PICTURE");
 		//ファイル名を取得
@@ -128,18 +134,20 @@ public class UpdateServlet extends HttpServlet {
 		part.write(path+File.separator+filename);
 
 		picture = "/sobaudon/body/"+filename;
-
+		}
 		//登録を押した際のカウント
 		String counter = "0" ;
 		if(request.getParameter("submit").equals("登録")) {
 			counter = "1";
 		}
 
-		ManageDao mDao = new ManageDao();
-		mDao.update(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
-
-		ManageDao md = new ManageDao();
-		Manage search = md.select(user_id , date);
+		System.out.print(mDao.selectOr(user_id, date));
+		if (mDao.selectOr(user_id, date)) {
+			mDao.update(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
+		} else {
+			mDao.insert(new Manage(user_id , date , breakfast , bftext , lunch , lctext , dinner , dntext , snack , exercise , drink , dayweight , picture , bmi , counter));
+		}
+		Manage search = mDao.select(user_id , date);
 		request.setAttribute("search", search);
 
 

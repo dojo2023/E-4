@@ -49,7 +49,6 @@ public class RegistrationServlet extends HttpServlet {
 
 				Calendar cal = Calendar.getInstance();
 				//SimpleDateFormatで書式を指定
-		        SimpleDateFormat sdf = new SimpleDateFormat("HH");
 		        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd");
 		        User user_id1 = (User)session.getAttribute("profile");
 				String user_id = user_id1.getUser_id();
