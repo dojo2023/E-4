@@ -12,7 +12,6 @@
 <div class="main">
 登録
 ランク制度
-広告募集
 </div>
 <%@ include file="footer.jsp" %>
 </body>
