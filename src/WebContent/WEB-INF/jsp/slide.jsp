@@ -27,7 +27,7 @@
     <c:forEach var="e" items="${manageSlideList}" >
     <input class="slider_img" type="hidden" value="${e.picture}">
     </c:forEach>
-            <img decoding="async" id="mypic" src="">
+            <img decoding="async" id="mypic" src="./img/start.png">
       </div>
 
   <div class="button">
