@@ -93,40 +93,46 @@
 
 	<table class="table_chuu">
 		<tr>
-		<th>運動</th>
-			<td>
-				<label><input id="rd1" type="radio" name="EXERCISE" value="1">あり</label>
-				<label><input id="rd2" type="radio" name="EXERCISE" value="0">なし</label>
-			</td>
-		<th>飲酒</th>
-			<td>
-				<label><input id="rd3" type="radio" name="DRINK" value="1">あり</label>
-				<label><input id="rd4" type="radio" name="DRINK" value="0">なし</label>
-			</td>
-		<th>間食・夜食</th>
-			<td>
-				<label><input id="rd5" type="radio" name="SNACK" value="1">あり</label>
-				<label><input id="rd6" type="radio" name="SNACK" value="0">なし</label>
-			</td>
+			<th>運動</th>
+				<td>
+					<label><input id="rd1" type="radio" name="EXERCISE" value="1">あり</label>
+					<label><input id="rd2" type="radio" name="EXERCISE" value="0">なし</label>
+				</td>
+			<th>飲酒</th>
+				<td>
+					<label><input id="rd3" type="radio" name="DRINK" value="1">あり</label>
+					<label><input id="rd4" type="radio" name="DRINK" value="0">なし</label>
+				</td>
+			<th>間食・夜食</th>
+				<td>
+					<label><input id="rd5" type="radio" name="SNACK" value="1">あり</label>
+					<label><input id="rd6" type="radio" name="SNACK" value="0">なし</label>
+				</td>
 		</tr>
 	</table>
 
 	<table class="table_shita">
 		<tr>
-		<th>体重</th>
-			<td>
-				<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}">
-			</td>
-		<th>bmi</th>
-			<td>
-				<input class="reg_text" type="text" name="BMI" value="${search.bmi}" disabled>
-			</td>
-		<th>写真</th>
-			<td>
-				<input type="file" name="PICTURE" width="100" height="150">
-			</td>
+			<th>体重</th>
+				<td>
+					<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}">
+				</td>
+			<th>bmi</th>
+				<td>
+					<input class="reg_text" type="text" name="BMI" value="${search.bmi}" disabled>
+				</td>
 		</tr>
 	</table>
+
+	<table class="table_picture">
+		<tr>
+			<th>写真</th>
+				<td>
+					<input type="file" name="PICTURE" width="100" height="150">
+				</td>
+		</tr>
+	</table>
+
 	<input type="hidden" value="${search.date}" name="DATE">
 	<input class="regi_submit" type="submit" name="submit" value="登録"><br>
 	<div>

@@ -7,6 +7,28 @@
 	<title>きょうから | 他人情報</title>
 	<!-- 登録っぽい系css挿入 -->
 	<link rel="stylesheet" href="/sobaudon/css/registration.css">
+
+	<!-- 他と違うtable用css -->
+	<style>
+		.ot_table_chuu {
+			margin : 4px 20px 4px 300px ;
+			display : block;
+			width : min-content;
+			white-space : nowrap;
+			position : absolute;
+			left :10px;
+			top : 400px;
+		}
+		.table_shita {
+			margin : 4px 20px 4px 300px ;
+			display : block;
+			width : min-content;
+			white-space : nowrap;
+			position : absolute;
+			left :240px;
+			top : 400px;
+		}
+	</style>
 </head>
 <body>
 <!-- ヘッダー -->
@@ -17,7 +39,7 @@
 	</div>
 <!-- ~~さんの情報 -->
 	<div class="oth_name">
-		<span>${search.name2}さんの情報</span>
+		<span>${name2}さんの情報</span>
 	</div>
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
@@ -100,30 +122,32 @@
 		</tr>
 	</table>
 
+	<table class="ot_table_chuu">
+		<tr>
+			<th>運動</th>
+				<td>
+					<label><input id="rd1" type="radio" name="EXERCISE" value="1" disabled>あり</label>
+					<label><input id="rd2" type="radio" name="EXERCISE" value="0" disabled>なし</label>
+				</td>
+			<th>飲酒</th>
+				<td>
+					<label><input id="rd3" type="radio" name="DRINK" value="1" disabled>あり</label>
+					<label><input id="rd4" type="radio" name="DRINK" value="0" disabled>なし</label>
+				</td>
+		</tr>
+	</table>
+
 	<table class="ot_table_shita">
 		<tr>
-		<th>運動</th>
-			<td>
-				<label><input id="rd1" type="radio" name="EXERCISE" value="1" disabled>あり</label>
-				<label><input id="rd2" type="radio" name="EXERCISE" value="0" disabled>なし</label>
-			</td>
-		<th>飲酒</th>
-			<td>
-				<label><input id="rd3" type="radio" name="DRINK" value="1" disabled>あり</label>
-				<label><input id="rd4" type="radio" name="DRINK" value="0" disabled>なし</label>
-			</td>
-		</tr>
-
-		<tr>
-		<th>間食・夜食</th>
-			<td>
-				<label><input id="rd5" type="radio" name="SNACK" value="1" disabled>あり</label>
-				<label><input id="rd6" type="radio" name="SNACK" value="0" disabled>なし</label>
-			</td>
-		<th>体重</th>
-			<td>
-				<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}" disabled>
-			</td>
+			<th>間食・夜食</th>
+				<td>
+					<label><input id="rd5" type="radio" name="SNACK" value="1" disabled>あり</label>
+					<label><input id="rd6" type="radio" name="SNACK" value="0" disabled>なし</label>
+				</td>
+			<th>体重</th>
+				<td>
+					<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}" disabled>
+				</td>
 		</tr>
 	</table>
 </form>

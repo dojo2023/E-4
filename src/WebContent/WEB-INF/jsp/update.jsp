@@ -129,6 +129,8 @@
 					<input class="reg_text" type="text" name="BMI" value="${search.bmi}" disabled>
 				</td>
 		</tr>
+	</table>
+	<table class="table_picture">
 		<tr>
 			<th>写真</th>
 				<td>
@@ -136,7 +138,8 @@
 				</td>
 		</tr>
 	</table>
-	<input type="hidden" value="${search.date}" name="DATE">
+	<input type="hidden" value="${search.date}" name="DATE1">
+	<input type="hidden" value="${date}" name="DATE2">
 	<input class="regi_submit" type="submit" name="submit" value="更新">
 </form>
 </main>
