@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -76,15 +77,33 @@ public class RegistrationServlet extends HttpServlet {
 			response.sendRedirect("/servlet/LoginServlet");
 			return;
 		}
-
+		Calendar cal = Calendar.getInstance();
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		String date = "";
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd");
-		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf2 = new SimpleDateFormat("HH");
+		String date1 = (String)sdf2.format(cal.getTime());
+		int sdf3= Integer.parseInt(date1);
+
+		if (sdf3 < 3) {
+			Date newdate = new Date();
+			// Date型の日時をCalendar型に変換
+	        Calendar calendar = Calendar.getInstance();
+	        calendar.setTime(newdate);
+
+	        // 日時を加算する
+	        calendar.add(Calendar.DATE, -1);
+
+	        // Calendar型の日時をDate型に戻す
+	        Date d1 = calendar.getTime();
+	        date = sdf1.format(d1);
+		} else {
+			date = (String)sdf1.format(cal.getTime());
+		}
+
         User user_id1 = (User)session.getAttribute("profile");
 		String user_id = user_id1.getUser_id();
-		String date = (String)sdf1.format(cal.getTime());
-
 		ManageDao md = new ManageDao();
 
 			String bf_se_st = request.getParameter("BF_SE_ST");
