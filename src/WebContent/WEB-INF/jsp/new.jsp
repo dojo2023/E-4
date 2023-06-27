@@ -10,7 +10,7 @@
 </head>
 <body class="newc">
 <div class="ln_wrapper">
-	<img src="#">
+	<img src="./img/titlelo.png" alt="きょうから">
 	<form method="POST" action="/sobaudon/NewServlet">
 	<div class="login_container">
 		<p class="login_p">ID</p>

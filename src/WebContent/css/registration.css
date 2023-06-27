@@ -1,17 +1,62 @@
 @charset "UTF-8";
 
+/*広告*/
+.ad{
+	width:240px;
+	height:500px;
+	position:absolute;
+	top:200px;
+	left:20px;
+	opacity:1;
+}
+.ad:hover{
+	opacity:0.3;
+}
+
+/*テーブル上*/
+.table_ue {
+	margin : 4px 20px 4px 300px ;
+}
+/*テーブル上 th*/
+.table_ue th {
+	width : 64px ;
+	text-align : center
+}
+/*テーブル上 td*/
+.table_ue td {
+	width : 500px ;
+	text-align : center
+}
+/*テーブル上text*/
+.eat_text1{
+	width:400px;
+}
+.eat_text2{
+	width:400px;
+}
+.eat_text3{
+	width:400px;
+}
+
+/*テーブル中*/
+.table_chuu {
+	margin : 4px 20px 4px 300px ;
+	display : block;
+	width : min-content;
+}
+
+/*テーブル下*/
+.table_shita {
+	margin : 4px 20px 4px 300px ;
+	display : block;
+	width : min-content;
+	float : center
+}
+
 /*登録ボタン*/
 .regi_submit{
-	float : right;
 	padding : 10px 30px 10px 30px;
 	margin-right : 15px;
 	margin-bottom : 30px;
-}
-
-/*チェックボックステーブル*/
-.table_ue td{
-	padding : 8px 10px 8px 10px ;
-	margin-top : 5px;
-	margin-bottom : 5px;
-	outline : flex;
+	float : right;
 }
