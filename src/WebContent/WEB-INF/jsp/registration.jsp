@@ -101,11 +101,15 @@
 					<label><input id="rd1" type="radio" name="EXERCISE" value="1">あり</label>
 					<label><input id="rd2" type="radio" name="EXERCISE" value="0">なし</label>
 				</td>
+		</tr>
+		<tr>
 			<th>飲酒</th>
 				<td>
 					<label><input id="rd3" type="radio" name="DRINK" value="1">あり</label>
 					<label><input id="rd4" type="radio" name="DRINK" value="0">なし</label>
 				</td>
+		</tr>
+		<tr>
 			<th>間食・夜食</th>
 				<td>
 					<label><input id="rd5" type="radio" name="SNACK" value="1">あり</label>
@@ -120,6 +124,8 @@
 				<td>
 					<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}">
 				</td>
+		</tr>
+		<tr>
 			<th>bmi</th>
 				<td>
 					<input class="reg_text" type="text" name="BMI" value="${search.bmi}" disabled>
@@ -135,7 +141,6 @@
 				</td>
 		</tr>
 	</table>
-
 	<!-- <input type="hidden" value="${search.date}" name="DATE"> -->
 	<input type="hidden" value="${search.date}" name="DATE1">
 	<input type="hidden" value="${date}" name="DATE2">

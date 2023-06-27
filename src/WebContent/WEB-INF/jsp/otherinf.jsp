@@ -153,6 +153,8 @@
 					<label><input id="rd1" type="radio" name="EXERCISE" value="1" disabled>あり</label>
 					<label><input id="rd2" type="radio" name="EXERCISE" value="0" disabled>なし</label>
 				</td>
+		</tr>
+		<tr>
 			<th>飲酒</th>
 				<td>
 					<label><input id="rd3" type="radio" name="DRINK" value="1" disabled>あり</label>
@@ -168,6 +170,8 @@
 					<label><input id="rd5" type="radio" name="SNACK" value="1" disabled>あり</label>
 					<label><input id="rd6" type="radio" name="SNACK" value="0" disabled>なし</label>
 				</td>
+		</tr>
+		<tr>
 			<th>体重</th>
 				<td>
 					<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}" disabled>
