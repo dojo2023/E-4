@@ -80,8 +80,12 @@
 .reg_text {
 	width:50px;
 	text-align: center;
+}
+/*（非活性）入力できない項目の色*/
+:disabled {
 	background-color : white;
-	text-color : 0;
+	color : inherit;
+	cursor : not-allowed;
 }
 
 /*テーブル写真*/
