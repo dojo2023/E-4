@@ -17,7 +17,7 @@
 .table_ue {
 	margin : 4px 20px 4px 300px ;
 	position : relative;
-	bottom : 45px;
+	bottom : 40px;
 }
 /*テーブル上 th*/
 .table_ue th {
@@ -47,8 +47,11 @@
 	width : min-content;
 	white-space : nowrap;
 	position : absolute;
-	left :5px;
+	left :0px;
 	top : 380px;
+}
+.table_chuu th {
+	width : 64px;
 }
 
 /*テーブル下*/
@@ -58,22 +61,23 @@
 	width : min-content;
 	white-space : nowrap;
 	position : absolute;
-	left :240px;
+	left :230px;
 	top : 380px;
 }
 /*体重bmiのテキスト*/
 .reg_text {
 	width:50px;
+	text-align: center;
 }
 
 /*テーブル写真*/
 .table_picture {
 	margin : 4px 20px 4px 300px ;
 	width : min-content;
-	height : 180px;
+	height : 240px;
 	white-space : nowrap;
 	position : absolute;
-	left :400px;
+	left :360px;
 	top : 380px;
 }
 
@@ -84,5 +88,5 @@
 	float : right;
 	position : absolute;
 	left : 1130px;
-	top : 520px;
+	top : 530px;
 }
