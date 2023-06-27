@@ -12,8 +12,7 @@
 
 <body>
 <div class="login_wrapper">
-<h1>きょうから(仮)</h1>
-<!-- <img src="#">-->
+<img src="./img/titlelo.png" alt="きょうから">
 	<div class="login_container">
 	<form method="POST" action="/sobaudon/LoginServlet">
 		<p class="login_p">ID</p>

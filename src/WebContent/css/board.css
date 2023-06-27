@@ -8,15 +8,30 @@ right: 235px;
 }
 .flexbox {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   text-align: center;
+  position: relative;
+  top: -44px;
+  left:205px;
 }
 .area {
   resize: none;
   width:300px;
   height:110px;
 }
-
+#inputlength{
+  position: relative;
+  top: 3px;
+  left:0px;
+}
+.example{
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    background: #cbe8fa;
+    cursor: pointer;
+}
 /*.button{
 display:flex;
 }
