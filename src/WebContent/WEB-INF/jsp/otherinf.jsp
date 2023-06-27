@@ -13,20 +13,45 @@
 		.ot_table_chuu {
 			margin : 4px 20px 4px 300px ;
 			display : block;
-			width : min-content;
 			white-space : nowrap;
 			position : absolute;
-			left :10px;
+			left :0px;
 			top : 400px;
 		}
-		.table_shita {
+		.ot_table_chuu th {
+		width : 100px;
+		text-align: center;
+		}
+		.ot_table_chuu td {
+		width : 150px;
+		text-align: center;
+		}
+
+		.ot_table_shita {
 			margin : 4px 20px 4px 300px ;
 			display : block;
-			width : min-content;
 			white-space : nowrap;
 			position : absolute;
-			left :240px;
-			top : 400px;
+			left :0px;
+			top : 500px;
+		}
+		.ot_table_shita th{
+		width : 100px;
+		text-align: center;
+		}
+		.ot_table_shita td{
+		width : 150px;
+		text-align: center;
+		}
+		/*（非活性）入力できない項目の色*/
+		:disabled {
+			background-color : white;
+			color : inherit;
+			cursor : not-allowed;
+		}
+
+		input:checked{
+			background-color: pink;
 		}
 	</style>
 </head>
