@@ -38,21 +38,13 @@ public class CalendarServlet extends HttpServlet {
 		//セッションスコープからuser_idを取得
 				User usr =  (User)session.getAttribute("profile");
 				String user_id = usr.getUser_id();
-				//Calendar cal = Calendar.getInstance();
-		        //SimpleDateFormatで書式を指定
-		        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-		        //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
-		        //System.out.println(sdf.format(cal.getTime()));
 				String date = "";
 				double dayweight = 0;
 				double bmi = 0;
 
 
-				//Manage graph = new Manage(user_id,date,date,breakfast,bftext,
-					//	lunch,dinner,dntext,snack,exercise,drink,dayweight,picture,bmi,counter);
-
 				ManageDao md = new ManageDao();
-		//登録した過去30日分のuser_id、日付、体重、bmiを取得
+				//登録した過去30日分のuser_id、日付、体重、bmiを取得
 				List<Graph> lg = md.selectGraph(new Graph(user_id,date,dayweight,bmi));
 				Collections.reverse(lg);
 				request.setAttribute("lg", lg);
@@ -81,6 +73,7 @@ public class CalendarServlet extends HttpServlet {
 				ManageDao md = new ManageDao();
 				Manage search = md.select(user_id , date );
 				request.setAttribute("search", search);
+				request.setAttribute("date", date);
 
 				//Manage graph = new Manage(user_id , date ,breakfast ,bftext ,lunch ,lctext ,dinner ,dntext,snack ,exercise ,drink ,dayweight,picture,bmi,counter);
 
