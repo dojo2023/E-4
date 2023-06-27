@@ -22,7 +22,7 @@
   <p id="date">日付</p>
 </div>
 <article>
-  <div class="advertisement"><img src="./img/advertisement.png"></div>
+  <div class="advertisement"><img src="./img/adv.png"></div>
     <div class="slider">
     <c:forEach var="e" items="${manageSlideList}" >
     <input class="slider_img" type="hidden" value="${e.picture}">
