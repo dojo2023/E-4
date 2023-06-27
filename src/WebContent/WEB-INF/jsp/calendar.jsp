@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>カレンダー</title>
+<title>きょうから | カレンダー</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">
 </head>
 <body>
