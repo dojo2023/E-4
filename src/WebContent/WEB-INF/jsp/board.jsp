@@ -28,7 +28,7 @@
 <form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
 <div class = "rw">
 <p class = "chat">コメント:<br>
-<textarea name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
+<textarea class = "area"name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
 <p id = "inputlength">0文字</p>
 <div class = "flexbox"><input type="submit" value="投稿"><input type="reset" value="リセット"></div>

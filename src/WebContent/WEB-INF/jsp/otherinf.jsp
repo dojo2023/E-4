@@ -29,7 +29,7 @@
 <input type="hidden" id="getbf3" value="${oth_search.drink}">
 
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
-	<table class="regi_ue">
+	<table class="table_ue">
 		<tr>
 			<th>朝</th>
 			<td>
@@ -86,7 +86,7 @@
 		</tr>
 	</table>
 
-	<table class="regi_shita">
+	<table class="table_shita">
 		<tr>
 		<th>運動</th>
 			<td>
