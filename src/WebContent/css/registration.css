@@ -3,9 +3,9 @@
 /*広告*/
 .ad{
 	width:240px;
-	height:500px;
+	height:480px;
 	position:absolute;
-	top:200px;
+	top:220px;
 	left:20px;
 	opacity:1;
 }
@@ -18,7 +18,7 @@
 	margin : 4px 20px 4px 300px ;
 	border : 2px solid gray;
 	position : relative;
-	bottom : 40px;
+	bottom : 48px;
 }
 /*テーブル上 th*/
 .table_ue th {
@@ -51,7 +51,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :0px;
-	top : 380px;
+	top : 386px;
 }
 .table_chuu th {
 	width : 64px;
@@ -70,7 +70,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :230px;
-	top : 380px;
+	top : 386px;
 }
 .table_shita td {
 	border : 1px solid gray;
@@ -80,6 +80,8 @@
 .reg_text {
 	width:50px;
 	text-align: center;
+	background-color : white;
+	outline : 0;
 }
 
 /*テーブル写真*/
@@ -91,7 +93,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :360px;
-	top : 380px;
+	top : 386px;
 }
 .table_picture td {
 	border : 1px solid gray;
@@ -105,4 +107,28 @@
 	position : absolute;
 	left : 1130px;
 	top : 530px;
+}
+
+/*選択日付*/
+.sele_date1 {
+	position : relative;
+	left : 64px;
+	top : 10px;
+	color : black;
+	background-color : rgb(193, 217, 236);
+	border : 1px solid #004080;
+	width : min-content;
+	height : min-content;
+	font-size : 24px;
+}
+.sele_date2 {
+	position : relative;
+	left : 64px;
+	top : 10px;
+	color : black;
+	background-color : rgb(193, 217, 236);
+	border : 1px solid #004080;
+	width : min-content;
+	height : min-content;
+	font-size : 24px;
 }

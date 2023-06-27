@@ -34,9 +34,8 @@
 <!-- ヘッダー -->
 	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
-	<div class="oth_date">
-		<span>${search.date}</span>
-	</div>
+	<div class="sele_date1">${search.date}</div>
+	<div class="sele_date2">${date}</div>
 <!-- ~~さんの情報 -->
 	<div class="oth_name">
 		<span>${name2}さんの情報</span>
@@ -150,6 +149,8 @@
 				</td>
 		</tr>
 	</table>
+	<input type="hidden" value="${search.date}" name="DATE1">
+	<input type="hidden" value="${date}" name="DATE2">
 </form>
 </main>
 <script src="/sobaudon/js/otherinf.js"></script>
