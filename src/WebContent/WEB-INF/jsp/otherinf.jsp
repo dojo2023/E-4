@@ -32,55 +32,64 @@
 	<table class="table_ue">
 		<tr>
 			<th>朝</th>
-			<td>
-			<div class=bf_eat_form>
+			<td class="regi_check">
 				<label><input id="reg_check1" type="checkbox" name="BF_SE_ST" value="1" class="check" disabled>主食</label>
 				<label><input type='hidden' value='0' name='BF_SE_ST' disabled></label>
+
 				<label><input id="reg_check2" type="checkbox" name="BF_SE_MA" value="1" class="check" disabled>主菜</label>
 				<label><input type='hidden' value="0" name="BF_SE_MA" disabled></label>
+
 				<label><input id="reg_check3" type="checkbox" name="BF_SE_SI" value="1" class="check" disabled>副菜</label>
 				<label><input type='hidden' value="0" name="BF_SE_SI" disabled></label>
+
 				<label><input id="reg_check4" type="checkbox" name="BF_SE_NO" value="1" class="check" disabled>たべていない</label>
 				<label><input type='hidden' value="0" name="BF_SE_NO" disabled></label>
+
 				<label><input id="reg_check5" type="checkbox" name="BF_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="BF_SE_OT" disabled></label>
-			</div>
+
 				<input class="eat_text" type="text" maxlength="100" name="BFTEXT" value="${search.bftext}" disabled>
 			</td>
 		</tr>
 		<tr>
 			<th>昼</th>
-			<td>
-			<div class=lc_eat_form>
+			<td class="regi_check">
 				<label><input id="reg_check6" type="checkbox" name="LC_SE_ST" value="1" class="check" disabled>主食</label>
 				<label><input type='hidden' value="0" name="LC_SE_ST" disabled></label>
+
 				<label><input id="reg_check7" type="checkbox" name="LC_SE_MA" value="1" class="check" disabled>主菜</label>
 				<label><input type='hidden' value="0" name="LC_SE_MA" disabled></label>
+
 				<label><input id="reg_check8" type="checkbox" name="LC_SE_SI" value="1" class="check" disabled>副菜</label>
 				<label><input type='hidden' value="0" name="LC_SE_SI" disabled></label>
+
 				<label><input id="reg_check9" type="checkbox" name="LC_SE_NO" value="1" class="check" disabled>たべていない</label>
 				<label><input type='hidden' value="0" name="LC_SE_NO" disabled></label>
+
 				<label><input id="reg_check10" type="checkbox" name="LC_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="LC_SE_OT" disabled></label>
-			</div>
+
 				<input class="eat_text" type="text" maxlength="100" name="LCTEXT" value="${search.lctext}" disabled>
 			</td>
 		</tr>
 		<tr>
 			<th>夜</th>
-			<td>
-			<div class=dn_eat_form>
+			<td class="regi_check">
 				<label><input id="reg_check11" type="checkbox" name="DN_SE_ST" value="1" class="check" disabled>主食</label>
 				<label><input type='hidden' value="0" name="DN_SE_ST" disabled></label>
+
 				<label><input id="reg_check12" type="checkbox" name="DN_SE_MA" value="1" class="check" disabled>主菜</label>
 				<label><input type='hidden' value="0" name="DN_SE_MA" disabled></label>
+
 				<label><input id="reg_check13" type="checkbox" name="DN_SE_SI" value="1" class="check" disabled>副菜</label>
 				<label><input type='hidden' value="0" name="DN_SE_SI" disabled></label>
+
 				<label><input id="reg_check14" type="checkbox" name="DN_SE_NO" value="1" class="check" disabled>たべていない</label>
 				<label><input type='hidden' value="0" name="DN_SE_NO" disabled></label>
+
 				<label><input id="reg_check15" type="checkbox" name="DN_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="DN_SE_OT" disabled></label>
-			</div>
+
 				<input class="eat_text" type="text" maxlength="100" name="DNTEXT" value="${search.dntext}" disabled>
 			</td>
 		</tr>
