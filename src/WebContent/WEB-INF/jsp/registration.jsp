@@ -142,6 +142,7 @@
 </main>
 <script>
 	var regiObj = document.getElementById('regi_form');
+	var errorMessageObj = document.getElementById('error_message');
 
 	let str1 = st1.charAt(0);
 	let str2 = st1.charAt(1);
@@ -158,8 +159,6 @@
 	let str13 = st3.charAt(2);
 	let str14 = st3.charAt(3);
 	let str15 = st3.charAt(4);
-
-	var errorMessageObj = document.getElementById('error_message');
 /*
 	regiObj.onsubmit = function() {
 		if(formObj_bf_eat1.value == "0" && formObj_bf_eat2.value == "0" && formObj_bf_eat3.value == "0" && formObj_bf_eat4.value == "0" && formObj_bf_eat5.value == "0"
