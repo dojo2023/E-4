@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>きょうから｜ヘルプ</title>
 <link rel="stylesheet" href="/sobaudon/css/help.css">
 </head>
 <body>
