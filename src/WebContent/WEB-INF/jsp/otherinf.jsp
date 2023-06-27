@@ -21,12 +21,12 @@
 	</a>
 <main>
 
-<input type="hidden" id="getcheck1" value="${oth_search.breakfast}">
-<input type="hidden" id="getcheck2" value="${oth_search.lunch}">
-<input type="hidden" id="getcheck3" value="${oth_search.dinner}">
-<input type="hidden" id="getbf1" value="${oth_search.snack}">
-<input type="hidden" id="getbf2" value="${oth_search.exercise}">
-<input type="hidden" id="getbf3" value="${oth_search.drink}">
+<input type="hidden" id="getcheck1" value="${search.breakfast}">
+<input type="hidden" id="getcheck2" value="${search.lunch}">
+<input type="hidden" id="getcheck3" value="${search.dinner}">
+<input type="hidden" id="getbf1" value="${search.snack}">
+<input type="hidden" id="getbf2" value="${search.exercise}">
+<input type="hidden" id="getbf3" value="${search.drink}">
 
 <form method="GET" action="/sobaudon/RegistrationServlet.java">
 	<table class="table_ue">
@@ -45,7 +45,7 @@
 				<label><input id="reg_check5" type="checkbox" name="BF_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="BF_SE_OT" disabled></label>
 			</div>
-				<input class="eat_text" type="text" maxlength="100" name="BFTEXT" value="${oth_search.bftext}" disabled>
+				<input class="eat_text" type="text" maxlength="100" name="BFTEXT" value="${search.bftext}" disabled>
 			</td>
 		</tr>
 		<tr>
@@ -63,7 +63,7 @@
 				<label><input id="reg_check10" type="checkbox" name="LC_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="LC_SE_OT" disabled></label>
 			</div>
-				<input class="eat_text" type="text" maxlength="100" name="LCTEXT" value="${oth_search.lctext}" disabled>
+				<input class="eat_text" type="text" maxlength="100" name="LCTEXT" value="${search.lctext}" disabled>
 			</td>
 		</tr>
 		<tr>
@@ -81,7 +81,7 @@
 				<label><input id="reg_check15" type="checkbox" name="DN_SE_OT" value="1" class="check" disabled>その他</label><br>
 				<label><input type='hidden' value="0" name="DN_SE_OT" disabled></label>
 			</div>
-				<input class="eat_text" type="text" maxlength="100" name="DNTEXT" value="${oth_search.dntext}" disabled>
+				<input class="eat_text" type="text" maxlength="100" name="DNTEXT" value="${search.dntext}" disabled>
 			</td>
 		</tr>
 	</table>
@@ -100,7 +100,6 @@
 			</td>
 		<th>間食・夜食</th>
 			<td>
-
 				<label><input id="rd5" type="radio" name="SNACK" value="1" disabled>あり</label>
 				<label><input id="rd6" type="radio" name="SNACK" value="0" disabled>なし</label>
 			</td>
@@ -109,7 +108,7 @@
 		<tr>
 		<th>体重</th>
 			<td>
-				<input class="reg_text" type="text" name="DAYWEIGHT" value="${oth_search.dayweight}" disabled>
+				<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}" disabled>
 			</td>
 		<th>bmi</th>
 			<td>
