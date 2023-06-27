@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
 	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
-	<div >${search.date}</div>
+	<div>${search.date}</div>
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
 		<img src="./img/adv.png" alt="広告" class="ad">

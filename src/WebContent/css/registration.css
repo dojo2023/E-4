@@ -16,6 +16,7 @@
 /*テーブル上*/
 .table_ue {
 	margin : 4px 20px 4px 300px ;
+	border : 2px solid gray;
 	position : relative;
 	bottom : 40px;
 }
@@ -27,7 +28,8 @@
 /*テーブル上 td*/
 .table_ue td {
 	width : 500px ;
-	text-align : center
+	text-align : center;
+	border : 2px solid gray;
 }
 /*テーブル上text*/
 .eat_text1{
@@ -43,6 +45,7 @@
 /*テーブル中*/
 .table_chuu {
 	margin : 4px 20px 4px 300px ;
+	border : 2px solid gray;
 	display : block;
 	width : min-content;
 	white-space : nowrap;
@@ -53,10 +56,15 @@
 .table_chuu th {
 	width : 64px;
 }
+.table_chuu td {
+	border : 1px solid gray;
+}
 
 /*テーブル下*/
 .table_shita {
 	margin : 4px 20px 4px 300px ;
+	border-collapse : collapse;
+	border : 2px solid gray;
 	display : block;
 	width : min-content;
 	white-space : nowrap;
@@ -64,6 +72,10 @@
 	left :230px;
 	top : 380px;
 }
+.table_shita td {
+	border : 1px solid gray;
+}
+
 /*体重bmiのテキスト*/
 .reg_text {
 	width:50px;
@@ -73,12 +85,16 @@
 /*テーブル写真*/
 .table_picture {
 	margin : 4px 20px 4px 300px ;
+	border : 2px solid gray;
 	width : min-content;
 	height : 240px;
 	white-space : nowrap;
 	position : absolute;
 	left :360px;
 	top : 380px;
+}
+.table_picture td {
+	border : 1px solid gray;
 }
 
 /*登録ボタン*/
