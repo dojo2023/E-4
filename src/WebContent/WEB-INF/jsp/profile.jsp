@@ -29,7 +29,7 @@
 		<!-- onclick～がないとクリックされたと認識しない -->
 		<input class="l_button lp_button" type="submit" name="SUBMIT" value="登録" onclick="validateForm(event)" ><br>
 	</form>
-<%@ include file="title.jsp" %>
+<%-- <%@ include file="title.jsp" %> --%>
 <%@ include file="footer.jsp" %>
 </body>
 </html>
