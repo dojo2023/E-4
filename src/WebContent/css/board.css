@@ -32,6 +32,21 @@ right: 235px;
     background: #cbe8fa;
     cursor: pointer;
 }
+.l_btn{
+	border:2px solid rgb(0, 166, 255);
+	background-color:white;
+	padding:5px;
+	width:120px;
+	margin-top:30px;
+	font-weight:bold;
+}
+.l_btn:hover{
+  background: rgb(193, 217, 236);
+  /*border: solid 4px rgb(0, 166, 255);*/
+}
+.l_btn:active{
+  background: rgb(176,224,230);
+}
 /*.button{
 display:flex;
 }
