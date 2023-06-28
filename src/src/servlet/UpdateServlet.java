@@ -111,7 +111,14 @@ public class UpdateServlet extends HttpServlet {
 		int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
 		int drink = Integer.parseInt(request.getParameter("DRINK"));
 
-		double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
+		double dayweight = 0;
+		String dw = request.getParameter("DAYWEIGHT");
+		if (dw.equals("")) {
+				dayweight = 0;
+		} else {
+				dayweight = Double.parseDouble(dw);
+		}
+
 		User height1 = (User)session.getAttribute("profile");
 		double height = height1.getHeight();
 		height = height / 100;
@@ -119,12 +126,15 @@ public class UpdateServlet extends HttpServlet {
 		double bmi = Math.floor(bmi1 * 10) / 10;
 		String picture = request.getParameter("PICTURE");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (picture == "null") {
 =======
 <<<<<<< HEAD
-		System.out.println(picture);
 =======
->>>>>>> 01137570f9d1f8f5040eb0b2f0862d4126d5ef1b
+
+>>>>>>> 0c40559511016fa86f9439f5576989b5b5be15f4
+		System.out.println(picture);
+
 		if (picture == null) {
 >>>>>>> c6fa4aa0e246a4d391d65b5814515c4e1652adc0
 			picture = "";
