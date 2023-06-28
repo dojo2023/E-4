@@ -142,7 +142,7 @@ public class RegistrationServlet extends HttpServlet {
 			double bmi = Math.floor(bmi1 * 10) / 10;
 			String picture = request.getParameter("PICTURE");
 
-			if (picture == null) {
+			if (picture == "null") {
 				picture = "";
 			} else {
 			//partオブジェクトとしてnameがpictureのものを取得
