@@ -135,13 +135,10 @@
 		<tr>
 			<th>写真</th>
 				<td>
-<<<<<<< HEAD
 					<input type="file" name="PICTURE">
 					<img src="${search.picture}" alt="写真" id="day_pic" width="360" height="240">
-=======
 					<input type="file" name="PICTURE" width="360" height="240">
 					<img src="${search.picture}" alt="写真" id="day_pic">
->>>>>>> c6fa4aa0e246a4d391d65b5814515c4e1652adc0
 				</td>
 		</tr>
 	</table>
