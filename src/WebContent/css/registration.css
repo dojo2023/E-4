@@ -18,12 +18,12 @@
 	margin : 4px 20px 4px 300px ;
 	border : 2px solid gray;
 	position : absolute;
-	bottom : 250px;
+	top : 168px;
 }
 /*テーブル上 th*/
 .table_ue th {
 	width : 64px ;
-	text-align : center
+	text-align : center;
 }
 /*テーブル上 td*/
 .table_ue td {
@@ -51,7 +51,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :0px;
-	top : 406px;
+	top : 410px;
 }
 .table_chuu th {
 	width : 64px;
@@ -67,10 +67,11 @@
 	border : 2px solid gray;
 	display : block;
 	width : min-content;
+	height : auto;
 	white-space : nowrap;
 	position : absolute;
 	left :230px;
-	top : 406px;
+	top : 445px;
 }
 .table_shita td {
 	border : 1px solid gray;
@@ -97,7 +98,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :360px;
-	top : 406px;
+	top : 385px;
 }
 
 .table_picture img {
@@ -116,7 +117,7 @@
 	float : right;
 	position : absolute;
 	left : 1100px;
-	top : 550px;
+	top : 580px;
 }
 
 /*選択日付*/
