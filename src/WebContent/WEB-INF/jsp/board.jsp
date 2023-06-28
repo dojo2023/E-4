@@ -13,6 +13,7 @@
 </head>
 <body class = "txt">
 <%@ include file="header.jsp" %>
+<div class = "area_lim">
 <c:forEach var="e" items="${list}" >
 <form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
 <input class="data" type="hidden" name= "USER_ID" value="${e.user_id}">
@@ -23,7 +24,7 @@
 <br>
 <br>
 </c:forEach>
-
+</div>
 
 <form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
 <div class = "rw">
