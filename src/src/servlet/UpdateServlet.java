@@ -125,18 +125,10 @@ public class UpdateServlet extends HttpServlet {
 		double bmi1 = ((dayweight/height)/height);
 		double bmi = Math.floor(bmi1 * 10) / 10;
 		String picture = request.getParameter("PICTURE");
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if (picture == "null") {
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> 0c40559511016fa86f9439f5576989b5b5be15f4
 		System.out.println(picture);
 
 		if (picture == null) {
->>>>>>> c6fa4aa0e246a4d391d65b5814515c4e1652adc0
 			picture = "";
 		} else {
 		//partオブジェクトとしてnameがpictureのものを取得
