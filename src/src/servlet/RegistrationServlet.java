@@ -134,7 +134,13 @@ public class RegistrationServlet extends HttpServlet {
 			int exercise = Integer.parseInt(request.getParameter("EXERCISE"));
 			int drink = Integer.parseInt(request.getParameter("DRINK"));
 
-			double dayweight = Double.parseDouble(request.getParameter("DAYWEIGHT"));
+			double dayweight = 0;
+			String dw = request.getParameter("DAYWEIGHT");
+			if (dw.equals("")) {
+					dayweight = 0;
+			} else {
+					dayweight = Double.parseDouble(dw);
+			}
 			User height1 = (User)session.getAttribute("profile");
 			double height = height1.getHeight();
 			height = height / 100;
@@ -142,7 +148,7 @@ public class RegistrationServlet extends HttpServlet {
 			double bmi = Math.floor(bmi1 * 10) / 10;
 			String picture = request.getParameter("PICTURE");
 
-			if (picture == "null") {
+			if (picture == null) {
 				picture = "";
 			} else {
 			//partオブジェクトとしてnameがpictureのものを取得
