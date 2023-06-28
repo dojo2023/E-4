@@ -23,7 +23,7 @@
 /*テーブル上 th*/
 .table_ue th {
 	width : 64px ;
-	text-align : center
+	text-align : center;
 }
 /*テーブル上 td*/
 .table_ue td {
