@@ -12,8 +12,8 @@
 <!-- ヘッダー -->
 	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
-	<div class="sele_date1">${search.date}</div>
-	<div class="sele_date2">${date}</div>
+	<div class="regi_sele_date1">${search.date}</div>
+	<!-- <div class="regi_sele_date2">${date}</div> -->
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
 		<img src="./img/adv.png" alt="広告" class="ad">
@@ -122,7 +122,7 @@
 		<tr>
 			<th>体重</th>
 				<td>
-					<input class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}">
+					<input id="day_weight" class="reg_text" type="text" name="DAYWEIGHT" value="${search.dayweight}">
 				</td>
 		</tr>
 		<tr>
@@ -189,6 +189,14 @@
 			return false;
 		}
 		errorMessageObj.textContent = null;
+	}
+
+	var formObj = document.getElementById('regi_form');
+	formObj.onsubmit = function() {
+		if (!formObj..value) {
+			alert('体重は必須項目です');
+			return false;
+		}
 	}
 </script>
 <script src="/sobaudon/js/registration.js"></script>

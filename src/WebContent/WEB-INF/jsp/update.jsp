@@ -23,9 +23,9 @@
 <input type="hidden" id="getcheck1" value="${search.breakfast}">
 <input type="hidden" id="getcheck2" value="${search.lunch}">
 <input type="hidden" id="getcheck3" value="${search.dinner}">
-<input type="hidden" id="getbf1" value="${search.snack}">
-<input type="hidden" id="getbf2" value="${search.exercise}">
-<input type="hidden" id="getbf3" value="${search.drink}">
+<input type="hidden" id="getbf1" value="${search.exercise}">
+<input type="hidden" id="getbf2" value="${search.drink}">
+<input type="hidden" id="getbf3" value="${search.snack}">
 <form method="POST" action="/sobaudon/UpdateServlet" enctype="multipart/form-data">
 	<table class="table_ue">
 		<tr>

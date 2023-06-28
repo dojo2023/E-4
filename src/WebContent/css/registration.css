@@ -116,22 +116,32 @@
 /*選択日付*/
 .sele_date1 {
 	position : relative;
-	left : 64px;
-	top : 10px;
+	left : 55px;
+	top : 5px;
 	color : black;
 	background-color : rgb(193, 217, 236);
-	border : 1px solid #004080;
+	/*border : 1px solid #004080;*/
 	width : min-content;
 	height : min-content;
 	font-size : 24px;
 }
 .sele_date2 {
 	position : relative;
-	left : 64px;
-	top : 10px;
+	left : 55px;
+	top : 5px;
 	color : black;
 	background-color : rgb(193, 217, 236);
-	border : 1px solid #004080;
+	/*border : 1px solid #004080;*/
+	width : min-content;
+	height : min-content;
+	font-size : 24px;
+}
+.regi_sele_date1 {
+	position : relative;
+	left : 55px;
+	top : 5px;
+	color : black;
+	background-color : rgb(193, 217, 236);
 	width : min-content;
 	height : min-content;
 	font-size : 24px;
