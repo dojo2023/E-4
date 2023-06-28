@@ -50,8 +50,10 @@
 			cursor : not-allowed;
 		}
 
-		input:checked{
-			background-color: pink;
+		.oth_name {
+			position : relative;
+			top : 2px;
+			left: 56px;
 		}
 	</style>
 </head>
