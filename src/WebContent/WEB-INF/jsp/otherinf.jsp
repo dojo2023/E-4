@@ -16,7 +16,7 @@
 			white-space : nowrap;
 			position : absolute;
 			left :0px;
-			top : 380px;
+			top : 420px;
 		}
 		.ot_table_chuu th {
 		width : 100px;
@@ -33,7 +33,7 @@
 			white-space : nowrap;
 			position : absolute;
 			left :300px;
-			top : 380px;
+			top : 420px;
 		}
 		.ot_table_shita th{
 		width : 100px;
@@ -54,6 +54,10 @@
 			position : relative;
 			top : 2px;
 			left: 56px;
+		}
+
+		body {
+		background-color : #F6F5EA;
 		}
 	</style>
 </head>
