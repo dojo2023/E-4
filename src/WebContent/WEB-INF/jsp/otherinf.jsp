@@ -16,7 +16,7 @@
 			white-space : nowrap;
 			position : absolute;
 			left :0px;
-			top : 420px;
+			top : 418px;
 		}
 		.ot_table_chuu th {
 		width : 100px;
@@ -32,8 +32,8 @@
 			display : block;
 			white-space : nowrap;
 			position : absolute;
-			left :300px;
-			top : 420px;
+			left :312px;
+			top : 418px;
 		}
 		.ot_table_shita th{
 		width : 100px;
@@ -192,7 +192,7 @@
 <!-- 称号 -->
 	<%@ include file="title.jsp" %>
 <!-- 前回の称号 -->
-	<div class="achivement">前回の称号</div>
+	<!-- <div class="achivement">前回の称号</div> -->
 <!-- フッター -->
 	<%@ include file="footer.jsp" %>
 </body>

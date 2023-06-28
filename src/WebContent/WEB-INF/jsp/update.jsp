@@ -135,6 +135,7 @@
 		<tr>
 			<th>写真</th>
 				<td>
+					<input type="hidden" name="PICTURE1" value="${search.picture}">
 					<input type="file" name="PICTURE">
 					<img src="${search.picture}" alt="写真" id="day_pic" width="360" height="240">
 				</td>

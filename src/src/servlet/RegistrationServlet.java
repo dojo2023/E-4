@@ -146,11 +146,8 @@ public class RegistrationServlet extends HttpServlet {
 			height = height / 100;
 			double bmi1 = ((dayweight/height)/height);
 			double bmi = Math.floor(bmi1 * 10) / 10;
-			String picture = request.getParameter("PICTURE");
 
-			if (picture == null) {
-				picture = "";
-			} else {
+			String picture;
 			//partオブジェクトとしてnameがpictureのものを取得
 			Part part = request.getPart("PICTURE");
 			//ファイル名を取得
@@ -161,10 +158,13 @@ public class RegistrationServlet extends HttpServlet {
 
 			System.out.println(path);
 
-			part.write(path+File.separator+filename);
-
-			picture = "/sobaudon/body/"+filename;
-			}
+			try {
+				part.write(path+File.separator+filename);
+				picture = "/sobaudon/body/"+filename;
+				} catch(java.io.IOException e) {
+					e.printStackTrace();
+					picture = "";
+				}
 			//登録を押した際のカウント
 			String counter = "0" ;
 			if(request.getParameter("submit").equals("登録")) {
