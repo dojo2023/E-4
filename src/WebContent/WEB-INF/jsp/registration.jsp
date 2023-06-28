@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
 	<%@ include file="header.jsp" %>
 <!-- 選択した日付 -->
-	<div class="regi_sele_date1">${search.date}</div>
+	<div class="sele_date1">${search.date}</div>
 	<!-- <div class="regi_sele_date2">${date}</div> -->
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
@@ -137,8 +137,8 @@
 		<tr>
 			<th>写真</th>
 				<td>
-					<input type="file" name="PICTURE" width="360" height="240">
-					<img src="${search.picture}" alt="写真" id="day_pic">
+					<input type="file" name="PICTURE">
+					<img src="${search.picture}" alt="写真" id="day_pic" width="360" height="240">
 				</td>
 		</tr>
 	</table>
@@ -194,8 +194,8 @@
 
 	var formObj = document.getElementById('regi_form');
 	formObj.onsubmit = function() {
-		if (!formObj..value) {
-			alert('体重は必須項目です');
+		if (!formObj.day_weight.value) {
+			window.alert('体重は必須項目です');
 			return false;
 		}
 	}
