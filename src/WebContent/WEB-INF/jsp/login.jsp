@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>きょうから｜ログイン画面</title>
+<title>きょうから｜ログイン</title>
 <!-- ログインcssの挿入 -->
 <link rel="stylesheet" href="/sobaudon/css/login.css">
 </head>
