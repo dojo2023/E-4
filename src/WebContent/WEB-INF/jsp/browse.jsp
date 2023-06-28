@@ -7,7 +7,7 @@
 <title>きょうから | 閲覧</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/calendar.css">
 </head>
-<body>
+<body id="other">
   <header>
 	<%@ include file="header.jsp" %>
   </header>
