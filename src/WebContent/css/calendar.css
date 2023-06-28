@@ -125,3 +125,7 @@ td.today {
 .ad:hover{
 	opacity:0.3;
 }
+/*閲覧の背景色*/
+#other {
+	background-color:#F6F5EA;
+}
