@@ -4,7 +4,7 @@ width: 100px;
 height: 100px;
 position: absolute;
 bottom: 180px;
-right: 235px; 
+right: 235px;
 }
 .flexbox {
   display: flex;
@@ -36,7 +36,7 @@ right: 235px;
 	border:2px solid rgb(0, 166, 255);
 	background-color:white;
 	padding:5px;
-	width:120px;
+	width:auto;
 	margin-top:30px;
 	font-weight:bold;
 }
