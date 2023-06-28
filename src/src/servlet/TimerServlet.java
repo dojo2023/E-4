@@ -1,12 +1,13 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
-import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,23 +29,30 @@ public class TimerServlet extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Calendar cal = Calendar.getInstance();
 		Timer timer = new Timer(false);
-		SimpleDateFormat year = new SimpleDateFormat("2023/06/27 17:32:00");
+		SimpleDateFormat year = new SimpleDateFormat("2023/06/28 10:25:00");
 		String year1 = (String)year.format(cal.getTime());
-		//int year2 = Integer.parseInt(year1);
-		SimpleDateFormat month = new SimpleDateFormat("MM");
-		String month1 = (String)month.format(cal.getTime());
-		int month2 = Integer.parseInt(month1);
-		SimpleDateFormat date = new SimpleDateFormat("dd");
-		String date1 = (String)date.format(cal.getTime());
-		int date2 = Integer.parseInt(date1);
-		SimpleDateFormat hour = new SimpleDateFormat("HH");
-		String hour1 = (String)hour.format(cal.getTime());
-		int hour2 = Integer.parseInt(hour1);
-		SimpleDateFormat min = new SimpleDateFormat("mm");
-		String min1 = (String)min.format(cal.getTime());
-		int min2 = Integer.parseInt(min1);
+		Date year2 = sdf.parse(year1);
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(year2);
+
+
+		ScheduledExecutorService service
+		= Executors.newSingleThreadScheduledExecutor();
+
+		service.scheduleAtFixedRate(() -> {
+			System.out.println(
+					"ループ内のID=" + Thread.currentThread().getId()); // 12
+		}, 0, 3, TimeUnit.DAYS.convert(calendar.getTime()));
+
+
+
+
+
+
+		/*int year2 = Integer.parseInt(year1);
 
 		System.out.println(year1);
+
 
 
 		TimerTask task = new TimerTask() {
@@ -52,21 +60,33 @@ public class TimerServlet extends HttpServlet {
 			@Override
 			public void run() {
 				System.out.println("てすと");
+				timer.cancel();
+
+
 
 
 			}
+
+
 		};
 
-		//while(true) {
+
+		while(true) {
 
 			try {
+
 				timer.schedule(task, sdf.parse(year1));
+
+				task.cancel();
+
+
+
 
 				System.out.println(year1);
 
-				Date year2 = year.parse(year1);
+				Date year2 = sdf.parse(year1);
 
-				System.out.println(year2); //この前が
+				System.out.println(year2);
 
 				Calendar calendar = Calendar.getInstance();
 		        calendar.setTime(year2);
@@ -82,15 +102,11 @@ public class TimerServlet extends HttpServlet {
 
 		        System.out.println(year1);
 
+
 			} catch (ParseException e) {
-				e.printStackTrace();
-		}
+				task.cancel();
+			}
 
-
-
-		//}
-
-
+		}*/
 	}
-
 }
