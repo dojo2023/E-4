@@ -47,6 +47,10 @@ right: 235px;
 .l_btn:active{
   background: rgb(176,224,230);
 }
+.area_lim{
+	width:70%;
+	
+}
 /*.button{
 display:flex;
 }
