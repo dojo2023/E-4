@@ -16,7 +16,7 @@
 			white-space : nowrap;
 			position : absolute;
 			left :0px;
-			top : 430px;
+			top : 380px;
 		}
 		.ot_table_chuu th {
 		width : 100px;
@@ -33,7 +33,7 @@
 			white-space : nowrap;
 			position : absolute;
 			left :300px;
-			top : 430px;
+			top : 380px;
 		}
 		.ot_table_shita th{
 		width : 100px;
