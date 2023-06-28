@@ -18,7 +18,7 @@
 	margin : 4px 20px 4px 300px ;
 	border : 2px solid gray;
 	position : absolute;
-	bottom : 220px;
+	bottom : 250px;
 }
 /*テーブル上 th*/
 .table_ue th {
@@ -51,7 +51,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :0px;
-	top : 435px;
+	top : 406px;
 }
 .table_chuu th {
 	width : 64px;
@@ -70,7 +70,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :230px;
-	top : 435px;
+	top : 406px;
 }
 .table_shita td {
 	border : 1px solid gray;
@@ -97,7 +97,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :360px;
-	top : 435px;
+	top : 406px;
 }
 
 .table_picture img {
@@ -115,7 +115,7 @@
 	margin-right : 15px;
 	float : right;
 	position : absolute;
-	left : 1150px;
+	left : 1100px;
 	top : 550px;
 }
 
