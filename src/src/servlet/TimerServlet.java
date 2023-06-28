@@ -54,7 +54,6 @@ public class TimerServlet extends HttpServlet {
 				System.out.println("てすと");
 
 
-
 			}
 		};
 
