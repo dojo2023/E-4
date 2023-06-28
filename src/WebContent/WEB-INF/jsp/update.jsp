@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>きょうから | 他人情報</title>
+	<title>きょうから | 更新</title>
 	<!-- 登録っぽい系css挿入 -->
 	<link rel="stylesheet" href="/sobaudon/css/registration.css">
 </head>
@@ -98,21 +98,21 @@
 			<th>運動</th>
 				<td>
 					<label><input id="rd1" type="radio" name="EXERCISE" value="1">あり</label>
-					<label><input id="rd2" type="radio" name="EXERCISE" value="0">なし</label>
+					<label><input id="rd2" type="radio" name="EXERCISE" value="0" checked>なし</label>
 				</td>
 		</tr>
 		<tr>
 			<th>飲酒</th>
 				<td>
 					<label><input id="rd3" type="radio" name="DRINK" value="1">あり</label>
-					<label><input id="rd4" type="radio" name="DRINK" value="0">なし</label>
+					<label><input id="rd4" type="radio" name="DRINK" value="0" checked>なし</label>
 				</td>
 		</tr>
 		<tr>
 			<th>間食・夜食</th>
 				<td>
 					<label><input id="rd5" type="radio" name="SNACK" value="1">あり</label>
-					<label><input id="rd6" type="radio" name="SNACK" value="0">なし</label>
+					<label><input id="rd6" type="radio" name="SNACK" value="0" checked>なし</label>
 				</td>
 		</tr>
 	</table>
