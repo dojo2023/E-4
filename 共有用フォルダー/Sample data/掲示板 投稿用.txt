@@ -1,0 +1,48 @@
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('yamada','yuki','仕事のストレスで太ったから自己管理も含めて始めました。つらくなったらここ見て頑張りましょう',
+'2023/06/01 10:23:37',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('diengo','chisaya','今日からダイエットするわW夏までに痩せんとガチやばいWWWWW','2023/06/01 10:28:12',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('CYU3w','^q^','腹減ったわあうああうあー^q^','2023/06/01 14:47:39',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('UxoxU_xx','hina','ケトやってるんだけど管理アプリで楽そーなのあったから入れてみた！ダイエットするうえでこれいいよみたいな情報あったら教えてくださるとうれしいです！',
+	  '2023/06/01 19:38:56',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('yamada','yuki','hina>>一緒に頑張りましょう！！','2023/06/01 21:23:37',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('diengo','chisaya','hina>>糖質より脂質制限した方がいいよ　糖質は溜め込む水分量が減るだけだから体重は減るけど体脂肪は減りにくいし。','2023/06/01 22:46:14',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('CYU3w','^q^','chisaya>>タンパク質とりゃ問題ないだろ。なんも食わなけりゃ筋肉落ちるけどタンパク質取ってりゃ別に落ちないし、ケトーシス入ったら脂肪燃焼してくれるし頭ごなしに否定するもんじゃない',
+'2023/06/01 23:42:02',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('notbell','vell','結局食う飯だからケトでもローファットでも変わらねぇだろ。体質であうあわないあるし、自分に合う方法を見つけるしかない。ちな俺は糖質制限してる',
+'2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
+
+INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
+   VALUES('','','','2023/06/02 06:23:07',,,);
