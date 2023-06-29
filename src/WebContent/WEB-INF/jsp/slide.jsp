@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<title>スライドショー画面</title>
+<title>きょうから｜スライドショー</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/slide.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/header.css">
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/title.css">
@@ -22,6 +22,7 @@
   <p id="date">日付</p>
 </div>
 <article>
+
   <a href="https://www.seplus.jp/" target="_blank" class="advertisement"><img class="adv" src="./img/advteraco.png" ></a>
     <div class="slider">
     <c:forEach var="e" items="${manageSlideList}" >
