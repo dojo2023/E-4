@@ -1,3 +1,5 @@
+var my_audio = new Audio("/sobaudon/bgm/251_long_BPM150.mp3");
+
 
 // class名"a"の要素を取得
 const elements = document.getElementsByClassName('slider_img');
@@ -33,17 +35,21 @@ let timer = setInterval(function(){
 
 // 停止ボタンを押したとき
 document.getElementById('btnPause').onclick = function(){
+	my_audio.pause();	// サウンドを停止
     paused = true;
 }
 
 // 開始ボタンを押したとき
 document.getElementById('btnResume').onclick = function(){
-  paused = false;
+    my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+ 	my_audio.play();  //サウンドを再生
+    paused = false;
 }
 
 // リセットボタンを押したとき
 document.getElementById('reset').onclick
 = function(){
+  my_audio.pause(); // サウンドを停止
   clearInterval(n);           // setIntervalのIDを入れることでsetIntervalを削除
   n++;                        //console.log(n);
   num = elements.length - 1;  // 配列の先頭の要素を取り出す

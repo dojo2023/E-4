@@ -94,6 +94,7 @@
 .table_picture {
 	margin : 4px 20px 4px 300px ;
 	border : 2px solid gray;
+	border-bottom : 30px;
 	display : block ;
 	white-space : nowrap;
 	width : auto;
@@ -111,13 +112,13 @@
 
 .image {
 	border : none;
-	height :360px;
-	width : 240px;
+	height :auto;
+	width : 360px;
 }
  .file {
 	border : none;
 	border-top : 1px solid gray;
-	height : 20px;
+	height : 16px;
 	text-align : center;
  }
 

@@ -141,7 +141,7 @@
 		</tr>
 		<tr>
 				<td class=image>
-					<img src="${search.picture}" alt="写真" id="day_pic" width="360" height="240">
+					<img src="${search.picture}" alt="写真" id="day_pic">
 				</td>
 		</tr>
 	</table>
