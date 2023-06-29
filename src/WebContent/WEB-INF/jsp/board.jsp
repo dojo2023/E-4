@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>掲示板</title>
+<title>きょうから｜掲示板</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
 </head>
 <body class = "txt">
@@ -20,7 +20,7 @@
 <input class = "l_btn"value="ニックネーム:${e.name}" type = "submit" name = "submit"> <c:out value="${e.date}"></c:out>
 </form><br>
 投稿内容:<c:out value="${e.chattext}"></c:out><br>
- 
+
 <br>
 <br>
 </c:forEach>
@@ -32,7 +32,7 @@
 <textarea class = "area" class = "subbtn"name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
 <p id = "inputlength">0文字</p>
-<div class = "flexbox"><input type="submit" value="投稿"><input type="reset" value="リセット"></div>
+<div id = "txt_button"class = "flexbox"><input id ="txt"type="submit" value="投稿"><input id = "rst"type="reset" value="リセット"></div>
 
 </div>
 </form>
@@ -52,6 +52,10 @@ function check()
 function ShowLength( str ) {
 	   document.getElementById("inputlength").innerHTML = str.length + "文字";
 	}
+	
+document.getElementById("text-button").onclick = function() {
+	  document.getElementById("text").innerHTML = "クリックされた！";
+	};
 
 </script>
 <%@ include file="title.jsp" %>
