@@ -126,12 +126,21 @@ body{
 
 /*登録ボタン*/
 .regi_submit{
+	border:2px solid rgb(0, 166, 255);
+	background-color:white;
 	padding : 10px 30px 10px 30px;
 	margin-right : 15px;
 	float : right;
 	position : absolute;
 	left : 1100px;
 	top : 520px;
+}
+.regi_submit:hover{
+  background: rgb(193, 217, 236);
+  /*border: solid 4px rgb(0, 166, 255);*/
+}
+.regi_submit:active{
+  background: rgb(176,224,230);
 }
 
 /*選択日付*/
