@@ -12,17 +12,19 @@ right: 235px;
   text-align: center;
   position: relative;
   top: -44px;
-  left:205px;
+  left:220px;
 }
 .area {
   resize: none;
   width:300px;
   height:110px;
+  position:relative;
+  right:-15px;
 }
 #inputlength{
   position: relative;
   top: 3px;
-  left:0px;
+  left:15px;
 }
 .example{
     width: 300px;
