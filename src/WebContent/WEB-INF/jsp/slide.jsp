@@ -22,12 +22,13 @@
   <p id="date">日付</p>
 </div>
 <article>
-  <div class="advertisement"><a href="https://www.seplus.jp/" target="_blank"></a> <img class="adv" src="./img/adv.png"></div>
+  <a href="https://www.seplus.jp/" target="_blank" class="advertisement"><img class="adv" src="./img/advteraco.png" ></a>
     <div class="slider">
     <c:forEach var="e" items="${manageSlideList}" >
     <input class="slider_img" type="hidden" value="${e.picture}">
     </c:forEach>
-            <img decoding="async" id="mypic" src="./img/start.png">
+            <!-- <img decoding="async" id="mypic" src="./img/start.png"> -->
+            <img decoding="async" id="mypic" src="./img/猫4.jpg">
       </div>
 
   <div class="button">

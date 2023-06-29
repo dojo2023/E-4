@@ -93,12 +93,12 @@
 /*テーブル写真*/
 .table_picture {
 	margin : 4px 20px 4px 300px ;
-	border-collapse : collapse;
 	border : 2px solid gray;
-	display : block;
-	width : auto;
-	height : 240px;
+	border-bottom : 30px;
+	display : block ;
 	white-space : nowrap;
+	width : auto;
+	height : auto;
 	position : absolute;
 	left :360px;
 	top : 385px;
@@ -110,6 +110,18 @@
 	object-fit: contain;
 }
 
+.image {
+	border : none;
+	height :auto;
+	width : 360px;
+}
+ .file {
+	border : none;
+	border-top : 1px solid gray;
+	height : 16px;
+	text-align : center;
+ }
+
 /*登録ボタン*/
 .regi_submit{
 	padding : 10px 30px 10px 30px;
@@ -117,7 +129,7 @@
 	float : right;
 	position : absolute;
 	left : 1100px;
-	top : 580px;
+	top : 520px;
 }
 
 /*選択日付*/

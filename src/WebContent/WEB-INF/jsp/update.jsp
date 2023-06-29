@@ -16,7 +16,7 @@
 	<div class="sele_date2">${date}</div>
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
-		<img src="./img/adv.png" alt="広告" class="ad">
+		<img src="./img/advplusdojo.png" alt="広告" class="ad">
 	</a>
 
 <main>
@@ -132,14 +132,16 @@
 		</tr>
 	</table>
 	<table class="table_picture">
-		<tr>
 			<th>写真</th>
-				<td>
+		<tr>
+				<td class=file>
 					<input type="hidden" name="PICTURE1" value="${search.picture}">
 					<input type="file" name="PICTURE">
 				</td>
-				<td>
-					<img src="${search.picture}" alt="写真" id="day_pic" width="360" height="240">
+		</tr>
+		<tr>
+				<td class=image>
+					<img src="${search.picture}" alt="写真" id="day_pic">
 				</td>
 		</tr>
 	</table>
