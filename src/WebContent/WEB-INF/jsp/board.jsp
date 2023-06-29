@@ -17,9 +17,9 @@
 <c:forEach var="e" items="${list}" >
 <form action = "<%= request.getContextPath() %>/BrowseServlet" method="post">
 <input class="data" type="hidden" name= "USER_ID" value="${e.user_id}">
-<input class = "l_btn"value="ニックネーム:${e.name}" type = "submit" name = "submit"> 
+<input class = "l_btn"value="ニックネーム:${e.name}" type = "submit" name = "submit"> <c:out value="${e.date}"></c:out>
 </form><br>
-<c:out value="${e.date}"></c:out>　投稿内容:<c:out value="${e.chattext}"></c:out><br>
+投稿内容:<c:out value="${e.chattext}"></c:out><br>
  
 <br>
 <br>
