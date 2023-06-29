@@ -25,6 +25,7 @@
 		.ot_table_chuu td {
 		width : 150px;
 		text-align: center;
+		border : 1px solid gray;
 		}
 
 		.ot_table_shita {
@@ -42,13 +43,21 @@
 		.ot_table_shita td{
 		width : 150px;
 		text-align: center;
+		border : 1px solid gray;
 		}
 		/*（非活性）入力できない項目の色*/
-		:disabled {
+		input[type=checkbox]:checked:disabled {
 			background-color : white;
 			color : inherit;
 			cursor : not-allowed;
 		}
+		input[type=radio]:checked:disabled {
+			background-color : white;
+			color : inherit;
+			cursor : not-allowed;
+		}
+		E:disabled{
+		background : #fff;}
 
 		.oth_name {
 			position : relative;

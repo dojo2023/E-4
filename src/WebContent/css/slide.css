@@ -6,8 +6,8 @@ body {
 
 .slider {
 	position: absolute;
-    width: 450px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
     overflow: hidden;
     margin: 0 auto;
     border-color: black;
@@ -16,8 +16,8 @@ body {
 }
 
 .slider img {
-	width: 450px;
-    height: 400px;
+	width: 400px;
+    height: 600px;
 }
 
 
