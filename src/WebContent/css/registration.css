@@ -93,12 +93,11 @@
 /*テーブル写真*/
 .table_picture {
 	margin : 4px 20px 4px 300px ;
-	border-collapse : collapse;
 	border : 2px solid gray;
-	display : block;
-	width : auto;
-	height : 240px;
+	display : block ;
 	white-space : nowrap;
+	width : auto;
+	height : auto;
 	position : absolute;
 	left :360px;
 	top : 385px;
@@ -109,6 +108,15 @@
 	width: 100%;
 	object-fit: contain;
 }
+
+.image {
+	height :300px;
+	width : 200px;
+}
+ .file {
+	 height : 20px;
+	 text-align : center;
+ }
 
 /*登録ボタン*/
 .regi_submit{
