@@ -34,6 +34,10 @@ article {
 .adv{
 	width:240px;
 	height:500px;
+    opacity:1;
+}
+.adv:hover{
+	opacity:0.3;
 }
 
 .button{
