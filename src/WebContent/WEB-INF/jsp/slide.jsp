@@ -22,7 +22,7 @@
   <p id="date">日付</p>
 </div>
 <article>
-  <div class="advertisement"><a href="https://www.seplus.jp/" target="_blank"></a> <img class="adv" src="./img/advteraco.png"></div>
+  <div class="advertisement"><a href="https://www.seplus.jp/" target="_blank"><img class="adv" src="./img/advteraco.png"></a> </div>
     <div class="slider">
     <c:forEach var="e" items="${manageSlideList}" >
     <input class="slider_img" type="hidden" value="${e.picture}">
