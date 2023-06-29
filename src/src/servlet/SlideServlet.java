@@ -27,14 +27,15 @@ public class SlideServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		//if (session.getAttribute("id") == null) {
-			//response.sendRedirect("/sobaudon/LoginServlet");
-			//return;
-		//}
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		User user_id1 = (User)session.getAttribute("profile");
+			request.setCharacterEncoding("UTF-8");
+			HttpSession session = request.getSession();
+			User user_id1 = (User)session.getAttribute("profile");
+		if (user_id1.getUser_id() == null) {
+			response.sendRedirect("/sobaudon/LoginServlet");
+			return;
+		}
+		// リクエストパラメータを取得する
 		String user_id = user_id1.getUser_id();
 
 		// 検索処理を行う

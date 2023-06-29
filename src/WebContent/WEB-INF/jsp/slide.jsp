@@ -28,7 +28,7 @@
     <input class="slider_img" type="hidden" value="${e.picture}">
     </c:forEach>
             <!-- <img decoding="async" id="mypic" src="./img/start.png"> -->
-            <img decoding="async" id="mypic" src="./img/猫4.jpg">
+            <img decoding="async" id="mypic" src="./img/start1.png">
       </div>
 
   <div class="button">
