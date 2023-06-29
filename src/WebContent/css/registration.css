@@ -1,11 +1,14 @@
 @charset "UTF-8";
 
 /*広告*/
+body{
+	height:850px;
+}
 .ad{
 	width:240px;
 	height:480px;
 	position:absolute;
-	top:220px;
+	top:180px;
 	left:20px;
 	opacity:1;
 }
