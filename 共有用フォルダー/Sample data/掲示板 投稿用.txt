@@ -30,54 +30,54 @@ INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('diengo','chisaya','大した事じゃないけど、座ってる時に10秒間意識してグッと思いっきり力入れる。お腹なら腹筋を意識して。
 
 効果あるのか分からないけど仕事中にお腹、お尻、太もも(内腿を意識してくっつけるだけ)も順番にやりまくってたら次の日筋肉痛になったよ。',
-'2023/06/01 22:46:14',0,6);
+'2023/06/24 22:46:14',0,6);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('yamada','yuki','ジムとかはオススメしない。運動苦手ならわざわざ行って運動することが億劫になるよ。会費勿体無い。
 まずはテレビを見ながら踏み台昇降とかすぐには結果が出なくても運動に慣れることから始めるのがいいと思う。近くの公園を音楽聴きながらゆっくりウォーキングでもいいし。',
-'2023/06/01 23:42:02',0,7);
+'2023/06/24 23:42:02',0,7);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('CYU3w','^q^','食っても太らねえメシを教えろください',
-'2023/06/02 06:23:07',0,8);
+'2023/06/25 06:23:07',0,8);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('diengo','chisaya','そんなものはない','2023/06/02 06:23:07',0,9);
+   VALUES('diengo','chisaya','そんなものはない','2023/06/25 09:47:01',0,9);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('yamada','yuki','こんにゃくでも食ってろ','2023/06/02 06:23:07',0,10);
+   VALUES('yamada','yuki','こんにゃくでも食ってろ','2023/06/25 011:33:25',0,10);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('UxoxU_xx','hina','ヘルシー料理で検索して作れば？
-ジャンクとかばっかじゃなくてそういう系食えばそこまでは太らないと思う','2023/06/02 06:23:07',0,11);
+ジャンクとかばっかじゃなくてそういう系食えばそこまでは太らないと思う','2023/06/25 12:36:53',0,11);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('diengo','chisaya','マジレスするとサラダ','2023/06/02 06:23:07',0,12);
+   VALUES('diengo','chisaya','マジレスするとサラダ','2023/06/25 12:58:27',0,12);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('yamada','yuki','春雨スープとかいいぞ','2023/06/02 06:23:07',0,13);
+   VALUES('yamada','yuki','春雨スープとかいいぞ','2023/06/25 18:23:11',0,13);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('renaaaaaa','','オートミール','2023/06/02 06:23:07',0,14);
+   VALUES('renaaaaaa','','オートミール','2023/06/25 19:01:00',0,14);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('yamada','yuki','しらたきをすき焼きの割下で味が染みるまで煮込む
 それを生卵にくぐらせてたらふく食うべし！
 カロリー少ないのに全然痩せなかった
-','2023/06/02 06:23:07',0,15);
+','2023/06/25 21:23:35',0,15);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('renaaaaaa','','痩せなかったのかよ,,','2023/06/02 06:23:07',0,16);
+   VALUES('renaaaaaa','','痩せなかったのかよ,,','2023/06/25 22:01:52',0,16);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('CYU3w','^q^','二郎系は天地返ししなければヘルシーって言ってたよ','2023/06/02 06:23:07',0,17);
+   VALUES('CYU3w','^q^','二郎系は天地返ししなければヘルシーって言ってたよ','2023/06/26 00:13:42',0,17);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('UxoxU_xx','hina','こんにゃくだよカロリー０だよしらたきでもいいよ','2023/06/02 06:23:07',0,18);
+   VALUES('UxoxU_xx','hina','こんにゃく食べなよカロリー０だよしらたきでもいいよ','2023/06/26 04:44:01',0,18);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
-   VALUES('yamada','yuki','あんまりカサ増ししたカロリーないものを食い続けるのもよくないそうな。内臓の負担半端ない','2023/06/02 06:23:07',0,19);
+   VALUES('yamada','yuki','あんまりカサ増ししたカロリーないものを食い続けるのもよくないそうな。内臓の負担半端ない','2023/06/26 06:23:26',0,19);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('renaaaaaa','','豆腐を米代わりに食え
-','2023/06/02 06:23:07',0,20);
+','2023/06/26 07:54:14',0,20);

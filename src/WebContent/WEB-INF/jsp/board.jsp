@@ -53,9 +53,7 @@ function ShowLength( str ) {
 	   document.getElementById("inputlength").innerHTML = str.length + "文字";
 	}
 	
-document.getElementById("text-button").onclick = function() {
-	  document.getElementById("text").innerHTML = "クリックされた！";
-	};
+
 
 </script>
 <%@ include file="title.jsp" %>
