@@ -37,7 +37,7 @@
         <input class="button1" id="btnPause" type="button" value="停止">
         <input class="button1"  id="reset" type="button" value="リセット">
         <select class="button1"   name="selectbox" id="select_box">
-          <option id="fast" value="500">早い</option>
+          <option id="fast" value="500">速い</option>
           <option id="normal" value="1000" selected>普通</option>
           <option id="slow" value="1500">遅い</option>
         </select>
