@@ -30,7 +30,7 @@ INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('diengo','chisaya','大した事じゃないけど、座ってる時に10秒間意識してグッと思いっきり力入れる。お腹なら腹筋を意識して。
 
 効果あるのか分からないけど仕事中にお腹、お尻、太もも(内腿を意識してくっつけるだけ)も順番にやりまくってたら次の日筋肉痛になったよ。',
-'2023/06/01 22:46:14',0,6,);
+'2023/06/01 22:46:14',0,6);
 
 INSERT INTO BBS (USER_ID, NAME, CHATTEXT, DATE, VISITOR, BBSID)
    VALUES('yamada','yuki','ジムとかはオススメしない。運動苦手ならわざわざ行って運動することが億劫になるよ。会費勿体無い。

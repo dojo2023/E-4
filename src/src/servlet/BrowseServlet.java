@@ -30,12 +30,14 @@ public class BrowseServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("profile") == null) {
+		User user_id1 = (User)session.getAttribute("profile");
+		if (user_id1.getUser_id() == null) {
 			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
 		request.setCharacterEncoding("UTF-8");
 		String else_id = request.getParameter("USER_ID");
+
 		String pw = "";
 		String name ="";
 		Double height = null;

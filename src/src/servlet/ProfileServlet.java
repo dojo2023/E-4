@@ -24,8 +24,14 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//ユーザのプロフィールをセッションスコープから取得
 		HttpSession session = request.getSession();
+    	User usr =  (User)session.getAttribute("profile");
+		if (usr.getUser_id() == null) {
+			response.sendRedirect("/sobaudon/LoginServlet");
+			return;
+		}
+
+		//ユーザのプロフィールをセッションスコープから取得
 		User user_inf = (User)session.getAttribute("profile");
 
 		//をリクエストスコープに格納する

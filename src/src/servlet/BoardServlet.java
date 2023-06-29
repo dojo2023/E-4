@@ -36,7 +36,13 @@ public class BoardServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
+    	HttpSession session = request.getSession();
+    	User usr =  (User)session.getAttribute("profile");
+		if (usr.getUser_id() == null) {
+			response.sendRedirect("/sobaudon/LoginServlet");
+			return;
+		}
+
         //リスナークラスに移動したい
         request.setCharacterEncoding("UTF-8");
 
@@ -48,7 +54,7 @@ public class BoardServlet extends HttpServlet {
        // HttpSession session = request.getSession();
      //   session.setAttribute("listAttribute", list);
         request.setAttribute("list", list);
-        
+
         RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/jsp/board.jsp");
         rd.forward(request, response);
     }
@@ -58,27 +64,27 @@ public class BoardServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	HttpSession session = request.getSession();
-		if (session.getAttribute("profile") == null) {
+    	User usr =  (User)session.getAttribute("profile");
+		if (usr.getUser_id() == null) {
 			response.sendRedirect("/sobaudon/LoginServlet");
 			return;
 		}
     	request.setCharacterEncoding("UTF-8");
 
         // 入力された値を取得
-    	User usr =  (User)session.getAttribute("profile");
     	String user_id = usr.getUser_id();
         //String user_id = request.getParameter("user_id");//session userid get
         String name = usr.getName();//session~
         String chattext = request.getParameter("chattext");
-        
+
         //ここから3文は日付取得
         Calendar cal = Calendar.getInstance();
         //SimpleDateFormatで書式を指定
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/ HH:mm:ss");
         //Calendarの日付をSimpleDateFormatで指定した書式で文字列に変換
         String date = (sdf.format(cal.getTime()));
-        
-        
+
+
         //JavaBeansに格納
         Bbs bo = new Bbs(user_id,name, chattext,  date, 0, 0);
         bo.setUser_id(user_id);
@@ -87,28 +93,28 @@ public class BoardServlet extends HttpServlet {
         bo.setDate(date);
         bo.setVisitor(0);
         bo.setBbsid(0);
-        
-        
+
+
         // DBに格納
         BbsDAO acl = new BbsDAO();
         acl.insert(bo);
-        
+
         BbsDAO fct = new BbsDAO();
         List<Bbs> list = fct.selectAll();
-        
+
         request.setAttribute("list", list);
         // 今入力されたコメントと既存のコメントをh2dbから取得
        /*
         FindChattextLogic fcl = new FindChattextLogic();
         List<Bbs> list = fcl.executeFindChattext();
-        
+
         // セッションスコープにコメントリストを保存
         HttpSession session = request.getSession();
         session.setAttribute("listAttribute", list);
         */
         RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/jsp/board.jsp");
         rd.forward(request, response);
-        
+
         /*
      // 閲覧ページにフォワードする ＊名前が押されたら
      		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/browse.jsp");
