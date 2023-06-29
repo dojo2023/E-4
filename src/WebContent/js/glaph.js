@@ -7,7 +7,7 @@ function drawChart() {
   for(let i = 0; i < ItemList.length; i++) {
     value = ItemList.item(i).value;
     if (value.length !== 10) {
-      value = parseInt(value);
+      value = parseFloat(value);
     }
     DataList.push(value);
       console.log(value);
