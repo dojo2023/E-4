@@ -16,7 +16,7 @@
 	<!-- <div class="regi_sele_date2">${date}</div> -->
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
-		<img src="./img/adv.png" alt="広告" class="ad">
+		<img src="./img/advteraco.png" alt="広告" class="ad">
 	</a>
 
 <main>
