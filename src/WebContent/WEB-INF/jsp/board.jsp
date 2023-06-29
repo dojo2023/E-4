@@ -26,12 +26,13 @@
 </c:forEach>
 </div>
 
-<form action="/sobaudon/BoardServlet" method="post" name="form1"> <!-- onSubmit="return check()" -->
+<form action="/sobaudon/BoardServlet" method="post" name="form1"onsubmit="return check2()"> <!-- onSubmit="return check()" -->
 <div class = "rw">
 <p class = "chat">コメント:<br>
 <textarea class = "area" class = "subbtn"name="chattext" rows="5" cols="40" minlength="1" onkeyup = "ShowLength(value)"required placeholder="文字を入力してください。"onChange="check()"></textarea>
 </p>
 <p id = "inputlength">0文字</p>
+<!-- ウィンドウプロンプト 追加 -->
 <div id = "txt_button"class = "flexbox"><input id ="txt"type="submit" value="投稿"><input id = "rst"type="reset" value="リセット"></div>
 
 </div>
@@ -53,7 +54,16 @@ function ShowLength( str ) {
 	   document.getElementById("inputlength").innerHTML = str.length + "文字";
 	}
 	
-
+   function check2() {
+     if (window.confirm('送信してよろしいですか？')) { // 確認ダイアログを表示
+       return true; // 「OK」時は送信を実行
+     }
+     else { // 「キャンセル」時の処理
+       window.alert('キャンセルされました'); // 警告ダイアログを表示
+       return false; // 送信を中止
+     }
+   }
+   
 
 </script>
 <%@ include file="title.jsp" %>
