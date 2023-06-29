@@ -110,12 +110,15 @@
 }
 
 .image {
-	height :300px;
-	width : 200px;
+	border : none;
+	height :360px;
+	width : 240px;
 }
  .file {
-	 height : 20px;
-	 text-align : center;
+	border : none;
+	border-top : 1px solid gray;
+	height : 20px;
+	text-align : center;
  }
 
 /*登録ボタン*/
@@ -125,7 +128,7 @@
 	float : right;
 	position : absolute;
 	left : 1100px;
-	top : 580px;
+	top : 520px;
 }
 
 /*選択日付*/
