@@ -27,14 +27,14 @@ function drawChart() {
     }
   }
   var data = google.visualization.arrayToDataTable([
-    ['x', '体重(kg)', 'BMI(適正は22ぐらい)'],
+    ['x', '体重(kg)', 'BMI'],
     sl[0],sl[1],sl[2],sl[3],sl[4],sl[5],sl[6],sl[7],sl[8],sl[9],
     sl[10],sl[11],sl[12],sl[13],sl[14],sl[15],sl[16],sl[17],sl[18],sl[19],
     sl[20],sl[21],sl[22],sl[23],sl[24],sl[25],sl[26],sl[27],sl[28],sl[29]
   ]);
 
   var options = {
-    title: '登録された過去30日分の体重とBMIの推移',
+    title: '過去30日分の体重とBMIの推移',
     series: [
       { targetAxisIndex: 0 }, // 第1系列は左のY軸を使用
       { targetAxisIndex: 1 }, // 第2系列は右のY時を使用
