@@ -26,7 +26,7 @@ import model.User;
 @WebServlet("/RegistrationServlet")
 @MultipartConfig(
 	//location="C:\\dojo6\\src\\WebContent\\body",
-	maxFileSize=1000000
+	maxFileSize=10000000
 
 )
 
