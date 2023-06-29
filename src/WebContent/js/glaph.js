@@ -8,6 +8,8 @@ function drawChart() {
     value = ItemList.item(i).value;
     if (value.length !== 10) {
       value = parseFloat(value);
+    } else {
+      value = value.substr(value.indexOf('/') + 1);
     }
     DataList.push(value);
       console.log(value);

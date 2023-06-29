@@ -66,7 +66,19 @@
 		}
 
 		body {
-		background-color : #F6F5EA;
+			background-color : #F6F5EA;
+		}
+
+		.ad_other {
+			width:240px;
+			height:500px;
+			position:absolute;
+			top:210px;
+			left:20px;
+			opacity:1;
+		}
+		.ad_other:hover{
+			opacity:0.3;
 		}
 	</style>
 </head>
@@ -82,7 +94,7 @@
 	</div>
 <!-- 広告 -->
 	<a href="https://www.seplus.jp/" target="_blank">
-		<img src="./img/advplusdojo.png" alt="広告" class="ad">
+		<img src="./img/advplusdojo.png" alt="広告" class="ad_other">
 	</a>
 
 <main>
