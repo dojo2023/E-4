@@ -52,7 +52,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :0px;
-	top : 410px;
+	top : 400px;
 }
 .table_chuu th {
 	width : 64px;
@@ -72,7 +72,7 @@
 	white-space : nowrap;
 	position : absolute;
 	left :230px;
-	top : 445px;
+	top : 400px;
 }
 .table_shita td {
 	border : 1px solid gray;
@@ -100,7 +100,7 @@
 	height : auto;
 	position : absolute;
 	left :360px;
-	top : 385px;
+	top : 400px;
 }
 
 .table_picture img {
