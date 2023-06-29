@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>掲示板</title>
+<title>きょうから｜掲示板</title>
 <link rel="stylesheet" type="text/css" href="/sobaudon/css/board.css">
 </head>
 <body class = "txt">
@@ -20,7 +20,7 @@
 <input class = "l_btn"value="ニックネーム:${e.name}" type = "submit" name = "submit"> <c:out value="${e.date}"></c:out>
 </form><br>
 投稿内容:<c:out value="${e.chattext}"></c:out><br>
- 
+
 <br>
 <br>
 </c:forEach>
